@@ -1,0 +1,9 @@
+@media screen and (max-width: map-get($grid-breakpoints, sm)) {
+    .btn {
+        &_size_sm {
+        }
+
+        &_size_lg {
+        }
+    }
+}

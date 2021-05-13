@@ -1,0 +1,64 @@
+//
+$font-size-main:     18px;
+$font-size-mobile:   14px;
+
+$line-height-main:   1.5em;
+$line-height-mobile: $line-height-main;
+
+$font-size-28:          1.55rem;
+$font-size-28-mobile:   1.25rem;
+$font-size-24:          1.33rem;
+
+$font-size-h1:   3.11rem;
+$font-size-h2:   2.66rem;
+$font-size-h3:   $font-size-28;
+    
+//
+$color-green: #005760;
+$color-black: #212529;
+
+
+// 
+$spacers: (
+    0:   0.00rem,
+    1:   0.50rem, 
+    2:   0.75rem, 
+    3:   1.00rem, 
+    4:   1.50rem, 
+    5:   2.00rem, 
+    6:   2.50rem, 
+    7:   3.00rem,
+    8:   3.50rem,
+    9:   4.00rem,
+    100: 10rem,
+    200: 20rem
+);
+
+$enable-negative-margins: true;
+
+$grid-gutter-width: 2rem !default;
+
+$colors: (
+    "white": white,
+    "green": $color-green,
+    "black": $color-black
+);
+
+@use "sass:map";
+
+
+@mixin mt($index) { margin-top:    map.get($spacers, $index); }
+@mixin mb($index) { margin-bottom: map.get($spacers, $index); }
+@mixin ml($index) { margin-left:   map.get($spacers, $index); }
+@mixin mr($index) { margin-right:  map.get($spacers, $index); }
+
+@mixin mv($index) { margin-top:  map.get($spacers, $index); margin-bottom: map.get($spacers, $index); }
+@mixin mh($index) { margin-left: map.get($spacers, $index); margin-right:  map.get($spacers, $index); }
+
+@mixin pt($index) { padding-top:    map.get($spacers, $index); }
+@mixin pb($index) { padding-bottom: map.get($spacers, $index); }
+@mixin pl($index) { padding-left:   map.get($spacers, $index); }
+@mixin pr($index) { padding-right:  map.get($spacers, $index); }
+
+@mixin pv($index) { padding-top:  map.get($spacers, $index); padding-bottom: map.get($spacers, $index); }
+@mixin ph($index) { padding-left: map.get($spacers, $index); padding-right:  map.get($spacers, $index); }

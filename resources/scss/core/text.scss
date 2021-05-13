@@ -1,0 +1,55 @@
+h1, h2, h3, h4, h5, h6,
+p {
+    margin: 0;
+}
+
+
+h1 {
+    display: inline-block;
+    font-size: $font-size-h1;
+    line-height: 100%;
+}
+
+h2 {
+    display: inline-block;
+    font-size: $font-size-h2;
+    line-height: 100%;
+}
+
+h3 {
+    display: inline-block;
+    font-size: $font-size-h3;
+    line-height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+.text {
+    @each $color, $value in $colors {
+        &-#{$color} { 
+            color: $value; 
+        }
+    }
+
+    &-28 {
+        font-size: $font-size-28;
+        line-height: 1.5em;
+    }
+}
+
+.header-tag-icon {
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(150%, -100%);
+
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+        filter: invert(1);
+    }
+}
