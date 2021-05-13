@@ -18,5 +18,13 @@ Route::get('/', function () {
 });
 
 Route::get('/tours', function () {
-    return view('pages.tours');
+    return view('pages.tours.index');
+});
+
+Route::get('/tag', function () {
+    return view('pages.tags.show');
+});
+
+Route::get('/about', function () {
+    return view('pages.about');
 });

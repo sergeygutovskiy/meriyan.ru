@@ -9,16 +9,18 @@
 @section('header')
     <div class="header d-flex flex-column justify-content-center text-center text-white">
         <div class="row justify-content-center">
-            <h1 class="mb-7">Lorem Ipsum</h1>
-            <p class="text-28 col-lg-7 mb-7">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                Donec nec neque vel diam hendrerit ultrices non quis ante.
-            </p>
-            <div>
-                <button class="btn btn_size_lg">
-                    Узнать больше
-                </button>
+            <div class="col-12 col-lg-7">
+                <h1 class="mb-7">Lorem Ipsum</h1>
+                <p class="text-28 mb-7">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
+                    Donec nec neque vel diam hendrerit ultrices non quis ante.
+                </p>
+                <div>
+                    <button class="btn btn_size_lg">
+                        Узнать больше
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -115,7 +117,7 @@
             </div>
         </div>
         <div class="row row-cols-1 row-cols-lg-3 justify-content-sm-between mt-6">
-            <div class="col d-flex justify-content-center d-lg-block">
+            <div class="col d-flex justify-content-center">
                 <article class="partner ph-4 pv-6 pb-8">
                     <div class="partner__image-wrapper">
                         <img class="partner__image" src="http://placehold.it/500x500">
@@ -127,7 +129,7 @@
                     </p>
                 </article>
             </div>
-            <div class="col d-flex justify-content-center d-lg-block mt-4 mt-lg-0">
+            <div class="col d-flex justify-content-center mt-4 mt-lg-0">
                 <article class="partner ph-4 pv-6 pb-8">
                     <div class="partner__image-wrapper">
                         <img class="partner__image" src="http://placehold.it/500x500">
@@ -139,7 +141,7 @@
                     </p>
                 </article>
             </div>
-            <div class="col col-md-12 col-lg mt-4 mt-lg-0 d-flex d-lg-block justify-content-center">
+            <div class="col col-md-12 col-lg mt-4 mt-lg-0 d-flex justify-content-center">
                 <article class="partner ph-4 pv-6 pb-8">
                     <div class="partner__image-wrapper">
                         <img class="partner__image" src="http://placehold.it/500x500">

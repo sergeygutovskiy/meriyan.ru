@@ -11192,6 +11192,28 @@ button.swiper-pagination-bullet {
   outline: none;
 }
 
+h1, h2, h3, h4, h5, h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea,
+button {
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  overflow: auto;
+}
+
 html {
   font-size: 18px;
   line-height: 1.5em;
@@ -11203,11 +11225,6 @@ body {
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
   background-color: #003666;
-}
-
-h1, h2, h3, h4, h5, h6,
-p {
-  margin: 0;
 }
 
 h1 {
@@ -11226,10 +11243,6 @@ h3 {
   display: inline-block;
   font-size: 1.55rem;
   line-height: 100%;
-}
-
-a {
-  text-decoration: none;
 }
 
 .text-white {
@@ -11296,22 +11309,6 @@ a {
   border: solid 3px #005760;
 }
 
-@media screen and (max-width: 576px) {
-  html {
-    font-size: 14px;
-    line-height: 1.5em;
-  }
-
-  .text-28 {
-    font-size: 1.25rem;
-  }
-
-  .header-tag-icon img {
-    transform: translate(150%, -100%);
-    width: 40px;
-    height: 40px;
-  }
-}
 .tour-card {
   position: relative;
   max-width: 380px;
@@ -11416,18 +11413,6 @@ a {
      object-fit: cover;
 }
 
-input,
-textarea {
-  font-size: 1rem;
-  font-family: inherit;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 120px;
-  overflow: auto;
-}
-
 .form {
   max-width: 500px;
   width: 100%;
@@ -11446,6 +11431,21 @@ textarea {
 }
 
 @media screen and (max-width: 576px) {
+  html {
+    font-size: 14px;
+    line-height: 1.5em;
+  }
+
+  .text-28 {
+    font-size: 1.25rem;
+  }
+
+  .header-tag-icon img {
+    transform: translate(150%, -100%);
+    width: 40px;
+    height: 40px;
+  }
+
   .tour-card {
     max-width: 280px;
   }

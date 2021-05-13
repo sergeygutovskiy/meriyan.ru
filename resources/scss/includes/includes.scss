@@ -1,7 +1,0 @@
-@import "tours/card";
-@import "banner";
-@import "form";
-
-@media screen and (max-width: map-get($grid-breakpoints, sm)) {
-    @import "mobile/tours/card";
-}

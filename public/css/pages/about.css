@@ -1,0 +1,24 @@
+.point {
+  border-radius: 20px;
+}
+.point img {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media screen and (max-width: 576px) {
+  .tours-wrapper {
+    padding: 0;
+  }
+  .tours-wrapper .swiper-wrapper {
+    padding-left: 1rem;
+  }
+  .tours-wrapper .swiper-slide {
+    max-width: 280px;
+  }
+  .tours-wrapper .swiper-slide:last-child {
+    margin-right: 2rem;
+  }
+}

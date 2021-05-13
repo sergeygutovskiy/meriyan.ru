@@ -8,13 +8,15 @@
 
 @section('header')
     <div class="header d-flex flex-column justify-content-center text-center text-white">
-        <div class="row justify-content-center">
-            <h1 class="mb-7">Lorem Ipsum</h1>
-            <p class="text-28 col-lg-7 mb-7">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                Donec nec neque vel diam hendrerit ultrices non quis ante.
-            </p>
+        <div class="row justify-content-center mb-7">
+            <div class="col-12 col-lg-7">
+                <h1 class="mb-7">Lorem Ipsum</h1>
+                <p class="text-28">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
+                    Donec nec neque vel diam hendrerit ultrices non quis ante.
+                </p>
+            </div>
         </div>
         <div class="row">
             <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-start">

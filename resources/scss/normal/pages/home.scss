@@ -1,5 +1,5 @@
-@import "../bootstrap_variables";
-@import "../variables.scss";
+@import "../../variables";
+@import "../../bootstrap/variables";
 
 .header {
     min-height: 100vh;
@@ -41,14 +41,14 @@
         padding: 0;
 
         .swiper-wrapper {
-            @include pl(2);
+            @include pl(3);
         }
         
         .swiper-slide {
             max-width: 280px;
 
             &:last-child {
-                @include mr(2 * 2);
+                @include mr(5);
             }
         }
     }

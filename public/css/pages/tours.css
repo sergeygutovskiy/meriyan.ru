@@ -1,3 +1,7 @@
 .header {
+  position: relative;
   min-height: 100vh;
+}
+.header::after {
+  background-color: url(https://wallpapershome.ru/images/pages/pic_h/6487.jpg);
 }

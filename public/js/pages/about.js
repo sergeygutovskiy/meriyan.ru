@@ -12221,9 +12221,9 @@ __webpack_require__.r(__webpack_exports__);
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!************************************!*\
-  !*** ./resources/js/pages/home.js ***!
-  \************************************/
+/*!*************************************!*\
+  !*** ./resources/js/pages/about.js ***!
+  \*************************************/
 var _require = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js"),
     Swiper = _require["default"];
 

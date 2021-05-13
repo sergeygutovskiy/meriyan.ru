@@ -1,3 +1,5 @@
+@use "sass:map";
+
 //
 $font-size-main:     18px;
 $font-size-mobile:   14px;
@@ -36,17 +38,20 @@ $spacers: (
 
 $enable-negative-margins: true;
 
+
+//
 $grid-gutter-width: 2rem !default;
 
+
+//
 $colors: (
     "white": white,
     "green": $color-green,
     "black": $color-black
 );
 
-@use "sass:map";
 
-
+//
 @mixin mt($index) { margin-top:    map.get($spacers, $index); }
 @mixin mb($index) { margin-bottom: map.get($spacers, $index); }
 @mixin ml($index) { margin-left:   map.get($spacers, $index); }

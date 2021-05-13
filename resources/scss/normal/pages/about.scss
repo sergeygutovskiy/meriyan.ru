@@ -1,0 +1,30 @@
+@import "../../variables";
+@import "../../bootstrap/variables";
+
+.point {
+    border-radius: 20px;
+
+    img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, sm)) {
+    .tours-wrapper {
+        padding: 0;
+
+        .swiper-wrapper {
+            @include pl(3);
+        }
+        
+        .swiper-slide {
+            max-width: 280px;
+
+            &:last-child {
+                @include mr(5);
+            }
+        }
+    }
+}

@@ -36,12 +36,12 @@
     padding: 0;
   }
   .tours-wrapper .swiper-wrapper {
-    padding-left: 0.75rem;
+    padding-left: 1rem;
   }
   .tours-wrapper .swiper-slide {
     max-width: 280px;
   }
   .tours-wrapper .swiper-slide:last-child {
-    margin-right: 1.5rem;
+    margin-right: 2rem;
   }
 }

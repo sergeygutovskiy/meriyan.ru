@@ -4,7 +4,7 @@
     </div>
     <div class="tour-card__content pv-4 ph-3 pv-xl-6 ph-xl-4">
         <div class="tour-card__tags">
-            @for ($i = 0; $i < 3; $i++)
+            @for ($i = 0; $i < 3 && $i < count($tags); $i++)
                 <img class="tour-card__tag @if ($i > 0) ml-1 @endif" src="images/tours/tags/icon-{{ $tags[$i] }}.svg">
             @endfor
             @if (count($tags) - 3 > 0)

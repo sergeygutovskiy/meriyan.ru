@@ -1,9 +1,17 @@
 @import "variables";
 
-@import "bootstrap_variables";
-@import "bootstrap_reset";
+// bootstrap
+@import "bootstrap/variables";
+@import "bootstrap/reset";
 
+// swiper
 @import "~swiper/swiper-bundle";
 
-@import "core/core";
-@import "includes/includes";
+
+@import "normal/core/core";
+@import "normal/includes/includes";
+
+@media screen and (max-width: map-get($grid-breakpoints, sm)) {
+    @import "mobile/core/core";
+    @import "mobile/includes/includes";
+}
