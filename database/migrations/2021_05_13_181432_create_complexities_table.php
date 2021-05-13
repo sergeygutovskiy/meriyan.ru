@@ -15,6 +15,9 @@ class CreateComplexitiesTable extends Migration
     {
         Schema::create('complexities', function (Blueprint $table) {
             $table->id();
+
+            $table->string('name');
+
             $table->timestamps();
         });
     }
