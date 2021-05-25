@@ -1,0 +1,43 @@
+@use "sass:map";
+
+$spacers: (
+    0:   0.00rem,
+    1:   0.50rem, 
+    2:   0.75rem, 
+    3:   1.00rem, 
+    4:   1.50rem, 
+    5:   2.00rem, 
+    6:   2.50rem, 
+    7:   3.00rem,
+    8:   3.50rem,
+    9:   4.00rem,
+    100: 10rem,
+    200: 20rem
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1400px
+);
+
+$enable-negative-margins: true;
+$grid-gutter-width: 2rem !default;
+
+@mixin mt($index) { margin-top:    map.get($spacers, $index); }
+@mixin mb($index) { margin-bottom: map.get($spacers, $index); }
+@mixin ml($index) { margin-left:   map.get($spacers, $index); }
+@mixin mr($index) { margin-right:  map.get($spacers, $index); }
+
+@mixin mv($index) { margin-top:  map.get($spacers, $index); margin-bottom: map.get($spacers, $index); }
+@mixin mh($index) { margin-left: map.get($spacers, $index); margin-right:  map.get($spacers, $index); }
+
+@mixin pt($index) { padding-top:    map.get($spacers, $index); }
+@mixin pb($index) { padding-bottom: map.get($spacers, $index); }
+@mixin pl($index) { padding-left:   map.get($spacers, $index); }
+@mixin pr($index) { padding-right:  map.get($spacers, $index); }
+
+@mixin pv($index) { padding-top:  map.get($spacers, $index); padding-bottom: map.get($spacers, $index); }
+@mixin ph($index) { padding-left: map.get($spacers, $index); padding-right:  map.get($spacers, $index); }

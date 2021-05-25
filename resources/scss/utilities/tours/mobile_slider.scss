@@ -1,0 +1,17 @@
+@mixin utility-tours-slider--mobile {
+    .tours-wrapper {
+        padding: 0;
+
+        .swiper-wrapper {
+            @include pl(3);
+        }
+        
+        .swiper-slide {
+            max-width: 80vw;
+
+            &:last-child {
+                @include mr(5);
+            }
+        }
+    }
+}

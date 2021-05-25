@@ -11,11 +11,21 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.sass('resources/scss/app.scss', 'public/css')
-    .sass('resources/scss/normal/pages/home.scss' , 'public/css/pages')
-    .sass('resources/scss/normal/pages/tours.scss', 'public/css/pages')
-    .sass('resources/scss/normal/pages/about.scss', 'public/css/pages')
-    .js('resources/js/app.js', 'public/js')
+mix
+    .sass('resources/scss/app.scss', 'public/css')
+    .sass('resources/scss/reset.scss', 'public/css')
+    
+    .sass('resources/scss/pages/home.scss' , 'public/css/pages')
     .js('resources/js/pages/home.js', 'public/js/pages')
+
+    .sass('resources/scss/pages/about.scss', 'public/css/pages')
     .js('resources/js/pages/about.js', 'public/js/pages')
+    
+    .sass('resources/scss/pages/tour.scss', 'public/css/pages')
+
+    .sass('resources/scss/pages/contacts.scss', 'public/css/pages')
+    
+    .js('resources/js/app.js', 'public/js')
+
+    // .sass('resources/scss/normal/pages/tours.scss', 'public/css/pages')
     ;

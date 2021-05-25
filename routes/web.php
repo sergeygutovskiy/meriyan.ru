@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Tours\Tour;
+use App\Models\Tag;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +16,39 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.home');
-});
+    $tours = Tour::with('tags')->get();
+
+    return view('pages.home', [ 'tours' => $tours ]);
+})->name("home");
 
 Route::get('/tours', function () {
-    return view('pages.tours.index');
-});
+    $tours = Tour::get();
 
-Route::get('/tag', function () {
-    return view('pages.tags.show');
-});
+    return view('pages.tours.index', [ 'tours' => $tours ]);
+})->name("tours");
+
+Route::get('/tours/{tour}', function (Tour $tour) {
+    $tour = Tour::with('tags')
+        ->where('id', $tour->id)
+        ->first();
+    
+    return view('pages.tours.show', [ 'tour' => $tour ]);
+})->name('tour.show');
+
+Route::get('/tags/{tag}', function (Tag $tag) {
+    $tag = Tag::with('tours')
+        ->where('id', $tag->id)
+        ->first();
+
+    return view('pages.tags.show', [ 'tag' => $tag ]);
+})->name('tag.show');
 
 Route::get('/about', function () {
-    return view('pages.about');
-});
+    $tours = Tour::with('tags')->get();
+    
+    return view('pages.about', [ 'tours' => $tours ]);
+})->name("about");
+
+Route::get('/contacts', function () {
+    return view('pages.contacts');
+})->name("contacts");

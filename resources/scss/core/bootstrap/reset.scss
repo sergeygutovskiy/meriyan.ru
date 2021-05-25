@@ -1,0 +1,40 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+
+
+$utilities: (
+    "margin-start": map-merge( map-get($utilities, "margin-start"), ( class: ml ) ),
+    "margin-end":   map-merge( map-get($utilities, "margin-end"), ( class: mr ) ),
+    "margin-x":     map-merge( map-get($utilities, "margin-x"), ( class: mh ) ),
+    "margin-y":     map-merge( map-get($utilities, "margin-y"), ( class: mv ) ),
+ 
+    "margin-top":    map-get($utilities, "margin-top"),
+    "margin-bottom": map-get($utilities, "margin-bottom"),
+    
+    "negative-margin-top":    map-get($utilities, "negative-margin-top"),
+    "negative-margin-bottom": map-get($utilities, "negative-margin-bottom"),
+
+    "padding":       map-get($utilities, "padding"),
+    "padding-start": map-merge( map-get($utilities, "padding-start"), ( class: pl ) ),
+    "padding-end":   map-merge( map-get($utilities, "padding-end"), ( class: pr ) ),
+    "padding-x":     map-merge( map-get($utilities, "padding-x"), ( class: ph ) ),
+    "padding-y":     map-merge( map-get($utilities, "padding-y"), ( class: pv ) ),
+
+    "padding-top":    map-get($utilities, "padding-top"),
+    "padding-bottom": map-get($utilities, "padding-bottom"),
+
+    "display": map-get($utilities, "display"),
+    
+    "flex-direction":  map-get($utilities, "flex-direction"),
+    "justify-content": map-get($utilities, "justify-content"),
+    "align-items":     map-get($utilities, "align-items"),
+    "order":           map-get($utilities, "order"),
+    
+    "text-align": map-get($utilities, "text-align")
+);
+
+
+@import "~bootstrap/scss/utilities/api";

@@ -1,0 +1,14 @@
+.u-page-header {
+    display: flex;
+    flex-direction: column;
+
+    &_size {
+        &_100vh {
+            height: 100vh;
+        
+            > * {
+                flex-grow: 1;
+            }
+        }
+    }
+}

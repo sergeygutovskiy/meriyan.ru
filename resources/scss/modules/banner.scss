@@ -1,0 +1,16 @@
+.m-banner {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    color: $color-white;
+
+    &__image {
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+}

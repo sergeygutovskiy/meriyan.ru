@@ -1,0 +1,11 @@
+$color-green:       #005760;
+$color-green-light: #01737E;
+$color-black:       #212529;
+$color-white:       #ffffff;
+
+$colors: (
+    "white": $color-white,
+    "green": $color-green,
+    "green-light": $color-green-light,
+    "black": $color-black
+);

@@ -12,6 +12,6 @@ class Tag extends Model
 
     public function tours()
     {
-        return $this->belongsToMany(Tour::class);
+        return $this->belongsToMany(Tour::class, 'tours_tags');
     }
 }

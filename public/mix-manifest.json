@@ -1,9 +1,11 @@
 {
-    "/js/app.js": "/js/app.js",
     "/js/pages/home.js": "/js/pages/home.js",
     "/js/pages/about.js": "/js/pages/about.js",
+    "/js/app.js": "/js/app.js",
+    "/css/pages/tour.css": "/css/pages/tour.css",
     "/css/pages/about.css": "/css/pages/about.css",
-    "/css/pages/tours.css": "/css/pages/tours.css",
     "/css/pages/home.css": "/css/pages/home.css",
-    "/css/app.css": "/css/app.css"
+    "/css/reset.css": "/css/reset.css",
+    "/css/app.css": "/css/app.css",
+    "/css/pages/contacts.css": "/css/pages/contacts.css"
 }

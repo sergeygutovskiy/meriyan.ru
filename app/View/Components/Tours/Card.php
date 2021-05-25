@@ -3,25 +3,20 @@
 namespace App\View\Components\Tours;
 
 use Illuminate\View\Component;
+use App\Models\Tours\Tour;
 
 class Card extends Component
 {
-    public $img;
-    public $title;
-    public $desc;
-    public $tags;
+    public $tour;
     
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($img, $title, $desc, $tags)
+    public function __construct(Tour $tour)
     {
-        $this->img = $img;
-        $this->title = $title;
-        $this->desc = $desc;
-        $this->tags = $tags;
+        $this->tour = $tour;
     }
 
     /**

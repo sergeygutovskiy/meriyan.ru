@@ -8,16 +8,18 @@ class FormSection extends Component
 {
     public $title;
     public $paragraph;
+    public $is_green;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title, $paragraph)
+    public function __construct($title, $paragraph, $isGreen = false)
     {
         $this->title = $title;
         $this->paragraph = $paragraph;
+        $this->is_green = $isGreen;
     }
 
     /**

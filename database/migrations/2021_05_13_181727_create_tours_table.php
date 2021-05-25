@@ -15,7 +15,20 @@ class CreateToursTable extends Migration
     {
         Schema::create('tours', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger("info_id")->nullable()->unsigned()->index();
+            
+            $table->string("title");
+            $table->text("description");
+            
+            $table->string("image_path");
+            
+            $table->integer("price");
+            $table->integer("price_discount")->nullable();
+
             $table->timestamps();
+
+            $table->foreign('info_id')->references('id')->on('tour_infos');
         });
     }
 

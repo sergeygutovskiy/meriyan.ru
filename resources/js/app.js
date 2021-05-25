@@ -1,4 +1,5 @@
 require('./bootstrap');
+require('./includes/navigation_mobile');
 
 window._grid_breakpoints = {
     xs:  0,

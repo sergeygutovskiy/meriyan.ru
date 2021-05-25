@@ -10,13 +10,15 @@ class Tour extends Model
 {
     use HasFactory;
 
+    
+    
     public function info()
     {
-        return $this->hasOne(TourInfo::class);
+        return $this->belongsTo(TourInfo::class, 'info_id');
     }
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class, 'tours_tags');
     }
 }

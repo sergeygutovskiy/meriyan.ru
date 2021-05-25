@@ -1,27 +1,39 @@
-<article class="tour-card">
-    <div class="tour-card__image-wrapper">
-        <img class="tour-card__image" src="{{ $img }}">
+<article class="m-tour-card">
+    <div class="m-tour-card__image-wrapper">
+        <img class="m-tour-card__image" src="{{ $tour->image_path }}">
     </div>
-    <div class="tour-card__content pv-4 ph-3 pv-xl-6 ph-xl-4">
-        <div class="tour-card__tags">
-            @for ($i = 0; $i < 3 && $i < count($tags); $i++)
-                <img class="tour-card__tag @if ($i > 0) ml-1 @endif" src="images/tours/tags/icon-{{ $tags[$i] }}.svg">
+    <div class="m-tour-card__content pv-4 ph-3 pv-xl-6 ph-xl-4">
+        <div class="m-tour-card__tags">
+            @for ($i = 0; $i < 3 && $i < count($tour->tags); $i++)
+                <a
+                    class="m-tour-card__tag @if ($i > 0) ml-1 @endif"
+                    href="{{ route('tag.show', [ 'tag' => $tour->tags[$i] ]) }}">
+                    <img src="/images/{{ $tour->tags[$i]->image_path }}">
+                </a>
             @endfor
-            @if (count($tags) - 3 > 0)
-                <div class="tour-card__more-tags-count ml-1">
-                    +{{ count($tags) - 3 }}
+            @if (count($tour->tags) - 3 > 0)
+                <div class="m-tour-card__more-tags-count ml-1">
+                    +{{ count($tour->tags) - 3 }}
                 </div>
             @endif
         </div>
-        <div class="tour-card__text">
-            <h3 class="tour-card__title">{{ $title }}</h3>
-            <p class="tour-card__paragraph">
-                {{ $desc }}
+        <div class="m-tour-card__text">
+            <h3 class="m-tour-card__title mb-1">
+                <a href="{{ route('tour.show', ['tour' => $tour]) }}">
+                    {{ $tour->title }}
+                </a>
+            </h3>
+            {{-- </a> --}}
+            <p class="m-tour-card__paragraph">
+                {{ $tour->description }}
             </p>
         </div>
-        <div class="tour-card__links mt-8">
-            <a class="btn btn_size_sm ph-0 mr-1" href="">Подробнее</a>
-            <a class="btn btn_size_sm btn_theme_secondary ph-0 ml-1" href="">Хочу поехать</a>
+        <div class="m-tour-card__links">
+            <a class="u-btn u-btn_size_small u-btn_theme_transparent ph-0 mr-1" 
+                href="{{ route('tour.show', ['tour' => $tour]) }}">Подробнее</a>
+
+            <a class="u-btn u-btn_size_small u-btn_theme_white ph-0 ml-1" 
+                href="">Хочу поехать</a>
         </div>
     </div>
 </article>

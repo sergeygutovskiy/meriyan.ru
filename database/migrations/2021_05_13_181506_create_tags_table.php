@@ -17,7 +17,8 @@ class CreateTagsTable extends Migration
             $table->id();
 
             $table->string('name');
-            $table->string('icon_path');
+            $table->text("description");
+            $table->string('image_path');
 
             $table->timestamps();
         });

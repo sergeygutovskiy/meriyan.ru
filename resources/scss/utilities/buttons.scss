@@ -1,0 +1,60 @@
+.u-btn {
+    display: inline-block;
+    text-align: center;
+    border-radius: 20px;
+
+    &_size {
+        &_big {
+            @include pv(3);
+            @include ph(4);
+
+            max-width: 100%;
+            width: 400px;
+
+            font-size: $font-size-24;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        &_small {
+            @include pv(2);
+            @include ph(4);
+    
+            font-size: $font-size-base;
+        }
+    }
+
+    &_theme {
+        &_transparent {
+            background-color: transparent;
+            color: $color-white;
+            border: solid 3px $color-white;
+        }
+
+        &_white {
+            background-color: $color-white;
+            color: $color-black;
+            border: solid 3px $color-white;
+        }
+
+        &_green {
+            background-color: $color-green-light;
+            color: $color-white;
+            border: solid 3px $color-green-light;
+        }
+    }
+}
+
+@mixin utility-btn--mobile {
+    .u-btn {
+        &_size {
+            &_big {
+                font-size: $font-size-mobile;
+            }
+    
+            &_small {
+                font-size: $font-size-mobile;
+            }
+        }
+    }    
+}

@@ -13,11 +13,26 @@ class TourInfo extends Model
 
     public function complexity()
     {
-        return $this->hasOne(Complexity::class);
+        return $this->belongsTo(Complexity::class);
     }
 
     public function season()
     {
-        return $this->hasOne(Season::class);
+        return $this->belongsTo(Season::class);
+    }
+
+    public function locations()
+    {
+        return $this->hasMany(TourLocation::class, 'tour_info_id');
+    }
+
+    public function services_in_price()
+    {
+        return $this->hasMany(TourPriceInfo::class, 'tour_info_id')->where('is_in_price', true);
+    }
+
+    public function services_not_in_price()
+    {
+        return $this->hasMany(TourPriceInfo::class, 'tour_info_id')->where('is_in_price', false);
     }
 }
