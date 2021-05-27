@@ -682,6 +682,37 @@ button.swiper-pagination-bullet {
   padding-bottom: 35%;
 }
 
+#top-wave {
+  position: relative;
+}
+#top-wave::before, #top-wave::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: calc((100vw - 100%) * -0.5);
+  width: 100vw;
+  height: calc((638 * 100vw) / 1920);
+  background-image: url(/images/static/background/wave.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#top-wave::before {
+  top: -5%;
+}
+#top-wave > .middle-back {
+  position: absolute;
+  z-index: -1;
+  left: calc((100vw - 100%) * -0.5);
+  top: calc(calc((638 * 100vw) / 1920) - 5%);
+  width: 100vw;
+  height: calc(100% - calc((638 * 100vw) / 1920) + 5% - calc((638 * 100vw) / 1920) / 2);
+  background-color: #ffffff;
+}
+#top-wave::after {
+  bottom: calc(calc((638 * 100vw) / 1920) / 2);
+  transform: rotateZ(180deg) translateY(-100%);
+}
+
 @media screen and (max-width: 576px) {
   .tours-wrapper {
     padding: 0;

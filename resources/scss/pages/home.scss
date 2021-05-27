@@ -1,5 +1,6 @@
 // core
 @import "../core/variables/spaces";
+@import "../core/variables/colors";
 @import "~bootstrap/scss/functions";
 
 // bootstrap
@@ -41,6 +42,48 @@
                 padding-bottom: 35%;
             }
         }
+    }
+}
+
+$background-wave-height: calc((638 * 100vw) / 1920);
+$absolute-left: calc((100vw - 100%) * -0.5);
+
+#top-wave {
+    position: relative;
+
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: $absolute-left;
+        width: 100vw;
+        height: $background-wave-height;       
+    
+        background-image: url(/images/static/background/wave.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    } 
+
+    &::before {
+        top: -5%;
+    }
+
+    > .middle-back {
+        position: absolute;
+        z-index: -1;
+        left: $absolute-left;
+        top: calc(#{$background-wave-height} - 5%);
+        
+        width: 100vw;
+        height: calc(100% - #{$background-wave-height} + 5% - #{$background-wave-height} / 2);
+        
+        background-color: $color-white;        
+    }
+
+    &::after {
+        bottom: calc(#{$background-wave-height} / 2);
+
+        transform: rotateZ(180deg) translateY(-100%);
     }
 }
 

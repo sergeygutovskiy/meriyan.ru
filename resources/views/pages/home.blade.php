@@ -7,44 +7,14 @@
 @endsection
 
 @section('content')
-    <div class="u-page-background u-page-background__top" data-background-target="tours">
+    {{-- <div class="u-page-background u-page-background__top" data-background-target="tours">
         <img class="u-page-background__image" 
             src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg">
-
-        {{-- <svg class="u-page-background__bottom-svg" 
-            width="100%" 
-            height="647" 
-            viewBox="0 0 1920 647" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg">
-            
-            <path 
-                d="M1393 646.668C1212.1 
-                652.353 975.142 587.077 797.5 285.976C610.721 
-                -30.6134 281.732 -54.3143 0 89.5419V647L1393 
-                646.668ZM1393 646.668C1465.5 623 1526.28 608.287 
-                1574.5 591C1722.5 537.946 1920 401.081 1920 401.081V647L1393 646.668Z" 
-                stroke="white" 
-                stroke-width="2"
-            />
-        </svg> --}}
     </div>
     <div class="u-page-background u-page-background__bottom" data-background-target="tours">
         <img class="u-page-background__image" 
             src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg">
-
-        {{-- <svg class="u-page-background__bottom-svg" width="100%" height="647" viewBox="0 0 1920 647" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path 
-                d="M1393 646.668C1212.1 
-                652.353 975.142 587.077 797.5 285.976C610.721 
-                -30.6134 281.732 -54.3143 0 89.5419V647L1393 
-                646.668ZM1393 646.668C1465.5 623 1526.28 608.287 
-                1574.5 591C1722.5 537.946 1920 401.081 1920 401.081V647L1393 646.668Z" 
-                stroke="white" 
-                stroke-width="2"
-            />
-        </svg> --}}
-    </div>
+    </div> --}}
 
     <header class="u-page-header u-page-header_size_100vh">
         <div class="container d-flex flex-column justify-content-center text-center u-text_color_white">
@@ -119,7 +89,9 @@
         </div>
     </section>
 
-    <section class="container tours-wrapper">
+    <section id="top-wave" class="container tours-wrapper">
+        <div class="middle-back"></div>
+        
         <div id="tours">
             <x-tours.columns-3-grid :tours="$tours" />
         </div>
@@ -198,25 +170,25 @@
     <script src="js/pages/home.js"></script>
     
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let el = document.getElementsByClassName("u-page-background")[0];
-            let attr = el.dataset.backgroundTarget;
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     let el = document.getElementsByClassName("u-page-background")[0];
+        //     let attr = el.dataset.backgroundTarget;
             
-            let target = document.getElementById(attr);
-            let height = target.getBoundingClientRect().top + pageYOffset + target.offsetHeight / 2;
+        //     let target = document.getElementById(attr);
+        //     let height = target.getBoundingClientRect().top + pageYOffset + target.offsetHeight / 2;
 
-            el.style.cssText = "height: " + height + "px";
+        //     el.style.cssText = "height: " + height + "px";
 
-            //
+        //     //
 
-            el = document.getElementsByClassName("u-page-background")[1];
-            attr = el.dataset.backgroundTarget;
+        //     el = document.getElementsByClassName("u-page-background")[1];
+        //     attr = el.dataset.backgroundTarget;
 
-            target = document.getElementById(attr);
-            height = document.documentElement.offsetHeight - height;
+        //     target = document.getElementById(attr);
+        //     height = document.documentElement.offsetHeight - height;
 
-            el.style.cssText = "height: " + height + "px"
-                + ";" + "top: " + target.getBoundingClientRect().top;
-        });
+        //     el.style.cssText = "height: " + height + "px"
+        //         + ";" + "top: " + target.getBoundingClientRect().top;
+        // });
     </script>
 @endsection
