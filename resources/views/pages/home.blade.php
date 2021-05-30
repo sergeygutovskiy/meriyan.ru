@@ -51,7 +51,7 @@
                 </p>
             </div>
         </div>
-        <div class="row mb-7 justify-content-end">
+        <div class="row justify-content-end mb-7">
             <div class="col-lg-7">
                 <p class="u-text_size_28">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -69,27 +69,25 @@
         </div>
     </section>
 
-    <section class="mt-100">
-        <div class="container">
-            <nav class="row">
-                <div class="col d-flex 
-                    flex-column flex-lg-row 
-                    justify-content-lg-between align-items-lg-center 
-                    mb-8">
-                    <div class="mb-4 mb-lg-0">
-                        <h2 class="u-text_color_white mb-0">
-                            Lorem Ipsum
-                        </h2>
-                    </div>
-                    <button class="u-btn u-btn_size_big u-btn_theme_transparent">
-                        Больше туров
-                    </button>
+    <section class="container mt-100">
+        <nav class="row">
+            <div class="col d-flex 
+                flex-column flex-lg-row 
+                justify-content-lg-between align-items-lg-center 
+                mb-8">
+                <div class="mb-4 mb-lg-0">
+                    <h2 class="u-text_color_white mb-0">
+                        Lorem Ipsum
+                    </h2>
                 </div>
-            </nav>
-        </div>
+                <button class="u-btn u-btn_size_big u-btn_theme_transparent">
+                    Больше туров
+                </button>
+            </div>
+        </nav>
     </section>
 
-    <section id="top-wave" class="container tours-wrapper">
+    <section id="top-wave" class="tours-wrapper container">
         <div class="middle-back"></div>
         
         <div id="tours">
@@ -97,7 +95,7 @@
         </div>
     </section>
 
-    <section class="mt-100 container">
+    <section class="container mt-100">
         <x-banner
             title="Lorem Ipsum Lorem Ipsu Lorem Ipsu"
             desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -108,7 +106,7 @@
         />
     </section>
 
-    <section class="mt-100 container">
+    <section class="container mt-100">
         <div class="row">
             <div class="col text-center u-text_color_white">
                 <h2>Lorem Ipsum</h2>
@@ -116,40 +114,28 @@
         </div>
         <div class="row row-cols-1 row-cols-lg-3 justify-content-sm-between">
             <div class="col d-flex justify-content-center">
-                <article class="partner ph-4 pv-6 pb-8">
-                    <div class="partner__image-wrapper">
-                        <img class="partner__image" src="http://placehold.it/500x500">
-                    </div>
-                    <h3 class="mt-4">Lorem ipsum</h3>
-                    <p class="mt-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec sodales lacinia velit, a malesuada enim placerat ac. 
-                    </p>
-                </article>
+                <x-partner-card 
+                    name="Lorem ipsum"
+                    image="http://placehold.it/500x500"
+                    paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Donec sodales lacinia velit, a malesuada enim placerat ac."
+                />
             </div>
             <div class="col d-flex justify-content-center mt-4 mt-lg-0">
-                <article class="partner ph-4 pv-6 pb-8">
-                    <div class="partner__image-wrapper">
-                        <img class="partner__image" src="http://placehold.it/500x500">
-                    </div>
-                    <h3 class="mt-4">Lorem ipsum</h3>
-                    <p class="mt-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec sodales lacinia velit, a malesuada enim placerat ac. 
-                    </p>
-                </article>
+                <x-partner-card 
+                    name="Lorem ipsum"
+                    image="http://placehold.it/500x500"
+                    paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Donec sodales lacinia velit, a malesuada enim placerat ac."
+                />
             </div>
             <div class="col col-md-12 col-lg mt-4 mt-lg-0 d-flex justify-content-center">
-                <article class="partner ph-4 pv-6 pb-8">
-                    <div class="partner__image-wrapper">
-                        <img class="partner__image" src="http://placehold.it/500x500">
-                    </div>
-                    <h3 class="mt-4">Lorem ipsum</h3>
-                    <p class="mt-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec sodales lacinia velit, a malesuada enim placerat ac. 
-                    </p>
-                </article>
+                <x-partner-card 
+                    name="Lorem ipsum"
+                    image="http://placehold.it/500x500"
+                    paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Donec sodales lacinia velit, a malesuada enim placerat ac."
+                />
             </div>
         </div>
     </section>

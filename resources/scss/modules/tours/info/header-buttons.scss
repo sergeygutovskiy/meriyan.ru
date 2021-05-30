@@ -1,0 +1,15 @@
+.m-tour-info-header-buttons {
+    button {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+
+        span {
+            &:first-child {
+                font-weight: 800;
+                letter-spacing: 0.03em;
+                text-align: left;
+            }
+        }
+    }
+}

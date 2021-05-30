@@ -1,0 +1,10 @@
+.m-about-point-card {
+    background-color: $color-white;
+    border-radius: 20px;
+
+    img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+    }
+}

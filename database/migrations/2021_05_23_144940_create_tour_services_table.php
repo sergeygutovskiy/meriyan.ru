@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTourPriceInfosTable extends Migration
+class CreateTourServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateTourPriceInfosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tour_price_infos', function (Blueprint $table) {
+        Schema::create('tour_services', function (Blueprint $table) {
             $table->id();
 
             $table->unsignedBigInteger("tour_info_id")->unsigned()->index();
             $table->text("description");
-            $table->boolean("is_in_price");
+            $table->boolean("is_included_in_price");
 
             $table->timestamps();
 

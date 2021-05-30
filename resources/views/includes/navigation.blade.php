@@ -1,10 +1,10 @@
 <div class="navigation">
     <div class="navigation__logo-container">
-        <div class="navigation__logo-wrapper u-skeleton-loader">
+        <a class="navigation__logo-wrapper u-skeleton-loader" href="/">
             <img class="navigation__logo" 
                 src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
                 height="50px">
-        </div>
+        </a>
     </div>
     <nav class="navigation__links">
         <a class="navigation__link" href="{{ url('tours') }}">ТУРЫ</a>

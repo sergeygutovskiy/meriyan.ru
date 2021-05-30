@@ -19,151 +19,73 @@
 
     <section class="mt-100 container">
         <div class="row row-cols-2 justify-content-center">
-            <div class="col-12">
+            <div class="col-12 col-lg-11">
                 <div class="row justify-content-between pv-2">
                     <div class="mb-8 d-flex justify-content-center col-12 justify-content-lg-start col-lg-6">
-                        <article class="person ph-4 ph-sm-6 pb-6 pt-8 pv-8">
-                            <div class="person__image-wrapper u-skeleton-loader mr-4">
-                                <img 
-                                    class="person__image" 
-                                    src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg">
-                            </div>
-        
-                            <h3 class="mt-8 mt-sm-0 mb-4 mb-sm-6">
-                                Lorem Ipsum
-                            </h3>
-                            <p class="mb-5 mb-sm-6">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                                Donec nec neque vel diam hendrerit ultrices non quis ante.
-                            </p>
-                            <a class="person__link" href="">
-                                mar.78ma@rambler.ru
-                            </a>
-                            <a class="person__link" href="">
-                                +7 (962) 685-09-78
-                            </a>
-                        </article>
+                        <x-contact-card 
+                            name="Lorem Ipsum"
+                            image="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
+                            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
+                            Donec nec neque vel diam hendrerit ultrices non quis ante."
+                            email="mar.78ma@rambler.ru"
+                            phone="+7 (962) 685-09-78"
+                        />
                     </div>
                     <div class="mb-8 d-flex justify-content-center col-12 justify-content-lg-end col-lg-6">
-                        <article class="person ph-4 ph-sm-6 pb-6 pt-8 pv-8">
-                            <div class="person__image-wrapper u-skeleton-loader mr-4">
-                                <img 
-                                    class="person__image" 
-                                    src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg">
-                            </div>
-        
-                            <h3 class="mt-8 mt-sm-0 mb-4 mb-sm-6">
-                                Lorem Ipsum
-                            </h3>
-                            <p class="mb-5 mb-sm-6">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                                Donec nec neque vel diam hendrerit ultrices non quis ante.
-                            </p>
-                            <a class="person__link" href="">
-                                mar.78ma@rambler.ru
-                            </a>
-                            <a class="person__link" href="">
-                                +7 (962) 685-09-78
-                            </a>
-                        </article>
+                        <x-contact-card 
+                            name="Lorem Ipsum"
+                            image="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
+                            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
+                            Donec nec neque vel diam hendrerit ultrices non quis ante."
+                            email="mar.78ma@rambler.ru"
+                            phone="+7 (962) 685-09-78"
+                        />
                     </div>
                     <div class="mt-8 mb-8 d-flex justify-content-center col-12 justify-content-lg-start col-lg-6">
-                        <article class="person ph-4 ph-sm-6 pb-6 pt-8 pv-8">
-                            <div class="person__image-wrapper u-skeleton-loader mr-4">
-                                <img 
-                                    class="person__image" 
-                                    src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg">
-                            </div>
-        
-                            <h3 class="mt-8 mt-sm-0 mb-4 mb-sm-6">
-                                Lorem Ipsum
-                            </h3>
-                            <p class="mb-5 mb-sm-6">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                                Donec nec neque vel diam hendrerit ultrices non quis ante.
-                            </p>
-                            <a class="person__link" href="">
-                                mar.78ma@rambler.ru
-                            </a>
-                            <a class="person__link" href="">
-                                +7 (962) 685-09-78
-                            </a>
-                        </article>
+                        <x-contact-card 
+                            name="Lorem Ipsum"
+                            image="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
+                            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
+                            Donec nec neque vel diam hendrerit ultrices non quis ante."
+                            email="mar.78ma@rambler.ru"
+                            phone="+7 (962) 685-09-78"
+                        />
                     </div>
                     <div class="mt-8 mb-8 d-flex justify-content-center col-12 justify-content-lg-end col-lg-6">
-                        <article class="person ph-4 ph-sm-6 pb-6 pt-8 pv-8">
-                            <div class="person__image-wrapper u-skeleton-loader mr-4">
-                                <img 
-                                    class="person__image" 
-                                    src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg">
-                            </div>
-        
-                            <h3 class="mt-8 mt-sm-0 mb-4 mb-sm-6">
-                                Lorem Ipsum
-                            </h3>
-                            <p class="mb-5 mb-sm-6">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                                Donec nec neque vel diam hendrerit ultrices non quis ante.
-                            </p>
-                            <a class="person__link" href="">
-                                mar.78ma@rambler.ru
-                            </a>
-                            <a class="person__link" href="">
-                                +7 (962) 685-09-78
-                            </a>
-                        </article>
+                        <x-contact-card 
+                            name="Lorem Ipsum"
+                            image="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
+                            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
+                            Donec nec neque vel diam hendrerit ultrices non quis ante."
+                            email="mar.78ma@rambler.ru"
+                            phone="+7 (962) 685-09-78"
+                        />
                     </div>
                     <div class="mt-8 mb-8 d-flex justify-content-center col-12 justify-content-lg-start col-lg-6">
-                        <article class="person ph-4 ph-sm-6 pb-6 pt-8 pv-8">
-                            <div class="person__image-wrapper u-skeleton-loader mr-4">
-                                <img 
-                                    class="person__image" 
-                                    src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg">
-                            </div>
-        
-                            <h3 class="mt-8 mt-sm-0 mb-4 mb-sm-6">
-                                Lorem Ipsum
-                            </h3>
-                            <p class="mb-5 mb-sm-6">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                                Donec nec neque vel diam hendrerit ultrices non quis ante.
-                            </p>
-                            <a class="person__link" href="">
-                                mar.78ma@rambler.ru
-                            </a>
-                            <a class="person__link" href="">
-                                +7 (962) 685-09-78
-                            </a>
-                        </article>
+                        <x-contact-card 
+                            name="Lorem Ipsum"
+                            image="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
+                            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
+                            Donec nec neque vel diam hendrerit ultrices non quis ante."
+                            email="mar.78ma@rambler.ru"
+                            phone="+7 (962) 685-09-78"
+                        />
                     </div>
                     <div class="mt-8 mb-8 d-flex justify-content-center col-12 justify-content-lg-end col-lg-6">
-                        <article class="person ph-4 ph-sm-6 pb-6 pt-8 pv-8">
-                            <div class="person__image-wrapper u-skeleton-loader mr-4">
-                                <img 
-                                    class="person__image" 
-                                    src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg">
-                            </div>
-        
-                            <h3 class="mt-8 mt-sm-0 mb-4 mb-sm-6">
-                                Lorem Ipsum
-                            </h3>
-                            <p class="mb-5 mb-sm-6">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                                Donec nec neque vel diam hendrerit ultrices non quis ante.
-                            </p>
-                            <a class="person__link" href="">
-                                mar.78ma@rambler.ru
-                            </a>
-                            <a class="person__link" href="">
-                                +7 (962) 685-09-78
-                            </a>
-                        </article>
+                        <x-contact-card 
+                            name="Lorem Ipsum"
+                            image="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
+                            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
+                            Donec nec neque vel diam hendrerit ultrices non quis ante."
+                            email="mar.78ma@rambler.ru"
+                            phone="+7 (962) 685-09-78"
+                        />
                     </div>
                 </div>
             </div>

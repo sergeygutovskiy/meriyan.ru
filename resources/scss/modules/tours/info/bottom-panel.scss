@@ -1,0 +1,26 @@
+.m-tour-info-bottom-panel {
+    @include ph(4);
+    @include pv(4);
+
+    background-color: $color-white;
+    border-radius: 20px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+
+    &__point {
+        &:not(:last-child) {   
+            @include mb(2);
+        }
+        
+        @include ph(4);
+        @include pv(4);
+
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+    
+        > * {
+            &:not(:last-child) {
+                @include mb(2);
+            }
+        }
+    }
+}

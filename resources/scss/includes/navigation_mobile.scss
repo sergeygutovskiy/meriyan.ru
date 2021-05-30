@@ -24,11 +24,18 @@
 
 
     &__logo {
-        &-wrapper {
-            height: 32px;
+        &-container {
+            display: flex;
         }
 
-        height: 100%;
+        &-wrapper {
+            z-index: 1;
+            display: inline-block;
+            height: 32px;
+            width: 51px;
+        }
+
+        display: block;
     }
 
     &__dropdown {

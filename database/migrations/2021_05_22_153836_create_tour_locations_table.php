@@ -21,7 +21,7 @@ class CreateTourLocationsTable extends Migration
             $table->string("name");
             $table->string("image_path");
             $table->text("description");
-            $table->boolean("big_image");
+            $table->boolean("is_big");
 
             $table->timestamps();
 

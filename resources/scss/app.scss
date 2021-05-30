@@ -9,17 +9,6 @@
 @import "~bootstrap/scss/grid";
 
 
-// includes
-@import "includes/navigation";
-@import "includes/navigation_mobile";
-@import "includes/footer";
-
-// modules
-@import "modules/tours/card";
-@import "modules/banner";
-@import "modules/form";
-
-
 // utilities
 @import "utilities/buttons";
 @import "utilities/texts";
@@ -29,21 +18,50 @@
 @import "utilities/skeleton_loader.scss";
 
 
+// modules
+@import "modules/tours/card";
+@import "modules/banner";
+@import "modules/form";
+@import "modules/contact-card";
+@import "modules/partner-card";
+@import "modules/about-point-card";
+@import "modules/tours/info/video-container";
+@import "modules/tours/info/header-buttons";
+@import "modules/tours/info/location";
+@import "modules/tours/info/bottom-panel";
+
+
+// includes
+@import "includes/navigation";
+@import "includes/navigation_mobile";
+@import "includes/footer";
+
+
 @media screen and (max-width: map-get($grid-breakpoints, xl) - 1) {
     @include include-navigation--large;
     @include include-navigation-mobile--large;
 }
 
-@media screen and (max-width: map-get($grid-breakpoints, sm) - 1) {
-    // includes
-    @include include-navigation-mobile--mobile;
-    @include include-footer--mobile;
-    
-    // modules
-    @include module-tours-card--mobile;
-    
+
+@media screen and (max-width: map-get($grid-breakpoints, lg) - 1) {
+    @include module-tour-info-location--large;
+}
+
+
+@media screen and (max-width: map-get($grid-breakpoints, sm) - 1) {    
     // utilities
     @include utility-text--mobile;
     @include utility-tag-icon--mobile;
     @include utility-btn--mobile;
+
+
+    // modules
+    @include module-tours-card--mobile;
+    @include module-contact-card--mobile;
+    @include module-tour-info-location--mobile;
+
+
+    // includes
+    @include include-navigation-mobile--mobile;
+    @include include-footer--mobile;
 }

@@ -1,6 +1,6 @@
-<div class="row d-flex flex-column flex-lg-row">
+<div class="row">
     <div 
-        class="col col-lg-6 pr-4 
+        class="col-12 col-lg pr-4 
             d-flex flex-column justify-content-center
             {{ $is_green ? 'u-text_color_green' : 'u-text_color_white' }}">
         <h2>
@@ -10,5 +10,7 @@
             {{ $paragraph }}
         </p>
     </div>
-    <x-form.form/>
+    <div class="col-12 col-lg d-flex justify-content-lg-end mt-6 mt-lg-0">
+        <x-form.form/>
+    </div>
 </div>

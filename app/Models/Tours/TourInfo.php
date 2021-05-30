@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Complexity;
 use App\Models\Season; 
+use Database\Factories\TourInfoFactory;
 
 class TourInfo extends Model
 {
@@ -28,11 +29,16 @@ class TourInfo extends Model
 
     public function services_in_price()
     {
-        return $this->hasMany(TourPriceInfo::class, 'tour_info_id')->where('is_in_price', true);
+        return $this->hasMany(TourService::class, 'tour_info_id')->where('is_included_in_price', true);
     }
 
     public function services_not_in_price()
     {
-        return $this->hasMany(TourPriceInfo::class, 'tour_info_id')->where('is_in_price', false);
+        return $this->hasMany(TourService::class, 'tour_info_id')->where('is_included_in_price', false);
+    }
+
+    protected static function newFactory()
+    {
+        return TourInfoFactory::new();
     }
 }

@@ -1,8 +1,11 @@
 <div class="navigation-mobile">
     <div class="navigation-mobile__content">
-        <div class="navigation-mobile__logo-wrapper">
-            <img class="navigation-mobile__logo" 
-                src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg">
+        <div class="navigation-mobile__logo-container">
+            <a class="navigation-mobile__logo-wrapper u-skeleton-loader" href="/">
+                <img class="navigation-mobile__logo" 
+                    src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
+                    height="32px">
+            </a>
         </div>
         <button class="navigation-mobile__menu-button">
             <span></span>

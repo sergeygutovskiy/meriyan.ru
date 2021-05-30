@@ -653,35 +653,6 @@ button.swiper-pagination-bullet {
   backface-visibility: hidden;
 }
 
-.partner {
-  max-width: 380px;
-  width: 100%;
-  background-color: white;
-  border-radius: 20px;
-}
-.partner__image {
-  position: absolute;
-  z-index: 0;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 16px;
-}
-.partner__image-wrapper {
-  position: relative;
-  z-index: 0;
-  display: block;
-  overflow: hidden;
-}
-.partner__image-wrapper::after {
-  content: "";
-  display: block;
-  padding-bottom: 35%;
-}
-
 #top-wave {
   position: relative;
 }

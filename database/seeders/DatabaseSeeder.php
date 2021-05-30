@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\Models\Tours\Tour;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +15,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            SeasonsSeeder::class,
+            ComplexitiesSeeder::class
+        ]);
+
+
+        DB::table('tours')->delete();
+        Tour::factory()->count(6)->create();
     }
 }

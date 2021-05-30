@@ -4,14 +4,14 @@ namespace App\Models\Tours;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Database\Factories\TourLocationFactory;
+use Database\Factories\TourServiceFactory;
 
-class TourLocation extends Model
+class TourService extends Model
 {
     use HasFactory;
 
     protected static function newFactory()
     {
-        return TourLocationFactory::new();
+        return TourServiceFactory::new();
     }
 }
