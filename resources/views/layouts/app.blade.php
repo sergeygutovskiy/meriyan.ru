@@ -9,9 +9,9 @@
         @yield('title')
     </title>
 
-    <link rel="preload" href="/fonts/nunito/Nunito-Regular.ttf" as="font" />
-    <link rel="preload" href="/fonts/nunito/Nunito-SemiBold.ttf" as="font" />
-    <link rel="preload" href="/fonts/nunito/Nunito-Bold.ttf" as="font" />
+    <link rel="preload" href="/fonts/nunito/Nunito-Regular.ttf" as="font" crossorigin />
+    <link rel="preload" href="/fonts/nunito/Nunito-SemiBold.ttf" as="font" crossorigin />
+    <link rel="preload" href="/fonts/nunito/Nunito-Bold.ttf" as="font" crossorigin />
 
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/main.css">
