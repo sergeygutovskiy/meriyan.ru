@@ -94,9 +94,9 @@
                                 Популярные туры
                             </h2>
                         </div>
-                        <button class="u-btn u-btn_size_big u-btn_theme_transparent">
+                        <a class="u-btn u-btn_size_big u-btn_theme_transparent"  href="{{ url("tours") }}">
                             Больше туров
-                        </button>
+                        </a>
                     </div>
                 </nav>
             </div>
@@ -112,6 +112,11 @@
     </div>
 
     <section class="container u-page-margin">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="u-text_color_green-light">Lorem Ipsum</h2>
+            </div>
+        </div>
         <div class="row">
             <div class="swiper-container pb-4" id="reviews-slider">
                 <div class="swiper-wrapper">

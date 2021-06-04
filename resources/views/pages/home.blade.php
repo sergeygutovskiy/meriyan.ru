@@ -61,9 +61,9 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <button class="u-btn u-btn_size_big u-btn_theme_transparent">
+                    <a class="u-btn u-btn_size_big u-btn_theme_transparent" href="{{ url("about") }}">
                         Больше о нас
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -81,9 +81,9 @@
                             Lorem Ipsum
                         </h2>
                     </div>
-                    <button class="u-btn u-btn_size_big u-btn_theme_transparent">
+                    <a class="u-btn u-btn_size_big u-btn_theme_transparent"  href="{{ url("tours") }}">
                         Больше туров
-                    </button>
+                    </a>
                 </div>
             </nav>
         </section>
