@@ -17,11 +17,15 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             SeasonsSeeder::class,
-            ComplexitiesSeeder::class
+            ComplexitiesSeeder::class,
+            TagsSeeder::class
         ]);
 
 
         DB::table('tours')->delete();
-        Tour::factory()->count(6)->create();
+        
+        Tour::factory()
+            ->count(6)
+            ->create();
     }
 }

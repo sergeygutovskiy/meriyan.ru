@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Tours\Tour;
 use App\Models\Tours\TourInfo;
+use App\Models\Tag;
 
 class TourFactory extends Factory
 {
@@ -39,6 +40,15 @@ class TourFactory extends Factory
             TourInfo::factory()->create([
                 'tour_id' => $tour->id
             ]);
+
+            $count = rand(1, 5);
+            $tags = Tag::get();
+
+            for ($i = 0; $i < $count; $i++)
+            {
+                $random_tag = $this->faker->randomElement($tags);
+                $tour->tags()-> attach($random_tag);
+            }
         });
     }
 }

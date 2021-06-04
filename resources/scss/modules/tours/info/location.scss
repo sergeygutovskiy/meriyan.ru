@@ -1,6 +1,10 @@
 .m-tour-info-location {
     position: relative;
 
+    // &:not(:first-child) {
+    //     padding-top: 180px;
+    // }
+
     &::after {
         content: '';
         position: absolute;
@@ -26,11 +30,11 @@
         h2 {
             display: inline-flex;
             align-items: center;
-            color: $color-green;
             margin-bottom: 0;
 
             &::after {
                 @include ml(6);
+                margin-bottom: auto;
 
                 content: '';
                 display: inline-block;

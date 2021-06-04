@@ -1,5 +1,5 @@
 <div class="navigation-mobile">
-    <div class="navigation-mobile__content">
+    <div class="navigation-mobile__content pv-3 ph-3 ph-sm-6">
         <div class="navigation-mobile__logo-container">
             <a class="navigation-mobile__logo-wrapper u-skeleton-loader" href="/">
                 <img class="navigation-mobile__logo" 
@@ -8,20 +8,20 @@
             </a>
         </div>
         <button class="navigation-mobile__menu-button">
-            <span></span>
-            <span></span>
-            <span></span>
+            <div></div>
+            <div></div>
+            <div></div>
         </button>
     </div>
     <div class="navigation-mobile__dropdown-wrapper">
-        <div class="navigation-mobile__dropdown">
+        <div class="navigation-mobile__dropdown pv-4 ph-3 ph-sm-6">
             <nav class="navigation-mobile__links">
                 <a class="navigation-mobile__link mb-2" href="{{ url('tours') }}">ТУРЫ</a>
                 <a class="navigation-mobile__link mb-2" href="{{ url('about') }}">О НАС</a>
                 <a class="navigation-mobile__link mb-2" href="{{ url('contacts') }}">КОНТАКТЫ</a>
                 <a class="navigation-mobile__link" href="">ПОИСК ТУРА</a>
             </nav>
-            <div class="navigation-mobile__border"></div>
+            <div class="navigation-mobile__border mv-4"></div>
             <div class="navigation-mobile__social-links">
                 <a class="navigation-mobile__social-link mr-4" href="">
                     <svg 

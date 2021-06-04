@@ -10,15 +10,15 @@
         <a class="navigation__link" href="{{ url('tours') }}">ТУРЫ</a>
         <a class="navigation__link" href="{{ url('about') }}">О НАС</a>
         <a class="navigation__link" href="{{ url('contacts') }}">КОНТАКТЫ</a>
-        <a class="navigation__link" href="">ПОИСК ТУРА</a>
+        <a class="navigation__link" href="{{ url('search') }}">ПОИСК ТУРА</a>
     </nav>
     <div class="navigation__social-links">
         <a class="navigation__social-link mr-3" href="">
             <svg 
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 26 26" 
-                width="26" 
-                height="26">
+                width="24" 
+                height="24">
                 <path 
                     d="M 7.546875 0 C 3.390625 0 0 3.390625 0 7.546875 
                         L 0 18.453125 C 0 22.609375 3.390625 26 7.546875 26 
@@ -40,8 +40,8 @@
         <a class="navigation__social-link mr-3" href="">
             <svg 
                 enable-background="new 0 0 26 26" 
-                height="26" 
-                width="26" 
+                height="24" 
+                width="24" 
                 viewBox="0 0 26 26" 
                 xmlns="http://www.w3.org/2000/svg">
                 <path 
@@ -52,8 +52,8 @@
         </a>
         <a class="navigation__social-link mr-3" href="">
             <svg 
-                height="26px" 
-                width="26px" 
+                height="24" 
+                width="24" 
                 style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" 
                 version="1.1" 
                 viewBox="0 0 512 512" 
@@ -76,8 +76,8 @@
         </a>
         <a class="navigation__social-link" href="">
             <svg 
-                height="26" 
-                width="26" 
+                height="24" 
+                width="24" 
                 viewBox="0 0 26 26" 
                 xmlns="http://www.w3.org/2000/svg">
                 <path 
@@ -98,3 +98,5 @@
         </a>
     </div>
 </div>
+
+<div class="navigation-margin"></div>

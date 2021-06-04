@@ -1,6 +1,7 @@
 @import "core/variables/spaces";
 @import "core/variables/colors";
 @import "core/variables/fonts";
+@import "core/variables/animations";
 
 
 // bootstrap
@@ -13,9 +14,11 @@
 @import "utilities/buttons";
 @import "utilities/texts";
 @import "utilities/tags/icon";
-@import "utilities/page_backgrounds";
-@import "utilities/page_headers";
-@import "utilities/skeleton_loader.scss";
+@import "utilities/pages/headers";
+@import "utilities/pages/spaces";
+@import "utilities/pages/backgrounds";
+@import "utilities/skeleton-loader";
+@import "utilities/animations";
 
 
 // modules
@@ -29,11 +32,12 @@
 @import "modules/tours/info/header-buttons";
 @import "modules/tours/info/location";
 @import "modules/tours/info/bottom-panel";
+@import "modules/review-card";
 
 
 // includes
 @import "includes/navigation";
-@import "includes/navigation_mobile";
+@import "includes/navigation-mobile";
 @import "includes/footer";
 
 
@@ -53,6 +57,8 @@
     @include utility-text--mobile;
     @include utility-tag-icon--mobile;
     @include utility-btn--mobile;
+    @include utility-page-header--mobile;
+    @include utility-page-margin--mobile;
 
 
     // modules

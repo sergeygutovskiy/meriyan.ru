@@ -1,0 +1,25 @@
+// bootstrap
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+
+.form-icon {
+    object-fit: contain;
+}   
+
+.form-paragraph {
+    max-width: 500px;
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, xl) - 1) {
+    .form-icon {
+        width: 60px;
+    }    
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, lg) - 1) {
+    .form-icon {
+        width: auto;
+        height: 60px;
+    }    
+}

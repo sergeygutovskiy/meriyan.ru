@@ -31,10 +31,6 @@
     &__link {
         @extend .u-text_size_24;
 
-        @include mb(3); 
-        @include ph(3); 
-        @include pv(2);
-
         display: block;
         border: solid 3px $color-black;
         border-radius: 20px;

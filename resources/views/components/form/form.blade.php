@@ -1,4 +1,4 @@
-<form class="m-form p-4 pv-6 ph-lg-6">
+<form class="m-form ph-4 pv-6">
     <div class="mb-4">
         <input class="m-form-input" type="text" placeholder="Ваше имя">
     </div>

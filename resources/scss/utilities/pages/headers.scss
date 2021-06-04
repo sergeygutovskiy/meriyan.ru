@@ -1,0 +1,32 @@
+.u-page-header {
+    &_size {
+        &_100vh {
+            // TODO доделать отступы
+            // padding-top: 64px;   
+            // padding-bottom: 0;
+
+            display: flex;
+            flex-direction: column;
+
+            min-height: 100vh;
+        }
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        height: 86px;
+        width: 100%;
+    }
+}
+
+@mixin utility-page-header--mobile {
+    .u-page-header {
+        &::before {
+            content: '';
+            display: block;
+            height: 64px;
+            width: 100%;
+        }
+    }    
+}

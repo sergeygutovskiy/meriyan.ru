@@ -5,14 +5,12 @@ $spacers: (
     1:   0.50rem, 
     2:   0.75rem, 
     3:   1.00rem, 
-    4:   1.50rem, 
+    4:   1.50rem, // ph panel
     5:   2.00rem, 
-    6:   2.50rem, 
-    7:   3.00rem,
+    6:   2.50rem, // mb h1 | pv panel
+    7:   3.00rem, // mb h2
     8:   3.50rem,
-    9:   4.00rem,
-    100: 10rem,
-    200: 20rem
+    9:   4.00rem
 );
 
 $container-max-widths: (

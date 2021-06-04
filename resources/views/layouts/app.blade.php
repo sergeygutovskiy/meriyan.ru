@@ -9,6 +9,12 @@
         @yield('title')
     </title>
 
+    <link rel="preload" href="/fonts/nunito/Nunito-Regular.ttf" as="font" />
+    <link rel="preload" href="/fonts/nunito/Nunito-SemiBold.ttf" as="font" />
+    <link rel="preload" href="/fonts/nunito/Nunito-Bold.ttf" as="font" />
+
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/app.css">
         
@@ -19,10 +25,10 @@
     @include('includes/navigation-mobile')
 
     <main>
-        @yield('content')
-    
-        @include('includes/footer')
+        @yield('content')    
     </main>
+
+    @include('includes/footer')
 
     <script src="/js/app.js"></script>
     @yield('scripts')

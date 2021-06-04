@@ -1,3 +1,5 @@
 const tours_slider_mobile = require("../modules/tours_slider_modile");
 
-tours_slider_mobile.init("tours");
+document.addEventListener("DOMContentLoaded", function(event) { 
+    tours_slider_mobile.init("tours-slider");
+});

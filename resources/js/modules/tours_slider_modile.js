@@ -1,4 +1,7 @@
-import Swiper from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
+
+// configure Swiper to use modules
+Swiper.use([Navigation, Pagination]);
 
 let swiper_container = null;
 let swiper_wrapper   = null;
@@ -29,11 +32,18 @@ function add_tours_slider()
     swiper_slides.forEach(slide => {
         slide.classList.add("swiper-slide");
         slide.classList.remove("col-sm");
+        slide.classList.remove("mb-6");
     });
 
     tours_slider = new Swiper("#" + id, {
         slidesPerView: "auto",
-        spaceBetween: 24
+        spaceBetween: 24,
+        pagination: {
+            el: '.m-tours-mobile-slider-pagination',
+            bulletClass: 'm-tours-mobile-slider-pagination__item',
+            bulletActiveClass: 'm-tours-mobile-slider-pagination__item--active',
+            clickable: true
+        },
     });
 }
 
@@ -48,6 +58,7 @@ function remove_tours_slider()
     swiper_slides.forEach(slide => {
         slide.classList.remove("swiper-slide");
         slide.classList.add("col-sm");
+        slide.classList.add("mb-6");
     });
 
     tours_slider.destroy();

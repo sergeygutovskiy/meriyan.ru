@@ -1,0 +1,35 @@
+.m-review-card {
+    max-width: 380px;
+    background-color: $color-white;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+
+    &__image {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    
+        &-wrapper { 
+            position: relative;
+            z-index: 0;
+            display: block;
+            overflow: hidden;
+
+            &::after {
+                content: '';
+                display: block;
+                padding-bottom: 60%;
+            }
+        }
+    }
+
+    &__title {
+        position: absolute;
+        bottom: 0;
+    }
+}

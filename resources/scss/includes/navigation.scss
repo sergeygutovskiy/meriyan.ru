@@ -33,11 +33,20 @@
     &__links {
         display: flex;
         justify-content: space-between;
+        line-height: 1.25em;
     }
 
     &__link {
-        color: $color-green;
+        display: block;
+        color: $color-green-light;
         font-weight: 700;
+
+        border-color: white;
+        transition: border-bottom $animation-speed-main ease;
+    
+        &:hover {
+            border-bottom: solid 2px $color-green-light;
+        }
     }
 
     &__social {
@@ -56,8 +65,20 @@
     
             fill: $color-white;
     
-            background-color: $color-green;
+            background-color: $color-green-light;
+            border: solid 2px $color-green-light;
             border-radius: 50%;
+
+            transition: 
+                fill $animation-speed-main ease,
+                background-color $animation-speed-main ease,
+                border $animation-speed-main ease
+                ;
+
+            &:hover {
+                fill: $color-green-light;
+                background-color: $color-white;
+            }
         }
     }
 

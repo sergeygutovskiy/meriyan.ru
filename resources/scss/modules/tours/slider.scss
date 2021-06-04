@@ -1,0 +1,41 @@
+@mixin module-tours-mobile-slider--mobile {
+    .m-tours-mobile-slider {
+        padding: 0;
+
+        .swiper-wrapper {
+            @include pl(3);
+        }
+        
+        .swiper-slide {
+            max-width: 80vw;
+
+            &:last-child {
+                @include mr(5);
+            }
+        }
+
+        &-pagination {
+            @include mt(4);
+            @include ph(3);
+
+            display: flex;
+            justify-content: center;
+
+            &__item {
+                @include mh(1);
+
+                display: block;
+                width: 40px;
+                height: 16px;
+                background-color: $color-green-light;
+                opacity: 0.75;
+                border-radius: 20px;
+                
+                &--active {
+                    background-color: $color-green;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

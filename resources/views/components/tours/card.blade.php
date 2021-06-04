@@ -2,17 +2,17 @@
     <div class="m-tour-card__image-wrapper">
         <img class="m-tour-card__image" src="{{ $tour->image_path }}">
     </div>
-    <div class="m-tour-card__content pv-4 ph-3 pv-xl-6 ph-xl-4">
+    <div class="m-tour-card__content ph-4 pv-6">
         <div class="m-tour-card__tags">
             @for ($i = 0; $i < 3 && $i < count($tour->tags); $i++)
                 <a
-                    class="m-tour-card__tag @if ($i > 0) ml-1 @endif"
+                    class="m-tour-card__tag @if ($i > 0) ml-3 @endif"
                     href="{{ route('tag.show', [ 'tag' => $tour->tags[$i] ]) }}">
-                    <img src="/images/{{ $tour->tags[$i]->image_path }}">
+                    <img src="{{ $tour->tags[$i]->image_path }}" title="{{ $tour->tags[$i]->name }}">
                 </a>
             @endfor
             @if (count($tour->tags) - 3 > 0)
-                <div class="m-tour-card__more-tags-count ml-1">
+                <div class="m-tour-card__more-tags-count ml-3">
                     +{{ count($tour->tags) - 3 }}
                 </div>
             @endif

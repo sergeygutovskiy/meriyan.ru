@@ -1,0 +1,34 @@
+.u-page-margin {
+    margin-top: 180px;
+
+    &_size_big {
+        margin-top: 300px;
+    }
+}
+
+.u-page-padding {
+    padding-top: 180px;
+
+    &_size_big {
+        padding-top: 300px;
+    }
+}
+
+
+@mixin utility-page-margin--mobile {
+    .u-page-margin {
+        margin-top: 90px;
+    
+        &_size_big {
+            margin-top: 180px;
+        }
+    }
+    
+    .u-page-padding {
+        padding-top: 90px;
+    
+        &_size_big {
+            padding-top: 180px;
+        }
+    }
+}

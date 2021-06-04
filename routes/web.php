@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Tours\Tour;
-use App\Models\Tag;
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\TagController;
 
@@ -17,11 +16,8 @@ use App\Http\Controllers\TagController;
 |
 */
 
-Route::prefix('admin')->group(function () {
-    Route::get('/tours', function () {
-            
-    });
-});
+
+Route::get("/tours", [ TourController::class, 'index' ]);
 
 Route::get('/', function () {
     $tours = Tour::with('tags')->get();
@@ -40,6 +36,5 @@ Route::get('/about', function () {
     return view('pages.about', [ 'tours' => $tours ]);
 })->name("about");
 
-Route::get('/contacts', function () {
-    return view('pages.contacts');
-})->name("contacts");
+Route::get('/contacts', function () { return view('pages.contacts'); })->name("contacts");
+Route::get('/search', function () { return view('pages.search'); })->name("search");

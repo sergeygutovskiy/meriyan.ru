@@ -1,15 +1,15 @@
-$font-size-main:      18px;
-$font-size-mobile:    16px;
+$font-size-main:         18px;
+$font-size-main--mobile: 16px;
 
 
-$line-height-main:    1.5em;
-$line-height-mobile:  $line-height-main;
+$line-height-main:         1.5em;
+$line-height-main--mobile: $line-height-main;
 
 
-$font-size-28:        1.55rem;
-$font-size-28-mobile: 1.25rem;
-$font-size-24:        1.33rem;
-$font-size-24-mobile: 1.25rem;
+$font-size-28:         1.55rem;
+$font-size-28--mobile: 1.25rem;
+$font-size-24:         1.33rem;
+$font-size-24--mobile: 1.25rem;
 
 
 $font-size-h1:        3.11rem;
@@ -17,6 +17,16 @@ $font-size-h2:        2.66rem;
 $font-size-h3:        $font-size-28;
 
 
+$font-size-h1---mobile: 2.5rem;
+$font-size-h2---mobile: 2rem;
+$font-size-h3---mobile: $font-size-28--mobile;
+
+
 $line-height-h1:      1.5em;
 $line-height-h2:      1.5em;
 $line-height-h3:      1.25em;
+
+
+$line-height-h1--mobile: 1.25em;
+$line-height-h2--mobile: 1.25em;
+$line-height-h3--mobile: 1.25em;

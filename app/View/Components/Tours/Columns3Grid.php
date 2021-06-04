@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class Columns3Grid extends Component
 {
     public $tours;
+    public $max;
     public $centered;
 
     /**
@@ -14,9 +15,10 @@ class Columns3Grid extends Component
      *
      * @return void
      */
-    public function __construct($tours, $centered = false)
+    public function __construct($tours, $max = null, $centered = false)
     {
         $this->tours = $tours;
+        $this->max = $max;
         $this->centered = $centered;
     }
 

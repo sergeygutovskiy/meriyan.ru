@@ -3,6 +3,11 @@
     text-align: center;
     border-radius: 20px;
 
+    transition:
+        background-color $animation-speed-main ease,
+        color $animation-speed-main ease
+        ;
+
     &_size {
         &_big {
             @include pv(3);
@@ -29,18 +34,33 @@
             background-color: transparent;
             color: $color-white;
             border: solid 3px $color-white;
+
+            &:hover {
+                background-color: $color-white;
+                color: $color-black;
+            }
         }
 
         &_white {
             background-color: $color-white;
             color: $color-black;
             border: solid 3px $color-white;
+
+            &:hover {
+                background-color: transparent;
+                color: $color-white;
+            }
         }
 
         &_green {
             background-color: $color-green-light;
             color: $color-white;
             border: solid 3px $color-green-light;
+
+            &:hover {
+                background-color: $color-white;
+                color: $color-green-light;
+            }
         }
     }
 }
@@ -49,11 +69,11 @@
     .u-btn {
         &_size {
             &_big {
-                font-size: $font-size-mobile;
+                font-size: $font-size-main--mobile;
             }
     
             &_small {
-                font-size: $font-size-mobile;
+                font-size: $font-size-main--mobile;
             }
         }
     }    

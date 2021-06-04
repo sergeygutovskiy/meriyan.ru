@@ -2,10 +2,13 @@
     <div class="container">
         <div class="row d-flex justify-content-end ph-3 ph-lg-6">
             <div class="col-12 col-md-3">
-                <div class="footer__logo-wrapper text-start text-md-end text-lg-center">
-                    <img class="footer__logo"
-                        height="50"
-                        src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg">
+                <div class="d-flex justify-content-md-end justify-content-lg-center">
+                    <a class="footer__logo-wrapper u-skeleton-loader" href="/">
+                        <img class="footer__logo" 
+                            src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
+                            height="50px"
+                            >
+                    </a>
                 </div>
             </div>
         </div>
@@ -15,13 +18,12 @@
             </div>
         </div>
         <div class="row d-flex justify-content-start justify-content-sm-end justify-content-lg-between align-items-center ph-3 ph-lg-6">
-            <div class="col-lg-8 col-xs-6">
+            <div class="col-md-6">
                 <nav class="footer__links">
                     <a class="footer__link mb-3 mb-sm-0" href="{{ url("about") }}">О НАС</a>
-                    <a class="footer__link mb-3 mb-sm-0" href="">ОТЗЫВЫ</a>
                     <a class="footer__link mb-3 mb-sm-0" href="{{ url("tours") }}">ТУРЫ</a>
                     <a class="footer__link" href="">ПОИСК ТУРА</a>
-                    <a class="footer__link" href="{{ url("contacts") } ">КОНТАКТЫ</a>
+                    <a class="footer__link" href="{{ url("contacts") }} ">КОНТАКТЫ</a>
                 </nav>
             </div>
             <div class="col-sm-6 col-lg-3 footer__social-links mt-4 mt-lg-0">
@@ -29,8 +31,8 @@
                     <svg 
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 26 26" 
-                        width="26" 
-                        height="26">
+                        width="24" 
+                        height="24">
                         <path 
                             d="M 7.546875 0 C 3.390625 0 0 3.390625 0 7.546875 
                                 L 0 18.453125 C 0 22.609375 3.390625 26 7.546875 26 
@@ -52,8 +54,8 @@
                 <a class="footer__social-link" href="">
                     <svg 
                         enable-background="new 0 0 26 26" 
-                        height="26" 
-                        width="26" 
+                        height="24" 
+                        width="24" 
                         viewBox="0 0 26 26" 
                         xmlns="http://www.w3.org/2000/svg">
                         <path 
@@ -64,8 +66,8 @@
                 </a>
                 <a class="footer__social-link" href="">
                     <svg 
-                        height="26px" 
-                        width="26px" 
+                        height="24" 
+                        width="24" 
                         style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" 
                         version="1.1" 
                         viewBox="0 0 512 512" 
@@ -88,8 +90,8 @@
                 </a>
                 <a class="footer__social-link" href="">
                     <svg 
-                        height="26" 
-                        width="26" 
+                        height="24" 
+                        width="24" 
                         viewBox="0 0 26 26" 
                         xmlns="http://www.w3.org/2000/svg">
                         <path 
