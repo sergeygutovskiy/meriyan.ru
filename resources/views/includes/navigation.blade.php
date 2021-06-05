@@ -2,8 +2,9 @@
     <div class="navigation__logo-container">
         <a class="navigation__logo-wrapper u-skeleton-loader" href="/">
             <img class="navigation__logo" 
-                src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
-                height="50px">
+                src="/images/static/logo.jpg"
+                height="50"
+                width="133"> 
         </a>
     </div>
     <nav class="navigation__links">

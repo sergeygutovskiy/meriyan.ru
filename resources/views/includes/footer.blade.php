@@ -5,9 +5,9 @@
                 <div class="d-flex justify-content-md-end justify-content-lg-center">
                     <a class="footer__logo-wrapper u-skeleton-loader" href="/">
                         <img class="footer__logo" 
-                            src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
-                            height="50px"
-                            >
+                            src="/images/static/logo.jpg"
+                            height="50"
+                            width="133">
                     </a>
                 </div>
             </div>
@@ -18,12 +18,12 @@
             </div>
         </div>
         <div class="row d-flex justify-content-start justify-content-sm-end justify-content-lg-between align-items-center ph-3 ph-lg-6">
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <nav class="footer__links">
-                    <a class="footer__link mb-3 mb-sm-0" href="{{ url("about") }}">О НАС</a>
-                    <a class="footer__link mb-3 mb-sm-0" href="{{ url("tours") }}">ТУРЫ</a>
-                    <a class="footer__link" href="">ПОИСК ТУРА</a>
-                    <a class="footer__link" href="{{ url("contacts") }} ">КОНТАКТЫ</a>
+                    <div class="footer__link mb-3 mb-sm-0"><a href="{{ url("about") }}">О НАС</a></div>
+                    <div class="footer__link mb-3 mb-sm-0"><a href="{{ url("tours") }}">ТУРЫ</a></div>
+                    <div class="footer__link"><a href="">ПОИСК ТУРА</a></div>
+                    <div class="footer__link"><a href="{{ url("contacts") }} ">КОНТАКТЫ</a></div>
                 </nav>
             </div>
             <div class="col-sm-6 col-lg-3 footer__social-links mt-4 mt-lg-0">

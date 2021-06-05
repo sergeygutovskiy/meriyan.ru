@@ -1,5 +1,6 @@
 require('./bootstrap');
-require('./includes/navigation_mobile');
+import NavigationModule from './includes/navigation';
+
 
 window._grid_breakpoints = {
     xs:  0,
@@ -9,3 +10,7 @@ window._grid_breakpoints = {
     xl:  1200,
     xxl: 1400
 };
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+    NavigationModule.init();
+});

@@ -8,7 +8,8 @@
             z-index: 1;
             display: inline-block;
             height: 50px;
-            width: 80px;
+            width: 133px;
+            border-bottom: 0;
         }
 
         display: block;
@@ -26,7 +27,7 @@
         border-color: $color-green-light;
         transition: border-bottom $animation-speed-main ease;
     
-        &:hover {
+        > a:hover {
             border-bottom: solid 2px $color-white;
         }
     }

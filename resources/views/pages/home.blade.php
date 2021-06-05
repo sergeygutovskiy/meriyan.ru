@@ -12,7 +12,7 @@
     <div class="u-page-background u-page-background-top offset_2">
         <picture class="u-page-background__image">
             <source
-                srcset="/images/static/backgrounds/home.webp 1920w"
+                srcset="/images/static/backgrounds/home.webp"
                 type="image/webp"
             />
             <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home.jpeg" alt="">
@@ -101,11 +101,14 @@
         </div>
     </section>
 
-    {{-- <div class="u-page-background u-page-background-bottom offset_1">
-        <img 
-            class="u-page-background__image"
-            src="https://img.etimg.com/thumb/msid-68721417,width-650,imgsize-1016106,,resizemode-4/nature1_gettyimages.jpg"
-            >
+    <div class="u-page-background u-page-background-bottom offset_1">
+        <picture class="u-page-background__image">
+            <source
+                srcset="/images/static/backgrounds/home.webp"
+                type="image/webp"
+            />
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home.jpeg" alt="">
+        </picture>
 
         <section class="container u-page-margin">
             <x-banner
@@ -162,7 +165,7 @@
         </section>
 
         <div class="u-page-padding"></div>
-    </div> --}}
+    </div>
 @endsection
 
 @section('scripts')

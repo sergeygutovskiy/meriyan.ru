@@ -23,7 +23,6 @@
                     {{ $tour->title }}
                 </a>
             </h3>
-            {{-- </a> --}}
             <p class="m-tour-card__paragraph">
                 {{ $tour->description }}
             </p>

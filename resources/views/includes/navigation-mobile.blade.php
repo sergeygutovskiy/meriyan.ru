@@ -2,9 +2,13 @@
     <div class="navigation-mobile__content pv-3 ph-3 ph-sm-6">
         <div class="navigation-mobile__logo-container">
             <a class="navigation-mobile__logo-wrapper u-skeleton-loader" href="/">
-                <img class="navigation-mobile__logo" 
+                {{-- <img class="navigation-mobile__logo" 
                     src="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
-                    height="32px">
+                    height="32px"> --}}
+                <img class="navigation__logo" 
+                    src="/images/static/logo.jpg"
+                    height="32"
+                    width="85"> 
             </a>
         </div>
         <button class="navigation-mobile__menu-button">

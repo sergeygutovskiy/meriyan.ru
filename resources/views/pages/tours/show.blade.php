@@ -9,7 +9,7 @@
     <div class="u-page-background u-page-background-top offset_2">
         <img 
             class="u-page-background__image"
-            src="https://img.etimg.com/thumb/msid-68721417,width-650,imgsize-1016106,,resizemode-4/nature1_gettyimages.jpg"
+            src="{{ $tour->image_path }}"
             >
 
         <header class="u-page-header u-page-header_size_100vh">
@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div class="mt-7 mt-lg-0 col-12 col-lg-5 u-text_size_24 u-text_color_white">
-                    <div class="m-tour-info-video-containe__descriptionr">
+                    <div class="m-tour-info-video-container__description">
                         {!! html_entity_decode($tour->info->description) !!}
                     </div>
                 </div>
@@ -110,15 +110,16 @@
 
     </div>
 
-    <section class="container u-page-margin">
+    <section class="container u-page-margin u-page-margin_size_big">
         @foreach ($tour->info->locations as $location)
             <div class="m-tour-info-location {{ $loop->first ? '' : 'u-page-padding' }}">
                 <div class="row mb-4 mb-lg-8">
                     <div class="col-12">
                         <div class="m-tour-info-location__name">
-                            <h2 class="{{ $loop->first ? 'u-text_color_white' : 'u-text_color_green' }}">
-                                <span>{{ $location->name }}</span>
-                            </h2>
+                            <div class="{{ $loop->first ? 'u-text_color_white' : 'u-text_color_green' }}">
+                                <span class="pr-2 pr-sm-6">{{ $location->name }}</span>
+                                <span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,7 +136,7 @@
                         $location->is_big ? 
                             'col-12 col-lg-8' 
                             : 
-                            'col-12 col-lg-10'
+                            'col-12 col-lg-8'
                     }}">
                         <div class=
                             "m-tour-info-location__description {{

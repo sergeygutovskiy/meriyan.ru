@@ -24,7 +24,8 @@
             z-index: 1;
             display: inline-block;
             height: 50px;
-            width: 80px;
+            width: 133px;
+            border-bottom: 0;
         }
 
         display: block;
@@ -84,6 +85,13 @@
 
     &__logo-container, &__links, &__social-links {
         flex: 1 1 0;
+    }
+
+    transition: transform $animation-speed-main ease-in;
+
+    &.hide {
+        transform: translateY(-100%);
+        transition: transform $animation-speed-main ease-out;
     }
 }
 
