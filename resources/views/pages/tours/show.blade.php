@@ -153,7 +153,7 @@
     <div class="u-page-background u-page-background-bottom offset_2">
         <img 
             class="u-page-background__image"
-            src="https://img.etimg.com/thumb/msid-68721417,width-650,imgsize-1016106,,resizemode-4/nature1_gettyimages.jpg"
+            src="{{ $tour->image_path }}"
             >
 
         <section class="container u-page-margin">
