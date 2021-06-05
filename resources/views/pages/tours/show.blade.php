@@ -33,52 +33,52 @@
                 </div>
                 <div class="m-tour-info-header-buttons row justify-content-center mt-7">
                     <div class="col-12 col-md-6 col-lg-5 col-xxl-4 d-flex gx-sm-3">
-                        <button 
-                            class="u-btn u-btn_size_big u-btn_theme_transparent 
+                        <div 
+                            class="u-btn u-btn_size_big u-btn_theme_transparent no-hover
                                 d-inline-flex justify-content-between">
                             <span>Длительность:</span>
                             <span>
                                 {{ $tour->info->duration }}
                                 дней
                             </span>
-                        </button>
+                        </div>
                     </div>
                     <div class="gy-3 gy-md-0 col-12 col-md-6 col-lg-4 col-xxl-3 d-flex gx-sm-3">
-                        <button 
-                            class="u-btn u-btn_size_big u-btn_theme_transparent 
+                        <div 
+                            class="u-btn u-btn_size_big u-btn_theme_transparent no-hover
                                 d-inline-flex justify-content-between">
                             <span>Сложность:</span> 
                             <span>{{ $tour->info->complexity->name }}</span>
-                        </button>
+                        </div>
                     </div>
                     <div class="gy-3 gy-lg-0 order-3 order-lg-0 col-12 col-md-6 col-lg-3 col-xxl-3 d-flex gx-sm-3">
-                        <button 
-                            class="u-btn u-btn_size_big u-btn_theme_transparent 
+                        <div 
+                            class="u-btn u-btn_size_big u-btn_theme_transparent no-hover
                                 d-inline-flex justify-content-between">
                             <span>Сезон:</span> 
                             <span>{{ $tour->info->season->name }}</span>
-                        </button>
+                        </div>
                     </div>
                     <div class="order-5 order-lg-0 col-lg-7 col-xl-6 col-xxl-5 d-flex gy-3 g-sm-3">
-                        <button 
-                            class="u-btn u-btn_size_big u-btn_theme_transparent 
+                        <div 
+                            class="u-btn u-btn_size_big u-btn_theme_transparent no-hover
                                 d-inline-flex justify-content-between">
                             <span>Количество человек в группе:</span>
                             <span>
                                 {{ $tour->info->people_amount }}
                             </span>
-                        </button>
+                        </div>
                     </div>
                     <div class="order-4 order-lg-0 col-12 col-md-6 col-lg-5 col-xl-5 col-xxl-4 d-flex gy-3 gx-sm-3">
-                        <button 
-                            class="u-btn u-btn_size_big u-btn_theme_white 
+                        <div 
+                            class="u-btn u-btn_size_big u-btn_theme_white no-hover
                                 d-inline-flex justify-content-between">
                             <span>Стоимость:</span> 
                             <span>
                                 {{ $tour->price }}
                                 ₽ 
                             </span>
-                        </button>
+                        </div>
                     </div>
                 </div>
             </div>

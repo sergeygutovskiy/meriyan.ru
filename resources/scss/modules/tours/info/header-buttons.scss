@@ -1,5 +1,5 @@
 .m-tour-info-header-buttons {
-    button {
+    div {
         flex-grow: 1;
         display: flex;
         align-items: center;
@@ -9,6 +9,10 @@
                 font-weight: 800;
                 letter-spacing: 0.03em;
                 text-align: left;
+            }
+
+            &:hover {
+                cursor: text;
             }
         }
     }

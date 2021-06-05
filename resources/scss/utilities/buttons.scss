@@ -39,6 +39,14 @@
                 background-color: $color-white;
                 color: $color-black;
             }
+
+            &.no-hover {
+                &:hover {
+                    background-color: transparent;
+                    color: $color-white;
+                    cursor: default;
+                }
+            }
         }
 
         &_white {
@@ -49,6 +57,14 @@
             &:hover {
                 background-color: transparent;
                 color: $color-white;
+            }
+
+            &.no-hover {
+                &:hover {
+                    background-color: $color-white;
+                    color: $color-black;
+                    cursor: default;
+                }
             }
         }
 

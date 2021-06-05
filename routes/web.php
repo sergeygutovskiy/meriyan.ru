@@ -25,7 +25,7 @@ Route::get('/', function () {
     return view('pages.home', [ 'tours' => $tours ]);
 })->name("home");
 
-Route::get('/tours', [ TourController::class, 'index' ])->name("tours");
+Route::get('/tours', [ TourController::class, 'popular' ])->name("tours");
 Route::get('/tours/{tour}', [ TourController::class, 'show' ])->name('tour.show');
 
 Route::get('/tags/{tag}', [ TagController::class, 'show' ])->name('tag.show');

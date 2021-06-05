@@ -6459,6 +6459,11 @@
   background-color: #ffffff;
   color: #212529;
 }
+.u-btn_theme_transparent.no-hover:hover {
+  background-color: transparent;
+  color: #ffffff;
+  cursor: default;
+}
 .u-btn_theme_white {
   background-color: #ffffff;
   color: #212529;
@@ -6467,6 +6472,11 @@
 .u-btn_theme_white:hover {
   background-color: transparent;
   color: #ffffff;
+}
+.u-btn_theme_white.no-hover:hover {
+  background-color: #ffffff;
+  color: #212529;
+  cursor: default;
 }
 .u-btn_theme_green {
   background-color: #01737E;
@@ -6899,15 +6909,18 @@
   margin-bottom: 2.5rem;
 }
 
-.m-tour-info-header-buttons button {
+.m-tour-info-header-buttons div {
   flex-grow: 1;
   display: flex;
   align-items: center;
 }
-.m-tour-info-header-buttons button span:first-child {
+.m-tour-info-header-buttons div span:first-child {
   font-weight: 800;
   letter-spacing: 0.03em;
   text-align: left;
+}
+.m-tour-info-header-buttons div span:hover {
+  cursor: text;
 }
 
 .m-tour-info-location {
@@ -7150,6 +7163,9 @@
   height: 32px;
   width: 85px;
   border-bottom: none;
+}
+.navigation-mobile.active .navigation-mobile__logo-text {
+  fill: white;
 }
 .navigation-mobile__dropdown-wrapper {
   max-height: 0;
