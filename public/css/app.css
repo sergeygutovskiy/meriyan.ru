@@ -7010,6 +7010,7 @@
   padding-right: 1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  width: 100%;
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
@@ -7027,6 +7028,16 @@
 }
 .m-tour-info-bottom-panel__point > *:not(:last-child) {
   margin-bottom: 0.75rem;
+}
+.m-tour-info-bottom-panel_theme_green {
+  background-color: #01737E;
+  color: #ffffff;
+}
+.m-tour-info-bottom-panel_theme_green a {
+  border-bottom: none;
+}
+.m-tour-info-bottom-panel_theme_green a:hover {
+  text-decoration: underline;
 }
 
 .m-review-card {

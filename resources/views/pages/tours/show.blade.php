@@ -160,9 +160,9 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10 col-xl-11 col-xxl-10">
                     <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="m-tour-info-bottom-panel">
-                                <h3 class="d-flex justify-content-between">
+                        <div class="col-12 col-md-6 d-flex">
+                            <div class="m-tour-info-bottom-panel d-flex flex-column">
+                                <h3 class="d-flex mt-auto mb-auto justify-content-between">
                                     <span>Стоимость:</span>
                                     <span>
                                         {{ $tour->price }} ₽
@@ -170,9 +170,12 @@
                                 </h3>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 mt-4 mt-xl-0">
-                            <div class="m-tour-info-bottom-panel">
-            
+                        <div class="col-12 col-md-6 mt-4 mt-md-0">
+                            <div class="m-tour-info-bottom-panel m-tour-info-bottom-panel_theme_green d-flex align-items-center">
+                                <img src="/images/static/pdf.svg" width="56" height="80">
+                                <h3 class="pl-4">
+                                    <a href="">Посмотреть полную программу тура</a>
+                                </h3>
                             </div>
                         </div>
                     </div>

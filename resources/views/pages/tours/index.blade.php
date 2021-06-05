@@ -7,10 +7,13 @@
 
 @section('content')
     <div class="u-page-background u-page-background-top">
-        <img 
-            class="u-page-background__image"
-            src="https://img.etimg.com/thumb/msid-68721417,width-650,imgsize-1016106,,resizemode-4/nature1_gettyimages.jpg"
-            >
+        <picture class="u-page-background__image">
+            <source
+                srcset="/images/static/backgrounds/tours-top.webp"
+                type="image/webp"
+            />
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/tours-top.jpg" alt="">
+        </picture>
 
         <header class="u-page-header u-page-header_size_100vh">
             <div class="container u-text_color_white text-center mt-auto mb-auto">
@@ -105,10 +108,13 @@
     </section>
 
     <div class="u-page-background u-page-background-bottom offset_2">
-        <img 
-            class="u-page-background__image"
-            src="https://img.etimg.com/thumb/msid-68721417,width-650,imgsize-1016106,,resizemode-4/nature1_gettyimages.jpg"
-            >
+        <picture class="u-page-background__image">
+            <source
+                srcset="/images/static/backgrounds/tours-bottom.webp"
+                type="image/webp"
+            />
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/tours-bottom.jpeg" alt="">
+        </picture>
 
         <section class="container u-page-margin" id="tag3">
             <div class="d-flex flex-column justify-content-center u-text_color_white mb-6 mb-sm-8">

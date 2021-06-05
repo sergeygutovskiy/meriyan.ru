@@ -8,10 +8,13 @@
 
 @section('content')
     <div class="u-page-background u-page-background-top">
-        <img 
-            class="u-page-background__image"
-            src="https://img.etimg.com/thumb/msid-68721417,width-650,imgsize-1016106,,resizemode-4/nature1_gettyimages.jpg"
-            >
+        <picture class="u-page-background__image">
+            <source
+                srcset="/images/static/backgrounds/contacts.webp"
+                type="image/webp"
+            />
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/contacts.jpg" alt="">
+        </picture>
 
         <header class="u-page-header">
             <div class="container u-page-margin d-flex flex-column justify-content-center text-center u-text_color_white">

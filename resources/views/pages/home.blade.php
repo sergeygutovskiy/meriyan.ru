@@ -15,7 +15,7 @@
                 srcset="/images/static/backgrounds/home.webp"
                 type="image/webp"
             />
-            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home.jpeg" alt="">
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home.jpg" alt="">
         </picture>
 
         <header class="u-page-header u-page-header_size_100vh">

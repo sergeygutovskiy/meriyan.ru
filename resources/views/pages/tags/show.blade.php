@@ -8,10 +8,13 @@
 
 @section('content')
     <div class="u-page-background u-page-background-top">
-        <img 
-            class="u-page-background__image"
-            src="https://img.etimg.com/thumb/msid-68721417,width-650,imgsize-1016106,,resizemode-4/nature1_gettyimages.jpg"
-            >
+        <picture class="u-page-background__image">
+            <source
+                srcset="/images/static/backgrounds/tag.webp"
+                type="image/webp"
+            />
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/tag.jpg" alt="">
+        </picture>
 
         <header class="u-page-header u-page-header_size_100vh">
             <div class="container mt-auto mb-auto">
