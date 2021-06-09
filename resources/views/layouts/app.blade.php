@@ -29,8 +29,10 @@
     </main>
 
     @include('includes/footer')
+    @include('includes/fade')
 
     <script src="/js/app.js"></script>
+
     @yield('scripts')
 </body>
 </html>

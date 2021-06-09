@@ -1,10 +1,6 @@
-<div class="navigation">
+<div class="navigation" id="navigation">
     <div class="navigation__logo-container">
         <a class="navigation__logo-wrapper" href="/">
-            {{-- <img class="navigation__logo" 
-                src="/images/static/logo.svg"
-                height="50"
-                width="133">  --}}
             <svg
                 class="navigation__logo" 
                 width="133" 

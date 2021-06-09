@@ -150,7 +150,7 @@
         @endforeach
     </section>
 
-    <div class="u-page-background u-page-background-bottom offset_2">
+    <div class="u-page-background u-page-background-bottom offset_1">
         <img 
             class="u-page-background__image"
             src="{{ $tour->image_path }}"

@@ -91,7 +91,7 @@
     &-top::after {
         bottom: 0;
         left: 0;
-        transform: translateY(3px);
+        transform: translateY(4px);
     }
 
     &-bottom::after {
@@ -101,19 +101,19 @@
     }
 
     &-top.offset_2::after {
-        transform: translateY( calc((100% * #{$offset_2_k}) + 3px) );
+        transform: translateY( calc((100% * #{$offset_2_k}) + 4px) );
     }
     
     &-bottom.offset_2::after {
-        transform: rotateZ(180deg) translateY( calc((100% * #{$offset_2_k}) + 3px) );
+        transform: rotateZ(180deg) translateY( calc((100% * #{$offset_2_k}) + 4px) );
     }
 
     &-top.offset_1::after {
-        transform: translateY( calc((100% * #{$offset_1_k}) + 3px) );
+        transform: translateY( calc((100% * #{$offset_1_k}) + 4px) );
     }
     
     &-bottom.offset_1::after {
-        transform: rotateZ(180deg) translateY( calc((100% * #{$offset_1_k}) + 3px) );
+        transform: rotateZ(180deg) translateY( calc((100% * #{$offset_1_k}) + 4px) );
     }
 }
 

@@ -11,14 +11,14 @@
 
 
 // utilities
-@import "utilities/buttons";
-@import "utilities/texts";
-@import "utilities/tags/icon";
-@import "utilities/pages/headers";
-@import "utilities/pages/spaces";
-@import "utilities/pages/backgrounds";
+@import "utilities/button";
+@import "utilities/text";
+@import "utilities/tag/icon";
+@import "utilities/page/header";
+@import "utilities/page/space";
+@import "utilities/page/background";
 @import "utilities/skeleton-loader";
-@import "utilities/animations";
+@import "utilities/animation";
 
 
 // modules
@@ -33,12 +33,14 @@
 @import "modules/tours/info/location";
 @import "modules/tours/info/bottom-panel";
 @import "modules/review-card";
+@import "modules/modal";
 
 
 // includes
 @import "includes/navigation";
 @import "includes/navigation-mobile";
 @import "includes/footer";
+@import "includes/fade";
 
 
 @media screen and (max-width: map-get($grid-breakpoints, xl) - 1) {

@@ -1,45 +1,62 @@
-function init()
-{
-    let current_scroll = window.scrollY;
- 
-    const navigation_el = document.getElementsByClassName("navigation")[0];
-    const navigation_mobile_el = document.getElementsByClassName("navigation-mobile")[0];
-    const navigation_mobile_dropdown_el = document.getElementsByClassName("navigation-mobile__dropdown-wrapper")[0];
-    const navigation_mobile_btn_el = document.getElementsByClassName("navigation-mobile__menu-button")[0];
+export default class Navigation {
+    pc_el = null;
     
-    navigation_mobile_btn_el.addEventListener("click", function() {
-        this.classList.toggle("active");
+    mobile_el = null;
+    mobile_dropdown_el = null;
+    mobile_btn_el = null;
 
-        if (this.classList.contains("active"))
-        {
-            navigation_mobile_el.classList.toggle("active");
-            setTimeout(() => {
-                navigation_mobile_dropdown_el.classList.toggle("active");
-            }, 200);
-        }
-        else
-        {
-            navigation_mobile_dropdown_el.classList.toggle("active");
-            setTimeout(() => {
-                navigation_mobile_el.classList.toggle("active");
-            }, 200);
-        }
-    });
+    is_dropdown_opened = false;
 
-    window.addEventListener("scroll", function () {    
-        if (current_scroll > window.scrollY)
-        {
-            navigation_el.classList.remove("hide");
-            navigation_mobile_el.classList.remove("hide");
-        }
-        else if (current_scroll < window.scrollY)
-        {
-            navigation_el.classList.add("hide");
-            navigation_mobile_el.classList.add("hide");
-        }
+    current_scroll = null;
 
-        current_scroll = window.scrollY;
-    });
+    constructor() {
+        this.pc_el = document.getElementById("navigation");
+        this.mobile_el = document.getElementById("navigation-mobile");
+
+        this.mobile_dropdown_el = this.mobile_el.getElementsByClassName("navigation-mobile__dropdown-wrapper")[0];
+        this.mobile_btn_el = this.mobile_el.getElementsByClassName("navigation-mobile__menu-button")[0];
+    
+        this.mobile_btn_el.addEventListener("click", (e) => {
+            this.is_dropdown_opened ? this.close_dropdown() : this.open_dropdown();
+        });
+
+        this.current_scroll = window.scrollY;
+
+        window.addEventListener("scroll", (e) => {    
+            if (this.current_scroll > window.scrollY)
+            {
+                this.pc_el.classList.remove("hide");
+                this.mobile_el.classList.remove("hide");
+            }
+            else if (this.current_scroll < window.scrollY)
+            {
+                this.pc_el.classList.add("hide");
+                this.mobile_el.classList.add("hide");
+            }
+
+            this.current_scroll = window.scrollY;
+        });
+    }
+
+    open_dropdown() {
+        this.mobile_el.classList.add("active");
+        this.mobile_btn_el.classList.add("active");
+
+        setTimeout(() => {
+            this.mobile_dropdown_el.classList.add("active");
+        
+            this.is_dropdown_opened = true;
+        }, 200);
+    }
+
+    close_dropdown() {        
+        this.mobile_dropdown_el.classList.remove("active");
+        this.mobile_btn_el.classList.remove("active");
+        
+        setTimeout(() => {
+            this.mobile_el.classList.remove("active");
+        
+            this.is_dropdown_opened = false;
+        }, 200);
+    }
 }
-
-export default { init }

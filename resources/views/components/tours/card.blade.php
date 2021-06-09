@@ -31,8 +31,7 @@
             <a class="u-btn u-btn_size_small u-btn_theme_transparent ph-0 mr-1" 
                 href="{{ route('tour.show', ['tour' => $tour]) }}">Подробнее</a>
 
-            <a class="u-btn u-btn_size_small u-btn_theme_white ph-0 ml-1" 
-                href="">Хочу поехать</a>
+            <a class="u-btn u-btn_size_small u-btn_theme_white ph-0 ml-1 m-tour-card__booking-btn">Хочу поехать</a>
         </div>
     </div>
 </article>

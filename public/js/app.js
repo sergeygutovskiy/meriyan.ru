@@ -1865,54 +1865,389 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/includes/navigation.js":
+/***/ "./resources/js/includes/Fade.js":
+/*!***************************************!*\
+  !*** ./resources/js/includes/Fade.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Fade)
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Fade = /*#__PURE__*/function () {
+  function Fade() {
+    _classCallCheck(this, Fade);
+
+    _defineProperty(this, "el", null);
+
+    this.el = document.getElementById("fade");
+  }
+
+  _createClass(Fade, [{
+    key: "open",
+    value: function open() {
+      this.el.classList.add("active");
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      this.el.classList.remove("active");
+    }
+  }]);
+
+  return Fade;
+}();
+
+
+
+/***/ }),
+
+/***/ "./resources/js/includes/Modal.js":
+/*!****************************************!*\
+  !*** ./resources/js/includes/Modal.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Modal)
+/* harmony export */ });
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Modal = /*#__PURE__*/function () {
+  function Modal(el, trigger_els) {
+    var _this = this;
+
+    _classCallCheck(this, Modal);
+
+    _defineProperty(this, "el", null);
+
+    _defineProperty(this, "btn_el", null);
+
+    _defineProperty(this, "trigger_els", []);
+
+    _defineProperty(this, "container_els", []);
+
+    this.el = el;
+    this.btn_el = this.el.getElementsByClassName("m-modal__close-btn")[0];
+    this.btn_el.addEventListener("click", function (e) {
+      _this.close();
+    });
+    this.trigger_els = trigger_els;
+
+    var _iterator = _createForOfIteratorHelper(trigger_els),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var trigger_el = _step.value;
+        trigger_el.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          _this.open();
+        });
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+
+    this.container_els = this.el.getElementsByClassName("m-modal__fade-container");
+
+    var _iterator2 = _createForOfIteratorHelper(this.container_els),
+        _step2;
+
+    try {
+      var _loop = function _loop() {
+        var container_el = _step2.value;
+        container_el.addEventListener("click", function (e) {
+          if (e.target !== container_el) return;
+
+          _this.close();
+        });
+      };
+
+      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+        _loop();
+      }
+    } catch (err) {
+      _iterator2.e(err);
+    } finally {
+      _iterator2.f();
+    }
+  }
+
+  _createClass(Modal, [{
+    key: "open",
+    value: function open() {
+      this.el.classList.add("active");
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      this.el.classList.remove("active");
+    }
+  }]);
+
+  return Modal;
+}(); // let modal_el = null;
+// let modal_close_btn_el = null;
+// window.modals = [];
+// function init(el) {
+//     modal_el = el;
+//     modal_close_btn_el = el.getElementsByClassName("m-modal__close-btn")[0];
+//     modal_close_btn_el.addEventListener("click", function() {
+//         close();
+//         window.fade.close();
+//     });
+//     let fade_container_els = modal_el.getElementsByClassName("m-modal__fade-container");
+//     for (let fade_container_el of fade_container_els) {
+//         fade_container_el.addEventListener("click", function(e) {
+//             if (e.target !== this) return;
+//             close();
+//             window.fade.close();
+//         });
+//     }
+//     window.modals[modal_el.id] = {
+//         open,
+//         close
+//     }
+// }
+// function open() {
+//     modal_el.classList.add("active");
+// }
+// function close() {
+//     console.log(1);
+//     console.log(modal_el);
+//     modal_el.classList.remove("active");
+// }
+
+
+
+
+/***/ }),
+
+/***/ "./resources/js/includes/ModalFadeManager.js":
+/*!***************************************************!*\
+  !*** ./resources/js/includes/ModalFadeManager.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ModalFadeManager)
+/* harmony export */ });
+/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Modal */ "./resources/js/includes/Modal.js");
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var ModalFadeManager = function ModalFadeManager(fade) {
+  var _this = this;
+
+  _classCallCheck(this, ModalFadeManager);
+
+  _defineProperty(this, "modals", []);
+
+  _defineProperty(this, "fade", []);
+
+  this.fade = fade;
+  var modal_1_el = document.getElementById("modal-tour-booking");
+  var modal_2_el = document.getElementById("modal-help-chose-tour");
+  var modal_1_trigger_els = [];
+  var modal_2_trigger_els = [];
+  modal_1_trigger_els = document.getElementsByClassName("m-tour-card__booking-btn");
+  modal_2_trigger_els.push(document.getElementById("trigger-modal-help-chose-tour"));
+  var modal_1 = new _Modal__WEBPACK_IMPORTED_MODULE_0__.default(modal_1_el, modal_1_trigger_els);
+  var modal_2 = new _Modal__WEBPACK_IMPORTED_MODULE_0__.default(modal_2_el, modal_2_trigger_els);
+  this.modals.push(modal_1);
+  this.modals.push(modal_2);
+
+  var _iterator = _createForOfIteratorHelper(this.modals),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var modal = _step.value;
+
+      var _iterator2 = _createForOfIteratorHelper(modal.trigger_els),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var trigger_el = _step2.value;
+          trigger_el.addEventListener("click", function (e) {
+            _this.fade.open();
+          });
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+
+      modal.btn_el.addEventListener("click", function (e) {
+        _this.fade.close();
+      });
+
+      var _iterator3 = _createForOfIteratorHelper(modal.container_els),
+          _step3;
+
+      try {
+        var _loop = function _loop() {
+          var container_el = _step3.value;
+          container_el.addEventListener("click", function (e) {
+            if (e.target !== container_el) return;
+
+            _this.fade.close();
+          });
+        };
+
+        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+          _loop();
+        }
+      } catch (err) {
+        _iterator3.e(err);
+      } finally {
+        _iterator3.f();
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+};
+
+
+
+/***/ }),
+
+/***/ "./resources/js/includes/Navigation.js":
 /*!*********************************************!*\
-  !*** ./resources/js/includes/navigation.js ***!
+  !*** ./resources/js/includes/Navigation.js ***!
   \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ Navigation)
 /* harmony export */ });
-function init() {
-  var current_scroll = window.scrollY;
-  var navigation_el = document.getElementsByClassName("navigation")[0];
-  var navigation_mobile_el = document.getElementsByClassName("navigation-mobile")[0];
-  var navigation_mobile_dropdown_el = document.getElementsByClassName("navigation-mobile__dropdown-wrapper")[0];
-  var navigation_mobile_btn_el = document.getElementsByClassName("navigation-mobile__menu-button")[0];
-  navigation_mobile_btn_el.addEventListener("click", function () {
-    this.classList.toggle("active");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-    if (this.classList.contains("active")) {
-      navigation_mobile_el.classList.toggle("active");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Navigation = /*#__PURE__*/function () {
+  function Navigation() {
+    var _this = this;
+
+    _classCallCheck(this, Navigation);
+
+    _defineProperty(this, "pc_el", null);
+
+    _defineProperty(this, "mobile_el", null);
+
+    _defineProperty(this, "mobile_dropdown_el", null);
+
+    _defineProperty(this, "mobile_btn_el", null);
+
+    _defineProperty(this, "is_dropdown_opened", false);
+
+    _defineProperty(this, "current_scroll", null);
+
+    this.pc_el = document.getElementById("navigation");
+    this.mobile_el = document.getElementById("navigation-mobile");
+    this.mobile_dropdown_el = this.mobile_el.getElementsByClassName("navigation-mobile__dropdown-wrapper")[0];
+    this.mobile_btn_el = this.mobile_el.getElementsByClassName("navigation-mobile__menu-button")[0];
+    this.mobile_btn_el.addEventListener("click", function (e) {
+      _this.is_dropdown_opened ? _this.close_dropdown() : _this.open_dropdown();
+    });
+    this.current_scroll = window.scrollY;
+    window.addEventListener("scroll", function (e) {
+      if (_this.current_scroll > window.scrollY) {
+        _this.pc_el.classList.remove("hide");
+
+        _this.mobile_el.classList.remove("hide");
+      } else if (_this.current_scroll < window.scrollY) {
+        _this.pc_el.classList.add("hide");
+
+        _this.mobile_el.classList.add("hide");
+      }
+
+      _this.current_scroll = window.scrollY;
+    });
+  }
+
+  _createClass(Navigation, [{
+    key: "open_dropdown",
+    value: function open_dropdown() {
+      var _this2 = this;
+
+      this.mobile_el.classList.add("active");
+      this.mobile_btn_el.classList.add("active");
       setTimeout(function () {
-        navigation_mobile_dropdown_el.classList.toggle("active");
-      }, 200);
-    } else {
-      navigation_mobile_dropdown_el.classList.toggle("active");
-      setTimeout(function () {
-        navigation_mobile_el.classList.toggle("active");
+        _this2.mobile_dropdown_el.classList.add("active");
+
+        _this2.is_dropdown_opened = true;
       }, 200);
     }
-  });
-  window.addEventListener("scroll", function () {
-    if (current_scroll > window.scrollY) {
-      navigation_el.classList.remove("hide");
-      navigation_mobile_el.classList.remove("hide");
-    } else if (current_scroll < window.scrollY) {
-      navigation_el.classList.add("hide");
-      navigation_mobile_el.classList.add("hide");
+  }, {
+    key: "close_dropdown",
+    value: function close_dropdown() {
+      var _this3 = this;
+
+      this.mobile_dropdown_el.classList.remove("active");
+      this.mobile_btn_el.classList.remove("active");
+      setTimeout(function () {
+        _this3.mobile_el.classList.remove("active");
+
+        _this3.is_dropdown_opened = false;
+      }, 200);
     }
+  }]);
 
-    current_scroll = window.scrollY;
-  });
-}
+  return Navigation;
+}();
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  init: init
-});
+
 
 /***/ }),
 
@@ -19410,8 +19745,20 @@ var __webpack_exports__ = {};
   !*** ./resources/js/app.js ***!
   \*****************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _includes_navigation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/navigation */ "./resources/js/includes/navigation.js");
+/* harmony import */ var _includes_Navigation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/Navigation */ "./resources/js/includes/Navigation.js");
+/* harmony import */ var _includes_Modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./includes/Modal */ "./resources/js/includes/Modal.js");
+/* harmony import */ var _includes_Fade__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./includes/Fade */ "./resources/js/includes/Fade.js");
+/* harmony import */ var _includes_ModalFadeManager__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./includes/ModalFadeManager */ "./resources/js/includes/ModalFadeManager.js");
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+
+
 
 
 window._grid_breakpoints = {
@@ -19422,9 +19769,80 @@ window._grid_breakpoints = {
   xl: 1200,
   xxl: 1400
 };
-document.addEventListener("DOMContentLoaded", function (event) {
-  _includes_navigation__WEBPACK_IMPORTED_MODULE_0__.default.init();
+document.addEventListener("DOMContentLoaded", function (e) {
+  window.app = {};
+  window.app.config = {};
+  window.app.navigation = new _includes_Navigation__WEBPACK_IMPORTED_MODULE_0__.default();
+  window.app.fade = new _includes_Fade__WEBPACK_IMPORTED_MODULE_2__.default();
+  window.app.modal_fade_manager = new _includes_ModalFadeManager__WEBPACK_IMPORTED_MODULE_3__.default(window.app.fade); // window.app.navigation = new Navigation();
+  // Navigation.init();
+  // init_modals();    
+  // init_help_chose_tour_modal();
+  // init_tour_booking_modal();
 });
+
+function init_modals() {
+  var modals_el = document.getElementsByClassName("m-modal");
+  window.modals = [];
+
+  var _iterator = _createForOfIteratorHelper(modals_el),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var modal_el = _step.value;
+      window.modals[modal_el.id] = new _includes_Modal__WEBPACK_IMPORTED_MODULE_1__.default(modal_el);
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+}
+
+function init_help_chose_tour_modal() {
+  var modal_el = document.getElementById("modal-help-chose-tour");
+  var modal_close_btn_el = modal_el.getElementsByClassName("m-modal__close-btn")[0];
+  var modal_trigger_el = document.getElementById("trigger-modal-help-chose-tour");
+  modal_trigger_el.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.active_modal = modal_el;
+    modal_el.classList.add("active");
+    window.fade.open();
+  }); // modal_close_btn_el.addEventListener("click", function() {
+  //     modal_el.classList.remove("active");
+  //     window.fade.close();
+  // });
+}
+
+function init_tour_booking_modal() {
+  var tours_cards = document.getElementsByClassName("m-tour-card");
+  var modal_el = document.getElementById("modal-tour-booking");
+  var modal_close_btn_el = modal_el.getElementsByClassName("m-modal__close-btn")[0]; // modal_close_btn_el.addEventListener("click", function() {
+  //     modal_el.classList.remove("active");
+  //     window.fade.close();
+  // });
+
+  var _iterator2 = _createForOfIteratorHelper(tours_cards),
+      _step2;
+
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var card = _step2.value;
+      var link = card.getElementsByClassName("m-tour-card__booking-btn")[0];
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.active_modal = modal_el;
+        modal_el.classList.add("active");
+        window.fade.open();
+      });
+    }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
+  }
+}
 })();
 
 /******/ })()

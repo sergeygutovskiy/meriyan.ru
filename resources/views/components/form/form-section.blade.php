@@ -11,6 +11,6 @@
         </p>
     </div>
     <div class="col-12 col-lg d-flex justify-content-lg-end mt-6 mt-lg-0">
-        <x-form.form/>
+        <x-form.form textarea-placeholder="Ваш вопрос" />
     </div>
 </div>

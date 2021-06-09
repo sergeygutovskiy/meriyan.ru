@@ -11,8 +11,13 @@
                         {{ $desc }}
                     </p>
                     <div class="">
-                        <a class="u-btn u-btn_size_big u-btn_theme_transparent" 
-                            href="">{{ $link_text }}
+                        <a 
+                            class="u-btn u-btn_size_big u-btn_theme_transparent" 
+                            id="trigger-modal-help-chose-tour"
+                            href=""
+                            >
+                            
+                            {{ $link_text }}
                         </a>
                     </div>
                 </div>
