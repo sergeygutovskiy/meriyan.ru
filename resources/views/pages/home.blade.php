@@ -173,7 +173,7 @@
         <div class="container m-modal-container m-modal__fade-container">
             <div class="row m-modal-container m-modal__fade-container">
                 <div class="col d-flex justify-content-center align-items-center m-modal__fade-container">
-                    <form class="m-modal__content m-form ph-2 pv-2 mv-6">
+                    <form class="m-modal__content m-form ph-2 pv-2 mv-2 mv-sm-6" id="form-help-chose-tour">
                         <div class="d-flex justify-content-end">
                             <img class="m-modal__close-btn" src="/images/static/modal-close.svg">
                         </div>
@@ -187,23 +187,44 @@
                                 </p>
                             </div>
                             <div class="mb-4">
-                                <input class="m-form-input" type="text" placeholder="Ваше имя">
+                                <input 
+                                    class="m-form-input"
+                                    type="text"
+                                    name="name" 
+                                    placeholder="Ваше имя"
+                                    >
                             </div>
                             <div class="mb-4">
-                                <input class="m-form-input" type="text" placeholder="Ваш E-mail">
+                                <input 
+                                    class="m-form-input" 
+                                    type="text"
+                                    name="email" 
+                                    placeholder="Ваш E-mail"
+                                    >
                             </div>
                             <div class="mb-4">
-                                <input class="m-form-input" type="text" placeholder="Ваш телефон">
+                                <input 
+                                    class="m-form-input" 
+                                    type="text"
+                                    name="phone" 
+                                    placeholder="Ваш телефон"
+                                    >
                             </div>
                             <div class="mb-4">
                                 <textarea 
                                     class="m-form-input"
+                                    name="wishes"
                                     cols="30" 
                                     rows="8"
                                     placeholder="Ваши пожелания"></textarea>
                             </div>
                             <div class="">
-                                <button class="m-form-button u-btn u-btn_size_big u-btn_theme_green">Отправить</button>
+                                <button 
+                                    type="submit"
+                                    class="m-form-button m-form-submit u-btn u-btn_size_big u-btn_theme_green"
+                                    >
+                                    Отправить
+                                </button>
                             </div>
                         </div>
                     </form>

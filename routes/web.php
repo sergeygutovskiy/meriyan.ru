@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Tours\Tour;
+use Illuminate\Http\Request;
+
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\TagController;
+
+use App\Models\Tours\Tour;
+use App\Models\Requests\TourSelection;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +42,15 @@ Route::get('/about', function () {
 
 Route::get('/contacts', function () { return view('pages.contacts'); })->name("contacts");
 Route::get('/search', function () { return view('pages.search'); })->name("search");
+
+
+Route::post("/requests/tour-selections", function (Request $request) {
+    $req = TourSelection::create([
+        'name' => $request->input('name'),
+        'phone' => $request->input('phone'),
+        'email' => $request->input('email'),
+        'wishes' => $request->input('wishes')
+    ]);
+
+    return "OK";
+});
