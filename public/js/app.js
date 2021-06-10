@@ -1923,6 +1923,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Form)
 /* harmony export */ });
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1932,7 +1938,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var Form = /*#__PURE__*/function () {
-  function Form(id, submit_action) {
+  function Form(el, endpoint_url, request_params) {
     var _this = this;
 
     _classCallCheck(this, Form);
@@ -1941,23 +1947,80 @@ var Form = /*#__PURE__*/function () {
 
     _defineProperty(this, "submit_btn_el", null);
 
-    _defineProperty(this, "submit_action", null);
+    _defineProperty(this, "endpoint_url", null);
 
-    this.el = document.getElementById(id);
-    this.submit_action = submit_action;
+    _defineProperty(this, "request_params", null);
+
+    this.el = el;
     this.submit_btn_el = this.el.getElementsByClassName("m-form-submit")[0];
     this.el.addEventListener("submit", function (e) {
       e.preventDefault();
-      console.log("Submited 1 !!!");
 
-      _this.submit(e);
+      _this.on_submit(e);
     });
+    this.endpoint_url = endpoint_url;
+    this.request_params = request_params;
   }
 
   _createClass(Form, [{
-    key: "submit",
-    value: function submit(e) {
-      this.submit_action(e, this.el);
+    key: "on_submit",
+    value: function on_submit(e) {
+      var _this2 = this;
+
+      this.el.classList.remove("success");
+
+      var _iterator = _createForOfIteratorHelper(this.el.elements),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var input = _step.value;
+          input.classList.remove("error");
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      var post_params = {};
+
+      var _iterator2 = _createForOfIteratorHelper(this.request_params),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var param = _step2.value;
+          post_params[param.name] = param.input.value;
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+
+      axios.post(this.endpoint_url, post_params).then(function (response) {
+        console.log(response);
+
+        _this2.el.classList.remove("success");
+
+        _this2.el.offsetHeight; // reflow 
+
+        _this2.el.classList.add("success");
+
+        _this2.el.reset();
+      })["catch"](function (error) {
+        if (error.response.status == 400) {
+          var data = error.response.data;
+          console.log(data);
+
+          for (var _i = 0, _Object$keys = Object.keys(data); _i < _Object$keys.length; _i++) {
+            var input = _Object$keys[_i];
+
+            _this2.el.elements[input].classList.add("error");
+          }
+        }
+      });
     }
   }]);
 
@@ -2575,33 +2638,51 @@ window._grid_breakpoints = {
   xl: 1200,
   xxl: 1400
 };
-document.addEventListener("DOMContentLoaded", function (e) {
-  window.app = {};
-  window.app.config = {};
-  window.app.navigation = new _includes_Navigation__WEBPACK_IMPORTED_MODULE_0__.default();
-  window.app.fade = new _includes_Fade__WEBPACK_IMPORTED_MODULE_2__.default();
-  window.app.modal_fade_manager = new _includes_ModalFadeManager__WEBPACK_IMPORTED_MODULE_3__.default(window.app.fade); // init default modals
-  // 1
+window.app = {};
+window.app.config = {};
+window.app.navigation = new _includes_Navigation__WEBPACK_IMPORTED_MODULE_0__.default();
+window.app.fade = new _includes_Fade__WEBPACK_IMPORTED_MODULE_2__.default();
+window.app.modal_fade_manager = new _includes_ModalFadeManager__WEBPACK_IMPORTED_MODULE_3__.default(window.app.fade); // init default modals
+// 1
 
-  var modal_el = document.getElementById("modal-help-chose-tour");
-  var modal_trigger_els = document.getElementsByClassName("m-tour-card__booking-btn");
-  var modal = new _includes_Modal__WEBPACK_IMPORTED_MODULE_1__.default(modal_el, modal_trigger_els);
-  window.app.modal_fade_manager.add_modal(modal); // let form1 = new Form("form-help-chose-tour", function(event, form) {
-  //     console.log(form.elements);
-  //     axios.post('/requests/tour-selections', {
-  //         name: form.elements.name.value,
-  //         phone: form.elements.phone.value,
-  //         email: form.elements.email.value,
-  //         wishes: form.elements.wishes.value
-  //     })
-  //     .then(function (response) {
-  //         console.log(response);
-  //     })
-  //     .catch(function (error) {
-  //         console.log(error);
-  //     });
-  // });
-});
+var modal_el = document.getElementById("modal-tour-booking");
+var modal_trigger_els = document.getElementsByClassName("m-tour-card__booking-btn");
+var modal = new _includes_Modal__WEBPACK_IMPORTED_MODULE_1__.default(modal_el, modal_trigger_els);
+window.app.modal_fade_manager.add_modal(modal); // init forms
+// 1
+
+var footer_form_el = document.getElementById("footer-form");
+var footer_form = null;
+
+if (footer_form_el) {
+  footer_form = new _includes_Form__WEBPACK_IMPORTED_MODULE_4__.default(footer_form_el, "/requests/questions", [{
+    name: "name",
+    input: footer_form_el.elements.name
+  }, {
+    name: "email",
+    input: footer_form_el.elements.email
+  }, {
+    name: "question",
+    input: footer_form_el.elements.question
+  }]);
+} // 2
+
+
+var booking_form_el = document.getElementById("tour-booking-form");
+var booking_form = null;
+
+if (booking_form_el) {
+  booking_form = new _includes_Form__WEBPACK_IMPORTED_MODULE_4__.default(booking_form_el, "/requests/tour-bookings", [{
+    name: "name",
+    input: booking_form_el.elements.name
+  }, {
+    name: "email",
+    input: booking_form_el.elements.email
+  }, {
+    name: "phone",
+    input: booking_form_el.elements.phone
+  }]);
+}
 })();
 
 /******/ })()

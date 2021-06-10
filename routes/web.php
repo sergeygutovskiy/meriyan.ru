@@ -1,13 +1,16 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\TagController;
 
 use App\Models\Tours\Tour;
 use App\Models\Requests\TourSelection;
+use App\Models\Requests\Question;
+use App\Models\Requests\TourBooking;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,11 +48,75 @@ Route::get('/search', function () { return view('pages.search'); })->name("searc
 
 
 Route::post("/requests/tour-selections", function (Request $request) {
+    $validator = Validator::make($request->all(), [
+        'name' => 'required',
+        'phone' => 'required',
+        'email' => 'required|email',
+        'wishes' => ''
+    ], $messages = [
+        'name.required' => 'Пожалуйста, укажите ваше имя',
+        'phone.required' => 'Пожалуйста, укажите ваш телефон',
+        'email.required' => 'Пожалуйста, укажите вашу почту',
+        'email.email' => 'Почта некоретна'
+    ]);
+    
+    if ($validator->fails()) {    
+        return response()->json($validator->messages(),  Response::HTTP_BAD_REQUEST);
+    }
+
     $req = TourSelection::create([
         'name' => $request->input('name'),
         'phone' => $request->input('phone'),
         'email' => $request->input('email'),
-        'wishes' => $request->input('wishes')
+        'wishes' => strlen($request->input('wishes')) ? $request->input('wishes') : ''
+    ]);
+
+    return "OK";
+});
+
+Route::post("/requests/questions", function (Request $request) {
+    $validator = Validator::make($request->all(), [
+        'name' => 'required',
+        'email' => 'required|email',
+        'question' => ''
+    ], $messages = [
+        'name.required' => 'Пожалуйста, укажите ваше имя',
+        'email.required' => 'Пожалуйста, укажите вашу почту',
+        'email.email' => 'Почта некоретна'
+    ]);
+    
+    if ($validator->fails()) {    
+        return response()->json($validator->messages(),  Response::HTTP_BAD_REQUEST);
+    }
+
+    $req = Question::create([
+        'name' => $request->input('name'),
+        'email' => $request->input('email'),
+        'question' => strlen($request->input('question')) ? $request->input('question') : ''
+    ]);
+
+    return "OK";
+});
+
+Route::post("/requests/tour-bookings", function (Request $request) {
+    $validator = Validator::make($request->all(), [
+        'name' => 'required',
+        'phone' => 'required',
+        'email' => 'required|email',
+    ], $messages = [
+        'name.required' => 'Пожалуйста, укажите ваше имя',
+        'phone.required' => 'Пожалуйста, укажите ваш телефон',
+        'email.required' => 'Пожалуйста, укажите вашу почту',
+    ]);
+    
+    if ($validator->fails()) {    
+        return response()->json($validator->messages(),  Response::HTTP_BAD_REQUEST);
+    }
+
+    $req = TourBooking::create([
+        'name' => $request->input('name'),
+        'phone' => $request->input('phone'),
+        'email' => $request->input('email'),
     ]);
 
     return "OK";

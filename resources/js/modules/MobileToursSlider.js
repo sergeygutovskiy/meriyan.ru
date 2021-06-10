@@ -2,7 +2,7 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 
 Swiper.use([Navigation, Pagination]);
 
-export default class MobileTourSlider {
+export default class MobileToursSlider {
     id = null;
     
     swiper_container_el = null;

@@ -2,6 +2,124 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./resources/js/includes/Form.js":
+/*!***************************************!*\
+  !*** ./resources/js/includes/Form.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Form)
+/* harmony export */ });
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Form = /*#__PURE__*/function () {
+  function Form(el, endpoint_url, request_params) {
+    var _this = this;
+
+    _classCallCheck(this, Form);
+
+    _defineProperty(this, "el", null);
+
+    _defineProperty(this, "submit_btn_el", null);
+
+    _defineProperty(this, "endpoint_url", null);
+
+    _defineProperty(this, "request_params", null);
+
+    this.el = el;
+    this.submit_btn_el = this.el.getElementsByClassName("m-form-submit")[0];
+    this.el.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      _this.on_submit(e);
+    });
+    this.endpoint_url = endpoint_url;
+    this.request_params = request_params;
+  }
+
+  _createClass(Form, [{
+    key: "on_submit",
+    value: function on_submit(e) {
+      var _this2 = this;
+
+      this.el.classList.remove("success");
+
+      var _iterator = _createForOfIteratorHelper(this.el.elements),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var input = _step.value;
+          input.classList.remove("error");
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      var post_params = {};
+
+      var _iterator2 = _createForOfIteratorHelper(this.request_params),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var param = _step2.value;
+          post_params[param.name] = param.input.value;
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+
+      axios.post(this.endpoint_url, post_params).then(function (response) {
+        console.log(response);
+
+        _this2.el.classList.remove("success");
+
+        _this2.el.offsetHeight; // reflow 
+
+        _this2.el.classList.add("success");
+
+        _this2.el.reset();
+      })["catch"](function (error) {
+        if (error.response.status == 400) {
+          var data = error.response.data;
+          console.log(data);
+
+          for (var _i = 0, _Object$keys = Object.keys(data); _i < _Object$keys.length; _i++) {
+            var input = _Object$keys[_i];
+
+            _this2.el.elements[input].classList.add("error");
+          }
+        }
+      });
+    }
+  }]);
+
+  return Form;
+}();
+
+
+
+/***/ }),
+
 /***/ "./resources/js/includes/Modal.js":
 /*!****************************************!*\
   !*** ./resources/js/includes/Modal.js ***!
@@ -148,7 +266,7 @@ var Modal = /*#__PURE__*/function () {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ MobileTourSlider)
+/* harmony export */   "default": () => (/* binding */ MobileToursSlider)
 /* harmony export */ });
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/core/core-class.js");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/navigation/navigation.js");
@@ -164,9 +282,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 swiper__WEBPACK_IMPORTED_MODULE_0__.default.use([swiper__WEBPACK_IMPORTED_MODULE_1__.default, swiper__WEBPACK_IMPORTED_MODULE_2__.default]);
 
-var MobileTourSlider = /*#__PURE__*/function () {
-  function MobileTourSlider(id) {
-    _classCallCheck(this, MobileTourSlider);
+var MobileToursSlider = /*#__PURE__*/function () {
+  function MobileToursSlider(id) {
+    _classCallCheck(this, MobileToursSlider);
 
     _defineProperty(this, "id", null);
 
@@ -193,7 +311,7 @@ var MobileTourSlider = /*#__PURE__*/function () {
     window.addEventListener("resize", this.on_document_resized);
   }
 
-  _createClass(MobileTourSlider, [{
+  _createClass(MobileToursSlider, [{
     key: "on_document_resized",
     value: function on_document_resized() {
       if (document.documentElement.clientWidth < window._grid_breakpoints.sm && !this.is_swiper_slider_created) {
@@ -241,7 +359,7 @@ var MobileTourSlider = /*#__PURE__*/function () {
     }
   }]);
 
-  return MobileTourSlider;
+  return MobileToursSlider;
 }();
 
 
@@ -255,21 +373,45 @@ var MobileTourSlider = /*#__PURE__*/function () {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _includes_Modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../includes/Modal */ "./resources/js/includes/Modal.js");
-/* harmony import */ var _modules_MobileToursSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/MobileToursSlider */ "./resources/js/modules/MobileToursSlider.js");
+/* harmony import */ var _includes_Form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../includes/Form */ "./resources/js/includes/Form.js");
+/* harmony import */ var _includes_Modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../includes/Modal */ "./resources/js/includes/Modal.js");
+/* harmony import */ var _modules_MobileToursSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/MobileToursSlider */ "./resources/js/modules/MobileToursSlider.js");
 
- // const tours_slider_mobile = require("../modules/tours_slider_modile");
+
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  // tours_slider_mobile.init("tours-slider");
-  // init mobile tours sldier
-  var tours_slider = new _modules_MobileToursSlider__WEBPACK_IMPORTED_MODULE_1__.default("tours-slider"); // init modals
+  // init header's learn more button for smooth scrolling to first section
+  var learn_more_btn = document.body.getElementsByTagName("header")[0];
+  learn_more_btn.addEventListener("click", function (e) {
+    window.scrollTo({
+      top: learn_more_btn.getBoundingClientRect().bottom,
+      behavior: "smooth"
+    });
+  }); // init mobile tours sldier
+
+  var tours_slider = new _modules_MobileToursSlider__WEBPACK_IMPORTED_MODULE_2__.default("tours-slider"); // init modals
   // 1
 
   var modal_el = document.getElementById("modal-help-chose-tour");
   var modal_trigger_els = [document.getElementById("trigger-modal-help-chose-tour")];
-  var modal = new _includes_Modal__WEBPACK_IMPORTED_MODULE_0__.default(modal_el, modal_trigger_els);
-  window.app.modal_fade_manager.add_modal(modal);
+  var modal = new _includes_Modal__WEBPACK_IMPORTED_MODULE_1__.default(modal_el, modal_trigger_els);
+  window.app.modal_fade_manager.add_modal(modal); // init forms
+  // 1
+
+  var form_el = document.getElementById("form-help-chose-tour");
+  var form = new _includes_Form__WEBPACK_IMPORTED_MODULE_0__.default(form_el, "/requests/tour-selections", [{
+    name: "name",
+    input: form_el.elements.name
+  }, {
+    name: "phone",
+    input: form_el.elements.phone
+  }, {
+    name: "email",
+    input: form_el.elements.email
+  }, {
+    name: "wishes",
+    input: form_el.elements.wishes
+  }]);
 });
 
 /***/ }),

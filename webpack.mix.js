@@ -23,6 +23,8 @@ mix
     .sass('resources/scss/pages/about.scss', 'public/css/pages')
     .js('resources/js/pages/about.js', 'public/js/pages')
     
+    .js('resources/js/pages/tours.js', 'public/js/pages')
+
     .sass('resources/scss/pages/contacts.scss', 'public/css/pages')
     
     .js('resources/js/app.js', 'public/js')

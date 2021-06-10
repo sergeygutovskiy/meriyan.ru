@@ -2,81 +2,109 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./resources/js/modules/tours_slider_modile.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/modules/tours_slider_modile.js ***!
-  \*****************************************************/
+/***/ "./resources/js/modules/MobileToursSlider.js":
+/*!***************************************************!*\
+  !*** ./resources/js/modules/MobileToursSlider.js ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "init": () => (/* binding */ init)
+/* harmony export */   "default": () => (/* binding */ MobileToursSlider)
 /* harmony export */ });
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/core/core-class.js");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/navigation/navigation.js");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/pagination/pagination.js");
- // configure Swiper to use modules
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 swiper__WEBPACK_IMPORTED_MODULE_0__.default.use([swiper__WEBPACK_IMPORTED_MODULE_1__.default, swiper__WEBPACK_IMPORTED_MODULE_2__.default]);
-var swiper_container = null;
-var swiper_wrapper = null;
-var swiper_slides = [];
-var tours_slider = null;
-var id = null;
 
-function init(elem_id) {
-  id = elem_id;
-  swiper_container = document.getElementById(id);
-  swiper_wrapper = swiper_container.childNodes[1];
-  swiper_slides = Array.from(swiper_wrapper.childNodes).filter(function (e) {
-    return e.localName == "div";
-  });
-  document_resize_listener(id);
-  window.addEventListener("resize", document_resize_listener);
-}
+var MobileToursSlider = /*#__PURE__*/function () {
+  function MobileToursSlider(id) {
+    _classCallCheck(this, MobileToursSlider);
 
-function add_tours_slider() {
-  if (swiper_container.classList.contains("swiper-container")) return;
-  swiper_container.classList.add("swiper-container");
-  swiper_wrapper.classList.add("swiper-wrapper");
-  swiper_wrapper.classList.remove("row");
-  swiper_slides.forEach(function (slide) {
-    slide.classList.add("swiper-slide");
-    slide.classList.remove("col-sm");
-    slide.classList.remove("mb-6");
-  });
-  tours_slider = new swiper__WEBPACK_IMPORTED_MODULE_0__.default("#" + id, {
-    slidesPerView: "auto",
-    spaceBetween: 24,
-    pagination: {
-      el: '.m-tours-mobile-slider-pagination',
-      bulletClass: 'm-tours-mobile-slider-pagination__item',
-      bulletActiveClass: 'm-tours-mobile-slider-pagination__item--active',
-      clickable: true
-    }
-  });
-}
+    _defineProperty(this, "id", null);
 
-function remove_tours_slider() {
-  if (!swiper_container.classList.contains("swiper-container")) return;
-  swiper_container.classList.remove("swiper-container");
-  swiper_wrapper.classList.remove("swiper-wrapper");
-  swiper_wrapper.classList.add("row");
-  swiper_slides.forEach(function (slide) {
-    slide.classList.remove("swiper-slide");
-    slide.classList.add("col-sm");
-    slide.classList.add("mb-6");
-  });
-  tours_slider.destroy();
-}
+    _defineProperty(this, "swiper_container_el", null);
 
-function document_resize_listener() {
-  if (document.documentElement.clientWidth < window._grid_breakpoints.sm) {
-    add_tours_slider();
-  } else {
-    remove_tours_slider();
+    _defineProperty(this, "swiper_wrapper_el", null);
+
+    _defineProperty(this, "swiper_slide_els", []);
+
+    _defineProperty(this, "swiper_slider", null);
+
+    _defineProperty(this, "is_swiper_slider_created", false);
+
+    this.add_slider_to_dom = this.add_slider_to_dom.bind(this);
+    this.remove_slider_from_dom = this.remove_slider_from_dom.bind(this);
+    this.on_document_resized = this.on_document_resized.bind(this);
+    this.id = id;
+    this.swiper_container_el = document.getElementById(id);
+    this.swiper_wrapper_el = this.swiper_container_el.childNodes[1];
+    this.swiper_slide_els = Array.from(this.swiper_wrapper_el.childNodes).filter(function (e) {
+      return e.localName == "div";
+    });
+    this.on_document_resized();
+    window.addEventListener("resize", this.on_document_resized);
   }
-}
+
+  _createClass(MobileToursSlider, [{
+    key: "on_document_resized",
+    value: function on_document_resized() {
+      if (document.documentElement.clientWidth < window._grid_breakpoints.sm && !this.is_swiper_slider_created) {
+        this.add_slider_to_dom();
+      } else if (document.documentElement.clientWidth >= window._grid_breakpoints.sm && this.is_swiper_slider_created) {
+        this.remove_slider_from_dom();
+      }
+    }
+  }, {
+    key: "add_slider_to_dom",
+    value: function add_slider_to_dom() {
+      this.is_swiper_slider_created = true;
+      this.swiper_container_el.classList.add("swiper-container");
+      this.swiper_wrapper_el.classList.add("swiper-wrapper");
+      this.swiper_wrapper_el.classList.remove("row");
+      this.swiper_slide_els.forEach(function (slide) {
+        slide.classList.add("swiper-slide");
+        slide.classList.remove("col-sm");
+        slide.classList.remove("mb-6");
+      });
+      this.swiper_slider = new swiper__WEBPACK_IMPORTED_MODULE_0__.default("#" + this.id, {
+        slidesPerView: "auto",
+        spaceBetween: 24,
+        pagination: {
+          el: '.m-tours-mobile-slider-pagination',
+          bulletClass: 'm-tours-mobile-slider-pagination__item',
+          bulletActiveClass: 'm-tours-mobile-slider-pagination__item--active',
+          clickable: true
+        }
+      });
+    }
+  }, {
+    key: "remove_slider_from_dom",
+    value: function remove_slider_from_dom() {
+      this.is_swiper_slider_created = false;
+      this.swiper_container_el.classList.remove("swiper-container");
+      this.swiper_wrapper_el.classList.remove("swiper-wrapper");
+      this.swiper_wrapper_el.classList.add("row");
+      this.swiper_slide_els.forEach(function (slide) {
+        slide.classList.remove("swiper-slide");
+        slide.classList.add("col-sm");
+        slide.classList.add("mb-6");
+      });
+      this.swiper_slider.destroy();
+    }
+  }]);
+
+  return MobileToursSlider;
+}();
 
 
 
@@ -7969,18 +7997,17 @@ var __webpack_exports__ = {};
   !*** ./resources/js/pages/about.js ***!
   \*************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/core/core-class.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/core/core-class.js");
+/* harmony import */ var _modules_MobileToursSlider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/MobileToursSlider */ "./resources/js/modules/MobileToursSlider.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
-var tours_slider_mobile = __webpack_require__(/*! ../modules/tours_slider_modile */ "./resources/js/modules/tours_slider_modile.js");
-
 document.addEventListener("DOMContentLoaded", function (event) {
   var _breakpoints;
 
-  tours_slider_mobile.init("tours-slider");
-  var reviews_slider = new swiper__WEBPACK_IMPORTED_MODULE_0__.default("#reviews-slider", {
+  var tours_slider = new _modules_MobileToursSlider__WEBPACK_IMPORTED_MODULE_0__.default("tours-slider");
+  var reviews_slider = new swiper__WEBPACK_IMPORTED_MODULE_1__.default("#reviews-slider", {
     slidesPerView: 'auto',
     centeredSlides: false,
     loop: true,

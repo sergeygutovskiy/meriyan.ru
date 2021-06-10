@@ -1,9 +1,8 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
-
-const tours_slider_mobile = require("../modules/tours_slider_modile");
+import MobileToursSlider from '../modules/MobileToursSlider';
 
 document.addEventListener("DOMContentLoaded", function(event) { 
-    tours_slider_mobile.init("tours-slider");
+    let tours_slider = new MobileToursSlider("tours-slider");
 
     const reviews_slider = new Swiper("#reviews-slider", {
         slidesPerView: 'auto',

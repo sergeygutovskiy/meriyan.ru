@@ -1,6 +1,7 @@
 {
     "/js/pages/home.js": "/js/pages/home.js",
     "/js/pages/about.js": "/js/pages/about.js",
+    "/js/pages/tours.js": "/js/pages/tours.js",
     "/js/app.js": "/js/app.js",
     "/css/pages/home.css": "/css/pages/home.css",
     "/css/fonts.css": "/css/fonts.css",

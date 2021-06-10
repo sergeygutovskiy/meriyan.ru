@@ -210,12 +210,58 @@
         </section>
 
         <section class="container u-page-margin">
-            <x-form.form-section
-                title="Lorem Ipsum"
-                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                Donec nec neque vel diam hendrerit ultrices non quis ante."
-            />
+            <div class="row">
+                <div 
+                    class="col-12 col-lg pr-4 
+                        d-flex flex-column justify-content-center 
+                        u-text_color_white"
+                    >
+                    <h2>
+                        Lorem Ipsum
+                    </h2>
+                    <p class="u-text_size_28">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
+                        Donec nec neque vel diam hendrerit ultrices non quis ante.
+                    </p>
+                </div>
+                <div class="col-12 col-lg d-flex justify-content-lg-end mt-6 mt-lg-0">
+                    <form class="m-form m-form__theme_text ph-4 pv-6" id="tour-booking-form">
+                        <div class="mb-4">
+                            <input 
+                                class="m-form-input" 
+                                type="text"
+                                name="name" 
+                                placeholder="Ваше имя"
+                                >
+                        </div>
+                        <div class="mb-4">
+                            <input 
+                                class="m-form-input" 
+                                type="text" 
+                                name="email"
+                                placeholder="Ваш E-mail"
+                                >
+                        </div>
+                        <div class="mb-4">
+                            <input 
+                                class="m-form-input" 
+                                type="text" 
+                                name="phone"
+                                placeholder="Ваш телефон"
+                                >
+                        </div>
+                        <div class="mb-4 m-form__success-text">
+                            <p class="u-text_color_green-light">
+                                Спасибо, заявка принята. Мы свяжемся с вами в ближайшее время
+                            </p>
+                        </div>
+                        <div>
+                            <button class="m-form-button u-btn u-btn_size_big u-btn_theme_green">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <div class="u-page-padding"></div>

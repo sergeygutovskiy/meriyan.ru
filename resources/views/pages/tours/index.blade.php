@@ -29,21 +29,21 @@
                 </div>
                 <div class="row mb-4 mb-lg-8">
                     <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-start mb-4 mb-lg-0">
-                        <a class="u-btn u-btn_size_big u-btn_theme_transparent" href="#tag1">
+                        <button class="u-btn u-btn_size_big u-btn_theme_transparent">
                             {{ $tag1->name }}
-                        </a>
+                        </button>
                     </div>
                     <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end">
-                        <a class="u-btn u-btn_size_big u-btn_theme_transparent" href="#tag2">
+                        <button class="u-btn u-btn_size_big u-btn_theme_transparent">
                             {{ $tag2->name }}
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col">
-                        <a class="u-btn u-btn_size_big u-btn_theme_transparent" href="#tag3">
+                        <button class="u-btn u-btn_size_big u-btn_theme_transparent">
                             {{ $tag3->name }}
-                        </a>
+                        </button>
                     </div>
                 </div>
             <div>
@@ -146,4 +146,8 @@
 
         <div class="u-page-padding"></div>
     </div>
+@endsection
+
+@section('scripts')
+    <script src="/js/pages/tours.js"></script>
 @endsection

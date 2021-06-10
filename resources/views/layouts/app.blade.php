@@ -26,10 +26,12 @@
 
     <main>
         @yield('content')    
+    
+        @include('includes/tour-booking-modal')
+        @include('includes/fade')
     </main>
 
     @include('includes/footer')
-    @include('includes/fade')
 
     <script src="/js/app.js"></script>
 
