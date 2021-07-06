@@ -98,6 +98,33 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="mb-3">
+                        <h3>PDF документ</h3>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Стоимость по скидке</label>
+                            <div class="input-group">
+                                <select class="form-select" v-model="is_document">
+                                    <option :value="false" :selected="!is_document">
+                                        Нет
+                                    </option>
+                                    <option :value="true" :selected="is_document">
+                                        Есть
+                                    </option>
+                                </select>
+                                <input type="file"
+                                    class="form-control"
+                                    ref="document_file"
+                                    :disabled="!is_document"
+                                    @change="document_file_changed"
+                                    >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="mb-3">
                         <h3>Категории</h3>
                     </div>
                     <div class="input-group mb-3">
@@ -269,7 +296,8 @@ export default {
                     people: 1,
                     season: null,
                     complexity: null,
-                    video_href: ''
+                    video_href: '',
+                    document: null,
                 },
 
                 tags: [],
@@ -278,6 +306,7 @@ export default {
             },
 
             is_price_discount: false,
+            is_document: false,
 
             tags: [],
             tag_to_add: null,
@@ -308,6 +337,13 @@ export default {
     watch: {
         'is_price_discount': function (val) {
            if (!this.is_price_discount) this.tour.price_discount = null;
+        },
+
+        'is_document': function (val) {
+            if (!this.is_document) {
+                this.tour.info.document = null;
+                this.$refs.document_file.value = null;
+            }
         }
     },
 
@@ -395,6 +431,10 @@ export default {
             this.tour.image_path = URL.createObjectURL(this.tour.image);
         },
 
+        document_file_changed(event) {
+            this.tour.info.document = event.target.files[0];
+        },
+
         add_service() {
             this.tour.services.push({
                 key: Date.now(),
@@ -433,6 +473,7 @@ export default {
             form_data.append('info_complexity', this.tour.info.complexity);
             form_data.append('info_description', this.tour.info.description);
             form_data.append('info_video', this.tour.info.video_href);
+            form_data.append('info_document', this.tour.info.document);
 
             // tour tags foreign ids
             form_data.append('tags', JSON.stringify( this.tour.tags.map(t => { return t.id; }) ) );

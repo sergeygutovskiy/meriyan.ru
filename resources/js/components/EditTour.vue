@@ -94,6 +94,42 @@
                 <strong>Отлично</strong> Данные обновлены
             </div>
 
+            <form class="card mb-4" @submit="document_form_submited">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h3 class="">PDF документ</h3>
+                    </div>
+                    <div class="input-group">
+                        <select class="form-select" v-model="is_document">
+                            <option :value="false" :selected="!is_document">
+                                Нет
+                            </option>
+                            <option :value="true" :selected="is_document">
+                                Есть
+                            </option>
+                        </select>
+                        <input type="file"
+                            class="form-control"
+                            ref="document_file"
+                            :disabled="!is_document"
+                            @change="document_file_changed"
+                            >
+                    </div>
+                    <div v-if="info.document_path" class="mt-3">
+                        <a :href="'/images/storage/tours/' + id + '/' + info.document_path" target="_blank">
+                            Посмотреть
+                        </a>
+                    </div>
+                    <div class="mt-3">
+                        <button class="btn btn-success" type="submit">Обновить</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="alert alert-success alert-dismissible fade show mb-4" role="alert" v-if="document_form_updated == true">
+                <strong>Отлично</strong> Данные обновлены
+            </div>
+
             <form class="card mb-4" @submit="tags_form_submited">
                 <div class="card-body">
                     <div class="mb-3">
@@ -219,6 +255,9 @@ export default {
             new_image_path: '',
             is_price_discount: false,
 
+            is_document: false,
+            document: null,
+
             tags: [],
             tag_to_add: null,
 
@@ -233,12 +272,20 @@ export default {
             info_form_updated: null,
             tags_form_updated: null,
             locations_form_updated: null,
+            document_form_updated: null
         }
     },
 
     watch: {
         'is_price_discount': function (val) {
            if (!this.is_price_discount) this.tour.discount_price = null;
+        },
+
+        'is_document': function (val) {
+            if (!this.is_document) {
+                this.document = null;
+                this.$refs.document_file.value = null;
+            }
         }
     },
 
@@ -250,6 +297,7 @@ export default {
                 this.info = response.data.info;
 
                 this.is_price_discount = (this.tour.discount_price != null);
+                this.is_document = (this.info.document_path != null);
             } catch (error) {
                 console.error(error);
             }
@@ -275,6 +323,10 @@ export default {
         tour_image_changed(event) {
             this.new_image = event.target.files[0];
             this.new_image_path = URL.createObjectURL(this.new_image);
+        },
+
+        document_file_changed(event) {
+            this.document = event.target.files[0];
         },
 
         location_image_changed(event) {
@@ -331,6 +383,7 @@ export default {
             this.info_form_updated = null;
             this.tags_form_updated = null;
             this.locations_form_updated = null;
+            this.document_form_updated = null;
 
             const form_data = new FormData();
             form_data.append('title', this.tour.title);
@@ -349,6 +402,7 @@ export default {
             this.info_form_updated = null;
             this.tags_form_updated = null;
             this.locations_form_updated = null;
+            this.document_form_updated = null;
 
             const form_data = new FormData();
             form_data.append('description', this.info.description);
@@ -366,6 +420,7 @@ export default {
             this.info_form_updated = null;
             this.tags_form_updated = null;
             this.locations_form_updated = null;
+            this.document_form_updated = null;
 
             const form_data = new FormData();
             form_data.append('tags', JSON.stringify( this.tour.tags.map(t => { return t.id; }) ));
@@ -380,6 +435,7 @@ export default {
             this.info_form_updated = null;
             this.tags_form_updated = null;
             this.locations_form_updated = null;
+            this.document_form_updated = null;
 
             const form_data = new FormData();
             
@@ -402,6 +458,21 @@ export default {
             form_data.append('locations', JSON.stringify(new_locations));
 
             this.send_locations_form(form_data);
+        },
+
+        document_form_submited(event) {
+            event.preventDefault();
+
+            this.main_form_updated = null;
+            this.info_form_updated = null;
+            this.tags_form_updated = null;
+            this.locations_form_updated = null;
+            this.document_form_updated = null;
+
+            const form_data = new FormData();
+            form_data.append('document', this.document);
+
+            this.send_document_form(form_data);
         },
 
         async send_main_form(form_data) {
@@ -450,6 +521,19 @@ export default {
                 let response = await axios.post('/api/tours/' + this.id, form_data);
                 if (response.data.status == 1) {
                     this.locations_form_updated = true;
+                }
+            } catch(error) {
+
+            }
+        },
+
+        async send_document_form(form_data) {
+            form_data.append('method', 'document');
+            
+            try {
+                let response = await axios.post('/api/tours/' + this.id, form_data);
+                if (response.data.status == 1) {
+                    this.document_form_updated = true;
                 }
             } catch(error) {
 

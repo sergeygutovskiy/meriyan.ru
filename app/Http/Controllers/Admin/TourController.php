@@ -71,6 +71,16 @@ class TourController extends Controller
         $info_duration = $request->input('info_duration');
         $info_video = $request->input('info_video');
 
+        $document = $request->info_document == 'null' ? null : $request->info_document;
+
+        if ($document != null)
+        {
+            Storage::disk('public_images')->put(
+                $tour->local_storage_path . 'document.' . $document->extension(), 
+                file_get_contents($document->getRealPath())
+            );
+        }
+
         $info_complexity = $request->input('info_complexity');
         $info_season = $request->input('info_season');
 
@@ -80,7 +90,8 @@ class TourController extends Controller
             'duration' => $info_duration,
             'video_path' => $info_video,
             'season_id' => $info_season,
-            'complexity_id' => $info_complexity
+            'complexity_id' => $info_complexity,
+            'document_path' => $document == null ? null : 'document.' . $document->extension()
         ]);
 
         // create and attach locations to tour info
@@ -133,6 +144,7 @@ class TourController extends Controller
         else if ($request->input('method') == 'info') return $this->update_info($request, $tour);
         else if ($request->input('method') == 'tags') return $this->update_tags($request, $tour);
         else if ($request->input('method') == 'locations') return $this->update_locations($request, $tour);
+        else if ($request->input('method') == 'document') return $this->update_document($request, $tour);
     }
 
     public function update_main(Request $request, Tour $tour)
@@ -223,6 +235,36 @@ class TourController extends Controller
                     'image_path' => $file_name
                 ]);
             }
+        }
+
+        return json_encode(['status' => 1]);
+    }
+
+    public function update_document(Request $request, Tour $tour)
+    {
+        $document = $request->document == 'null' ? null : $request->document;
+
+        if ($tour->info->document_path != null)
+        {
+            Storage::disk('public_images')->delete($tour->local_storage_path . $tour->info->document_path);
+        }
+
+        if ($document == null)
+        {
+            $tour->info->update([
+                'document_path' => null
+            ]);
+        }
+        else
+        {
+            Storage::disk('public_images')->put(
+                $tour->local_storage_path . 'document.' . $document->extension(), 
+                file_get_contents($document->getRealPath())
+            );
+
+            $tour->info->update([
+                'document_path' => 'document.' . $document->extension()
+            ]);
         }
 
         return json_encode(['status' => 1]);

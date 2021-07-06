@@ -170,14 +170,18 @@
                                 </h3>
                             </div>
                         </div>
+                        @if ($tour->info->document_path != null)
                         <div class="col-12 col-md-6 mt-4 mt-md-0">
                             <div class="m-tour-info-bottom-panel m-tour-info-bottom-panel_theme_green d-flex align-items-center">
                                 <img src="/images/static/pdf.svg" width="56" height="80">
                                 <h3 class="pl-4">
-                                    <a href="">Посмотреть полную программу тура</a>
+                                    <a href="{{ $tour->info->document_src }}" target="_blank">
+                                        Посмотреть полную программу тура
+                                    </a>
                                 </h3>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

@@ -18,8 +18,14 @@ class TourInfo extends Model
         'description',
         'video_path',
         'season_id',
-        'complexity_id'
+        'complexity_id',
+        'document_path'
     ];
+
+    public function getDocumentSrcAttribute()
+    {
+        return  '/images/storage' . $this->tour->local_storage_path . $this->document_path;
+    }
 
     public function tour()
     {
