@@ -11,8 +11,24 @@ class Tour extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title', 
+        'description', 
+        'price', 
+        'discount_price', 
+        'image_path'
+    ];
     
-    
+    public function getLocalStoragePathAttribute()
+    {
+        return '/tours/' . $this->id . '/';
+    }
+
+    public function getImageSrcAttribute()
+    {
+        return  '/images/storage/' . $this->local_storage_path . $this->image_path;
+    }
+
     public function info()
     {
         return $this->hasOne(TourInfo::class, 'tour_id');

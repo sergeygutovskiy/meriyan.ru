@@ -9,7 +9,7 @@
     <div class="u-page-background u-page-background-top offset_2">
         <img 
             class="u-page-background__image"
-            src="{{ $tour->image_path }}"
+            src="{{ $tour->image_src }}"
             >
 
         <header class="u-page-header u-page-header_size_100vh">
@@ -130,7 +130,7 @@
                             : 
                             'col-12 col-lg-7 col-xl-5'
                         }} m-tour-info-location__image-wrapper">
-                        <img class="m-tour-info-location__image" src="{{ $location->image_path }}">
+                        <img class="m-tour-info-location__image" src="{{ $location->image_src }}">
                     </div>
                     <div class="{{ 
                         $location->is_big ? 
@@ -153,7 +153,7 @@
     <div class="u-page-background u-page-background-bottom offset_1">
         <img 
             class="u-page-background__image"
-            src="{{ $tour->image_path }}"
+            src="{{ $tour->image_src }}"
             >
 
         <section class="container u-page-margin">

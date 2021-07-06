@@ -23,6 +23,22 @@ use App\Models\Requests\TourBooking;
 |
 */
 
+Route::prefix('admin')->group(function () {
+    Route::view('/',  'pages.admin');
+});
+
+Route::prefix('api')->group(function () {
+    Route::get('/tours', [ App\Http\Controllers\Admin\TourController::class, 'index' ]);
+    Route::post('/tours', [ App\Http\Controllers\Admin\TourController::class, 'store' ]);
+    Route::get('/tours/{id}', [ App\Http\Controllers\Admin\TourController::class, 'show' ]);
+    Route::post('/tours/{id}', [ App\Http\Controllers\Admin\TourController::class, 'update' ]);
+
+    Route::get('/tags', [ App\Http\Controllers\Admin\TagController::class, 'index' ]);
+
+    Route::get('/seasons', [ App\Http\Controllers\Admin\SeasonController::class, 'index' ]);
+
+    Route::get('/complexities', [ App\Http\Controllers\Admin\ComplexityController::class, 'index' ]);
+});
 
 Route::get("/tours", [ TourController::class, 'index' ]);
 

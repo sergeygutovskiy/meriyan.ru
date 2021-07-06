@@ -3,11 +3,13 @@
     "/js/pages/about.js": "/js/pages/about.js",
     "/js/pages/tours.js": "/js/pages/tours.js",
     "/js/app.js": "/js/app.js",
-    "/css/pages/home.css": "/css/pages/home.css",
+    "/js/admin.js": "/js/admin.js",
     "/css/fonts.css": "/css/fonts.css",
     "/css/app.css": "/css/app.css",
     "/css/main.css": "/css/main.css",
     "/css/reset.css": "/css/reset.css",
+    "/css/admin.css": "/css/admin.css",
     "/css/pages/contacts.css": "/css/pages/contacts.css",
-    "/css/pages/about.css": "/css/pages/about.css"
+    "/css/pages/about.css": "/css/pages/about.css",
+    "/css/pages/home.css": "/css/pages/home.css"
 }

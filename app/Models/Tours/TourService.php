@@ -10,6 +10,11 @@ class TourService extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'description',
+        'is_included_in_price'
+    ];
+
     protected static function newFactory()
     {
         return TourServiceFactory::new();

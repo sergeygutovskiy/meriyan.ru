@@ -28,4 +28,8 @@ mix
     .sass('resources/scss/pages/contacts.scss', 'public/css/pages')
     
     .js('resources/js/app.js', 'public/js')
+    
+    .sass('resources/scss/admin.scss', 'public/css')
+    .js('resources/js/admin.js', 'public/js')
+    .vue()
     ;

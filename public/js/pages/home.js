@@ -2206,6 +2206,18 @@ var scroll = shortcut('scroll');
 
 /***/ }),
 
+/***/ "./resources/scss/pages/home.scss":
+/*!****************************************!*\
+  !*** ./resources/scss/pages/home.scss ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/scss/pages/about.scss":
 /*!*****************************************!*\
   !*** ./resources/scss/pages/about.scss ***!
@@ -2222,6 +2234,18 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************!*\
   !*** ./resources/scss/pages/contacts.scss ***!
   \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/scss/admin.scss":
+/*!***********************************!*\
+  !*** ./resources/scss/admin.scss ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -2270,18 +2294,6 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************!*\
   !*** ./resources/scss/fonts.scss ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/scss/pages/home.scss":
-/*!****************************************!*\
-  !*** ./resources/scss/pages/home.scss ***!
-  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -8422,13 +8434,14 @@ function classesToSelector(classes) {
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/pages/home": 0,
-/******/ 			"css/pages/home": 0,
 /******/ 			"css/fonts": 0,
 /******/ 			"css/app": 0,
 /******/ 			"css/main": 0,
 /******/ 			"css/reset": 0,
+/******/ 			"css/admin": 0,
 /******/ 			"css/pages/contacts": 0,
-/******/ 			"css/pages/about": 0
+/******/ 			"css/pages/about": 0,
+/******/ 			"css/pages/home": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -8476,14 +8489,15 @@ function classesToSelector(classes) {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/pages/home","css/fonts","css/app","css/main","css/reset","css/pages/contacts","css/pages/about"], () => (__webpack_require__("./resources/js/pages/home.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/pages/home","css/fonts","css/app","css/main","css/reset","css/pages/contacts","css/pages/about"], () => (__webpack_require__("./resources/scss/reset.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/pages/home","css/fonts","css/app","css/main","css/reset","css/pages/contacts","css/pages/about"], () => (__webpack_require__("./resources/scss/main.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/pages/home","css/fonts","css/app","css/main","css/reset","css/pages/contacts","css/pages/about"], () => (__webpack_require__("./resources/scss/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/pages/home","css/fonts","css/app","css/main","css/reset","css/pages/contacts","css/pages/about"], () => (__webpack_require__("./resources/scss/fonts.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/pages/home","css/fonts","css/app","css/main","css/reset","css/pages/contacts","css/pages/about"], () => (__webpack_require__("./resources/scss/pages/home.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/pages/home","css/fonts","css/app","css/main","css/reset","css/pages/contacts","css/pages/about"], () => (__webpack_require__("./resources/scss/pages/about.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/pages/home","css/fonts","css/app","css/main","css/reset","css/pages/contacts","css/pages/about"], () => (__webpack_require__("./resources/scss/pages/contacts.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/js/pages/home.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/reset.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/main.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/fonts.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/pages/home.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/pages/about.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/pages/contacts.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/admin.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

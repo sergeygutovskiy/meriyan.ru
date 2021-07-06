@@ -1,6 +1,6 @@
 <article class="m-tour-card">
     <div class="m-tour-card__image-wrapper">
-        <img class="m-tour-card__image" src="{{ $tour->image_path }}">
+        <img class="m-tour-card__image" src="{{ $tour->image_src }}">
     </div>
     <div class="m-tour-card__content ph-4 pv-6">
         <div class="m-tour-card__tags">

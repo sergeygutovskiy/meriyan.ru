@@ -12,6 +12,20 @@ class TourInfo extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'people_amount',
+        'duration',
+        'description',
+        'video_path',
+        'season_id',
+        'complexity_id'
+    ];
+
+    public function tour()
+    {
+        return $this->belongsTo(Tour::class);
+    }
+
     public function complexity()
     {
         return $this->belongsTo(Complexity::class);
@@ -25,6 +39,11 @@ class TourInfo extends Model
     public function locations()
     {
         return $this->hasMany(TourLocation::class, 'tour_info_id');
+    }
+
+    public function services()
+    {
+        return $this->hasMany(TourService::class, 'tour_info_id');
     }
 
     public function services_in_price()
