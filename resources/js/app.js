@@ -1,10 +1,10 @@
 require('./bootstrap');
 
-import Navigation from './includes/Navigation';
-import Modal from './includes/Modal';
-import Fade from './includes/Fade';
+import Navigation       from './includes/Navigation';
+import Modal            from './includes/Modal';
+import Fade             from './includes/Fade';
 import ModalFadeManager from './includes/ModalFadeManager';
-import Form from './includes/Form';
+import Form             from './includes/Form';
 
 window._grid_breakpoints = {
     xs:  0,
@@ -25,8 +25,13 @@ window.app.modal_fade_manager = new ModalFadeManager(window.app.fade);
 // init default modals
 
 // 1
-let modal_el = document.getElementById("modal-tour-booking");
-let modal_trigger_els = document.getElementsByClassName("m-tour-card__booking-btn");
+let modal_el = document.getElementById('modal-tour-booking');
+let modal_trigger_els = document.getElementsByClassName('m-tour-card__booking-btn');
+for (let el of modal_trigger_els) {
+    el.addEventListener('click', function(event) {
+        document.getElementById('booking-form-tour-id').value = this.getAttribute('data-tour-id');
+    });
+}
 let modal = new Modal(modal_el, modal_trigger_els);
 
 window.app.modal_fade_manager.add_modal(modal);
@@ -34,31 +39,32 @@ window.app.modal_fade_manager.add_modal(modal);
 // init forms
 
 // 1
-let footer_form_el = document.getElementById("footer-form");
+let footer_form_el = document.getElementById('footer-form');
 let footer_form =  null;
 if (footer_form_el)
 {
     footer_form = new Form(
         footer_form_el,
-        "/requests/questions", [
-            { name: "name", input: footer_form_el.elements.name },
-            { name: "email", input: footer_form_el.elements.email },
-            { name: "question", input: footer_form_el.elements.question }
+        '/feedback/questions', [
+            { name: 'name', input: footer_form_el.elements.name },
+            { name: 'email', input: footer_form_el.elements.email },
+            { name: 'question', input: footer_form_el.elements.question }
         ]
     );
 }
 
 // 2
-let booking_form_el = document.getElementById("tour-booking-form");
+let booking_form_el = document.getElementById('tour-booking-form');
 let booking_form =  null;
 if (booking_form_el)
 {
     booking_form = new Form(
         booking_form_el,
-        "/requests/tour-bookings", [
-            { name: "name", input: booking_form_el.elements.name },
-            { name: "email", input: booking_form_el.elements.email },
-            { name: "phone", input: booking_form_el.elements.phone }
+        '/feedback/booking', [
+            { name: 'tour_id', input: booking_form_el.elements.tour_id },
+            { name: 'name', input: booking_form_el.elements.name },
+            { name: 'email', input: booking_form_el.elements.email },
+            { name: 'phone', input: booking_form_el.elements.phone }
         ]
     );
 }

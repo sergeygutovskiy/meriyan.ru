@@ -3,6 +3,8 @@
             <div class="row m-modal-container m-modal__fade-container">
                 <div class="col d-flex justify-content-center align-items-center m-modal__fade-container">
                     <form class="m-modal__content m-form m-form__theme_icon ph-2 pv-2 mv-6" id="tour-booking-form">
+                        <input name="tour_id" type="hidden" id="booking-form-tour-id">
+                        
                         <div class="d-flex justify-content-end">
                             <img class="m-modal__close-btn" src="/images/static/modal-close.svg">
                         </div>

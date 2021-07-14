@@ -8,15 +8,17 @@ use App\Models\Tours\Tour;
 class Card extends Component
 {
     public $tour;
-    
+    public $is_with_price;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(Tour $tour)
+    public function __construct(Tour $tour, $isWithPrice)
     {
         $this->tour = $tour;
+        $this->is_with_price = $isWithPrice;
     }
 
     /**

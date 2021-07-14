@@ -653,6 +653,35 @@ button.swiper-pagination-bullet {
   backface-visibility: hidden;
 }
 
+.home-header {
+  position: relative;
+}
+.home-header::before, .home-header::after {
+  content: "";
+  position: absolute;
+  width: 310px;
+  height: 380px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.home-header::before {
+  left: 0;
+  top: 0;
+  transform: translate(-90%, -30%);
+  background-image: url("/images/static/home-icon-left.svg");
+}
+.home-header::after {
+  right: 0;
+  bottom: 0;
+  transform: translate(90%, 30%);
+  background-image: url("/images/static/home-icon-right.svg");
+}
+
+@media screen and (max-width: 1400px) {
+  .home-header::before, .home-header::after {
+    display: none;
+  }
+}
 @media screen and (max-width: 576px) {
   .m-tours-mobile-slider {
     padding: 0;

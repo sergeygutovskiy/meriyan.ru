@@ -27,11 +27,28 @@
                 {{ $tour->description }}
             </p>
         </div>
+        @if ($is_with_price)
+        <div class="m-tour-card__price mt-n6 mb-n6">
+            <span class="u-text_size_24">
+                {{ $tour->price_formatted }}
+            </span>
+            @if ($tour->discount_price != null)
+            <span>
+                <del>{{ $tour->price_before_sale_formatted }}</del>
+            </span>
+            @endif
+        </div>
+        @endif
         <div class="m-tour-card__links">
             <a class="u-btn u-btn_size_small u-btn_theme_transparent ph-0 mr-1" 
                 href="{{ route('tour.show', ['tour' => $tour]) }}">Подробнее</a>
 
-            <a class="u-btn u-btn_size_small u-btn_theme_white ph-0 ml-1 m-tour-card__booking-btn">Хочу поехать</a>
+            <a 
+                data-tour-id="{{ $tour->id }}"
+                class="u-btn u-btn_size_small u-btn_theme_white ph-0 ml-1 m-tour-card__booking-btn"
+                >
+                Хочу поехать
+            </a>
         </div>
     </div>
 </article>

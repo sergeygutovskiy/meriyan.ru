@@ -21,7 +21,7 @@
         <header class="u-page-header u-page-header_size_100vh">
             <div class="container mt-auto mb-auto">
                 <div class="row justify-content-center text-center u-text_color_white">
-                    <div class="col-12 col-lg-7">
+                    <div class="home-header col-12 col-lg-7">
                         <h1 class="mb-7">Lorem Ipsum</h1>
                         <p class="u-text_size_28 mb-7">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 

@@ -89,8 +89,6 @@ var Form = /*#__PURE__*/function () {
       }
 
       axios.post(this.endpoint_url, post_params).then(function (response) {
-        console.log(response);
-
         _this2.el.classList.remove("success");
 
         _this2.el.offsetHeight; // reflow 
@@ -101,7 +99,6 @@ var Form = /*#__PURE__*/function () {
       })["catch"](function (error) {
         if (error.response.status == 400) {
           var data = error.response.data;
-          console.log(data);
 
           for (var _i = 0, _Object$keys = Object.keys(data); _i < _Object$keys.length; _i++) {
             var input = _Object$keys[_i];
@@ -217,6 +214,31 @@ var Modal = /*#__PURE__*/function () {
     key: "close",
     value: function close() {
       this.el.classList.remove("active");
+    }
+  }, {
+    key: "set_trigger_els",
+    value: function set_trigger_els(trigger_els) {
+      var _this2 = this;
+
+      this.trigger_els = trigger_els;
+
+      var _iterator3 = _createForOfIteratorHelper(trigger_els),
+          _step3;
+
+      try {
+        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+          var trigger_el = _step3.value;
+          trigger_el.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            _this2.open();
+          });
+        }
+      } catch (err) {
+        _iterator3.e(err);
+      } finally {
+        _iterator3.f();
+      }
     }
   }]);
 
@@ -379,37 +401,37 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener('DOMContentLoaded', function (event) {
   // init header's learn more button for smooth scrolling to first section
-  var learn_more_btn = document.body.getElementsByTagName("header")[0];
-  learn_more_btn.addEventListener("click", function (e) {
+  var learn_more_btn = document.getElementById('learn-more-btn');
+  learn_more_btn.addEventListener('click', function (e) {
     window.scrollTo({
       top: learn_more_btn.getBoundingClientRect().bottom,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   }); // init mobile tours sldier
 
-  var tours_slider = new _modules_MobileToursSlider__WEBPACK_IMPORTED_MODULE_2__.default("tours-slider"); // init modals
+  var tours_slider = new _modules_MobileToursSlider__WEBPACK_IMPORTED_MODULE_2__.default('tours-slider'); // init modals
   // 1
 
-  var modal_el = document.getElementById("modal-help-chose-tour");
-  var modal_trigger_els = [document.getElementById("trigger-modal-help-chose-tour")];
+  var modal_el = document.getElementById('modal-help-chose-tour');
+  var modal_trigger_els = [document.getElementById('trigger-modal-help-chose-tour')];
   var modal = new _includes_Modal__WEBPACK_IMPORTED_MODULE_1__.default(modal_el, modal_trigger_els);
   window.app.modal_fade_manager.add_modal(modal); // init forms
   // 1
 
-  var form_el = document.getElementById("form-help-chose-tour");
-  var form = new _includes_Form__WEBPACK_IMPORTED_MODULE_0__.default(form_el, "/requests/tour-selections", [{
-    name: "name",
+  var form_el = document.getElementById('form-help-chose-tour');
+  var form = new _includes_Form__WEBPACK_IMPORTED_MODULE_0__.default(form_el, '/feedback/selection-requests', [{
+    name: 'name',
     input: form_el.elements.name
   }, {
-    name: "phone",
+    name: 'phone',
     input: form_el.elements.phone
   }, {
-    name: "email",
+    name: 'email',
     input: form_el.elements.email
   }, {
-    name: "wishes",
+    name: 'wishes',
     input: form_el.elements.wishes
   }]);
 });
@@ -2234,6 +2256,18 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************!*\
   !*** ./resources/scss/pages/contacts.scss ***!
   \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/scss/pages/search.scss":
+/*!******************************************!*\
+  !*** ./resources/scss/pages/search.scss ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -8439,6 +8473,7 @@ function classesToSelector(classes) {
 /******/ 			"css/main": 0,
 /******/ 			"css/reset": 0,
 /******/ 			"css/admin": 0,
+/******/ 			"css/pages/search": 0,
 /******/ 			"css/pages/contacts": 0,
 /******/ 			"css/pages/about": 0,
 /******/ 			"css/pages/home": 0
@@ -8489,15 +8524,16 @@ function classesToSelector(classes) {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/js/pages/home.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/reset.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/main.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/fonts.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/pages/home.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/pages/about.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/pages/contacts.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/admin.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/search","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/js/pages/home.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/search","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/reset.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/search","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/main.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/search","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/search","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/fonts.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/search","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/pages/home.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/search","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/pages/about.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/search","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/pages/contacts.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/search","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/pages/search.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/fonts","css/app","css/main","css/reset","css/admin","css/pages/search","css/pages/contacts","css/pages/about","css/pages/home"], () => (__webpack_require__("./resources/scss/admin.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

@@ -73,7 +73,12 @@
                 </div>
             </div>
             <div>
-                <x-tours.columns-3-grid :tours="$tag1->tours" :max="3" :centered="true" />
+                <x-tours.columns-3-grid 
+                    :tours="$tag1->tours" 
+                    :max="3" 
+                    :centered="true" 
+                    :is-with-price="true" 
+                    />
             </div>
         </section>
     
@@ -103,7 +108,12 @@
             </div>
         </div>
         <div>
-            <x-tours.columns-3-grid :tours="$tag2->tours" :max="3" :centered="true" />
+            <x-tours.columns-3-grid 
+            :tours="$tag2->tours" 
+            :max="3" 
+            :centered="true" 
+            :is-with-price="true" 
+            />
         </div>
     </section>
 
@@ -140,7 +150,12 @@
                 </div>
             </div>
             <div>
-                <x-tours.columns-3-grid :tours="$tag3->tours" :max="3" :centered="true" />
+                <x-tours.columns-3-grid 
+                    :tours="$tag3->tours" 
+                    :max="3" 
+                    :centered="true" 
+                    :is-with-price="true" 
+                    />
             </div>
         </section>
 

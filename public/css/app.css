@@ -6487,6 +6487,15 @@
   background-color: #ffffff;
   color: #01737E;
 }
+.u-btn_theme_green_outlined {
+  background-color: #ffffff;
+  color: #01737E;
+  border: solid 3px #01737E;
+}
+.u-btn_theme_green_outlined:hover {
+  background-color: #01737E;
+  color: #ffffff;
+}
 
 .u-text_color_white {
   color: #ffffff;
@@ -6778,6 +6787,15 @@
 }
 .m-tour-card__links > * {
   flex-grow: 1;
+}
+.m-tour-card__price {
+  letter-spacing: 0.05em;
+}
+.m-tour-card__price > span:first-child {
+  font-weight: 700;
+}
+.m-tour-card__price > span:last-child {
+  opacity: 0.75;
 }
 
 .m-banner {
@@ -7077,6 +7095,10 @@
   position: relative;
 }
 
+.m-tour-info-location:first-child .m-tour-info-location__name span:first-child {
+  text-shadow: 0px 0px 3px #000;
+}
+
 .m-tour-info-bottom-panel {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -7110,6 +7132,9 @@
 }
 .m-tour-info-bottom-panel_theme_green a:hover {
   text-decoration: underline;
+}
+.m-tour-info-bottom-panel del {
+  opacity: 0.75;
 }
 
 .m-review-card {
@@ -7207,8 +7232,8 @@
 .navigation__logo-wrapper {
   z-index: 1;
   display: inline-block;
-  height: 50px;
-  width: 133px;
+  height: 40px;
+  width: 224px;
   border-bottom: 0;
 }
 .navigation__links {
@@ -7279,8 +7304,8 @@
 .navigation-mobile__logo-wrapper {
   z-index: 1;
   display: inline-block;
-  height: 32px;
-  width: 85px;
+  height: 29px;
+  width: 160px;
   border-bottom: none;
 }
 .navigation-mobile.active .navigation-mobile__logo-text {

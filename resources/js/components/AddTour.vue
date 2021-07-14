@@ -1,6 +1,10 @@
 <template>
     <section>
-        <h1 class="mb-3">Добавить тур</h1>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h1 class="mb-0">Добавить тур</h1>
+            </div>
+        </div>
 
         <form @submit="form_submited">
             <div class="card mb-4">

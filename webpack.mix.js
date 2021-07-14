@@ -17,6 +17,8 @@ mix
     .sass('resources/scss/app.scss', 'public/css')
     .sass('resources/scss/fonts.scss', 'public/css')    
 
+    //
+
     .sass('resources/scss/pages/home.scss' , 'public/css/pages')
     .js('resources/js/pages/home.js', 'public/js/pages')
 
@@ -27,8 +29,15 @@ mix
 
     .sass('resources/scss/pages/contacts.scss', 'public/css/pages')
     
+    .sass('resources/scss/pages/search.scss', 'public/css/pages')
+    .js('resources/js/pages/search.js', 'public/js/pages')
+
+    //
+
     .js('resources/js/app.js', 'public/js')
     
+    //
+
     .sass('resources/scss/admin.scss', 'public/css')
     .js('resources/js/admin.js', 'public/js')
     .vue()

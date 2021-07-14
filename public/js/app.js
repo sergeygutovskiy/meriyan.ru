@@ -2000,8 +2000,6 @@ var Form = /*#__PURE__*/function () {
       }
 
       axios.post(this.endpoint_url, post_params).then(function (response) {
-        console.log(response);
-
         _this2.el.classList.remove("success");
 
         _this2.el.offsetHeight; // reflow 
@@ -2012,7 +2010,6 @@ var Form = /*#__PURE__*/function () {
       })["catch"](function (error) {
         if (error.response.status == 400) {
           var data = error.response.data;
-          console.log(data);
 
           for (var _i = 0, _Object$keys = Object.keys(data); _i < _Object$keys.length; _i++) {
             var input = _Object$keys[_i];
@@ -2129,6 +2126,31 @@ var Modal = /*#__PURE__*/function () {
     key: "close",
     value: function close() {
       this.el.classList.remove("active");
+    }
+  }, {
+    key: "set_trigger_els",
+    value: function set_trigger_els(trigger_els) {
+      var _this2 = this;
+
+      this.trigger_els = trigger_els;
+
+      var _iterator3 = _createForOfIteratorHelper(trigger_els),
+          _step3;
+
+      try {
+        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+          var trigger_el = _step3.value;
+          trigger_el.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            _this2.open();
+          });
+        }
+      } catch (err) {
+        _iterator3.e(err);
+      } finally {
+        _iterator3.f();
+      }
     }
   }]);
 
@@ -2254,6 +2276,31 @@ var ModalFadeManager = /*#__PURE__*/function () {
         _iterator2.e(err);
       } finally {
         _iterator2.f();
+      }
+
+      this.modals.push(modal);
+    }
+  }, {
+    key: "update_modal_triggers",
+    value: function update_modal_triggers(index, trigger_els) {
+      var _this2 = this;
+
+      this.modals[index].set_trigger_els(trigger_els);
+
+      var _iterator3 = _createForOfIteratorHelper(this.modals[index].trigger_els),
+          _step3;
+
+      try {
+        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+          var trigger_el = _step3.value;
+          trigger_el.addEventListener("click", function (e) {
+            _this2.fade.open();
+          });
+        }
+      } catch (err) {
+        _iterator3.e(err);
+      } finally {
+        _iterator3.f();
       }
     }
   }]);
@@ -2623,6 +2670,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _includes_Fade__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./includes/Fade */ "./resources/js/includes/Fade.js");
 /* harmony import */ var _includes_ModalFadeManager__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./includes/ModalFadeManager */ "./resources/js/includes/ModalFadeManager.js");
 /* harmony import */ var _includes_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./includes/Form */ "./resources/js/includes/Form.js");
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -2645,41 +2698,61 @@ window.app.fade = new _includes_Fade__WEBPACK_IMPORTED_MODULE_2__.default();
 window.app.modal_fade_manager = new _includes_ModalFadeManager__WEBPACK_IMPORTED_MODULE_3__.default(window.app.fade); // init default modals
 // 1
 
-var modal_el = document.getElementById("modal-tour-booking");
-var modal_trigger_els = document.getElementsByClassName("m-tour-card__booking-btn");
+var modal_el = document.getElementById('modal-tour-booking');
+var modal_trigger_els = document.getElementsByClassName('m-tour-card__booking-btn');
+
+var _iterator = _createForOfIteratorHelper(modal_trigger_els),
+    _step;
+
+try {
+  for (_iterator.s(); !(_step = _iterator.n()).done;) {
+    var el = _step.value;
+    el.addEventListener('click', function (event) {
+      document.getElementById('booking-form-tour-id').value = this.getAttribute('data-tour-id');
+    });
+  }
+} catch (err) {
+  _iterator.e(err);
+} finally {
+  _iterator.f();
+}
+
 var modal = new _includes_Modal__WEBPACK_IMPORTED_MODULE_1__.default(modal_el, modal_trigger_els);
 window.app.modal_fade_manager.add_modal(modal); // init forms
 // 1
 
-var footer_form_el = document.getElementById("footer-form");
+var footer_form_el = document.getElementById('footer-form');
 var footer_form = null;
 
 if (footer_form_el) {
-  footer_form = new _includes_Form__WEBPACK_IMPORTED_MODULE_4__.default(footer_form_el, "/requests/questions", [{
-    name: "name",
+  footer_form = new _includes_Form__WEBPACK_IMPORTED_MODULE_4__.default(footer_form_el, '/feedback/questions', [{
+    name: 'name',
     input: footer_form_el.elements.name
   }, {
-    name: "email",
+    name: 'email',
     input: footer_form_el.elements.email
   }, {
-    name: "question",
+    name: 'question',
     input: footer_form_el.elements.question
   }]);
 } // 2
 
 
-var booking_form_el = document.getElementById("tour-booking-form");
+var booking_form_el = document.getElementById('tour-booking-form');
 var booking_form = null;
 
 if (booking_form_el) {
-  booking_form = new _includes_Form__WEBPACK_IMPORTED_MODULE_4__.default(booking_form_el, "/requests/tour-bookings", [{
-    name: "name",
+  booking_form = new _includes_Form__WEBPACK_IMPORTED_MODULE_4__.default(booking_form_el, '/feedback/booking', [{
+    name: 'tour_id',
+    input: booking_form_el.elements.tour_id
+  }, {
+    name: 'name',
     input: booking_form_el.elements.name
   }, {
-    name: "email",
+    name: 'email',
     input: booking_form_el.elements.email
   }, {
-    name: "phone",
+    name: 'phone',
     input: booking_form_el.elements.phone
   }]);
 }

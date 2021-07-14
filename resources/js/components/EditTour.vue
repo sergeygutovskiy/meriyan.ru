@@ -1,6 +1,10 @@
 <template>
     <section>
-        <h1 class="mb-3">Редактировать тур</h1>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h1 class="mb-0">Редактировать тур</h1>
+            </div>
+        </div>
 
         <div v-if="tour">
 

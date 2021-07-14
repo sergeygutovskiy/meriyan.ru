@@ -2,18 +2,14 @@
     <main class="container mt-5 mb-5">
         <div class="row">
             <div class="col-3">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <router-link :to="{ name: 'tours' }">
-                            ТУРЫ
-                        </router-link>
-                    </li>
-                    <li class="list-group-item">
-                        <router-link :to="{ name: 'tours' }">
-                            ЗАЯВКИ
-                        </router-link>
-                    </li>
-                </ul>
+                <div class="list-group">
+                    <router-link class="list-group-item list-group-item-action" :to="{ name: 'tours' }">
+                        ТУРЫ
+                    </router-link>
+                    <router-link class="list-group-item list-group-item-action" :to="{ name: 'feedback' }">
+                        ЗАЯВКИ
+                    </router-link>
+                </div>
             </div>
             <div class="col-9">
                 <router-view />

@@ -113,6 +113,20 @@
             flex-grow: 1;
         }
     }
+
+    &__price {
+        letter-spacing: 0.05em;
+
+        & > span {
+            &:first-child {
+                font-weight: 700;
+            }
+
+            &:last-child {
+                opacity: 0.75;
+            }
+        }
+    }
 }
 
 @mixin module-tours-card--mobile {

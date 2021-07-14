@@ -10,7 +10,7 @@
         <?php if ($count != null && $count == $max) break; ?>
     
         <x-tours.card-wrapper>
-            <x-tours.card :tour="$tour" />
+            <x-tours.card :tour="$tour" :is-with-price="$is_with_price"/>
         </x-tours.card-wrapper>
 
         <?php $count++; ?>

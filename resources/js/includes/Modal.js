@@ -38,6 +38,17 @@ export default class Modal {
     close() {
         this.el.classList.remove("active");
     }
+
+    set_trigger_els(trigger_els) {
+        this.trigger_els = trigger_els;
+        for (let trigger_el of trigger_els) {
+            trigger_el.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                this.open();
+            });
+        }
+    }
 }
 
 

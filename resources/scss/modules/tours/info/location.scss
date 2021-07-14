@@ -1,10 +1,6 @@
 .m-tour-info-location {
     position: relative;
 
-    // &:not(:first-child) {
-    //     padding-top: 180px;
-    // }
-
     &::after {
         content: '';
         position: absolute;
@@ -25,7 +21,6 @@
 
     &__name {
         display: flex;
-        // justify-content: flex-end;
         text-align: right;
 
         div {
@@ -98,6 +93,10 @@
     &__content {
         position: relative;
     }
+}
+
+.m-tour-info-location:first-child .m-tour-info-location__name span:first-child {
+    text-shadow: 0px 0px 3px #000
 }
 
 @mixin module-tour-info-location--large {

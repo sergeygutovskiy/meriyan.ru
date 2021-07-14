@@ -9,17 +9,19 @@ class Columns3Grid extends Component
     public $tours;
     public $max;
     public $centered;
+    public $is_with_price;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($tours, $max = null, $centered = false)
+    public function __construct($tours, $isWithPrice = false, $max = null, $centered = false,)
     {
         $this->tours = $tours;
         $this->max = $max;
         $this->centered = $centered;
+        $this->is_with_price = $isWithPrice;
     }
 
     /**

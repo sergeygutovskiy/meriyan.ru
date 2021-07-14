@@ -75,8 +75,7 @@
                                 d-inline-flex justify-content-between">
                             <span>Стоимость:</span> 
                             <span>
-                                {{ $tour->price }}
-                                ₽ 
+                                {{ $tour->price_formatted }}
                             </span>
                         </div>
                     </div>
@@ -164,9 +163,16 @@
                             <div class="m-tour-info-bottom-panel d-flex flex-column">
                                 <h3 class="d-flex mt-auto mb-auto justify-content-between">
                                     <span>Стоимость:</span>
-                                    <span>
-                                        {{ $tour->price }} ₽
-                                    </span>
+                                    <div>
+                                        <div>
+                                            {{ $tour->price_formatted }}                                            
+                                        </div>
+                                        @if ($tour->discount_price != null)
+                                        <div class="mt-1">
+                                            <del>{{ $tour->price_before_sale_formatted }}</del>
+                                        </div>
+                                        @endif
+                                    </div>
                                 </h3>
                             </div>
                         </div>
@@ -198,6 +204,7 @@
                                 @endforeach
                             </div>
                         </div>
+                        @if (count($tour->info->services_not_in_price) > 0)
                         <div class="col-12 col-xl-6 mt-4 mt-xl-0">
                             <div class="m-tour-info-bottom-panel">
                                 <h3 class="mb-4">Что не входит в стоимость:</h3>
@@ -208,6 +215,7 @@
                                 @endforeach
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

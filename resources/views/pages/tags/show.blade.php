@@ -38,7 +38,10 @@
         </header>
 
         <section class="container u-page-margin">
-            <x-tours.columns-3-grid :tours="$tag->tours" />
+            <x-tours.columns-3-grid 
+                :tours="$tag->tours" 
+                :is-with-price="true"
+                />
         </section>
 
     </div>

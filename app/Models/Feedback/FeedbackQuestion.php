@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Models\Requests;
+namespace App\Models\Feedback;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Question extends Model
+class FeedbackQuestion extends Model
 {
     use HasFactory;
+
+    protected $table = 'feedback_questions';
 
     protected $fillable = [
         'name', 'email', 'question'

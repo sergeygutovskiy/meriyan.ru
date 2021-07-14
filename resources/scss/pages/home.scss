@@ -13,6 +13,40 @@
 @import "../modules/tours/slider";
 
 
+.home-header {
+    position: relative;
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        width: 310px;
+        height: 380px; 
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &::before {
+        left: 0;
+        top: 0;
+        transform: translate(-90%, -30%);
+        background-image: url('/images/static/home-icon-left.svg');
+    }
+
+    &::after {
+        right: 0;
+        bottom: 0;
+        transform: translate(90%, 30%);
+        background-image: url('/images/static/home-icon-right.svg');
+    }
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, xxl)) {
+    .home-header {
+        &::before, &::after {
+            display: none;
+        }
+    }
+}
 
 @media screen and (max-width: map-get($grid-breakpoints, sm)) {
     @include module-tours-mobile-slider--mobile;

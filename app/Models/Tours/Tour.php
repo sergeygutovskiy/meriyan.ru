@@ -29,6 +29,21 @@ class Tour extends Model
         return  '/images/storage/' . $this->local_storage_path . $this->image_path;
     }
 
+    public function getPriceFormattedAttribute()
+    {
+        return number_format($this->price_real, 0, '', ' ') . ' ₽';
+    }
+
+    public function getPriceBeforeSaleFormattedAttribute()
+    {
+        return number_format($this->price, 0, '', ' ') . ' ₽';
+    }
+
+    public function getPriceRealAttribute()
+    {
+        return $this->discount_price == null ? $this->price : $this->discount_price;
+    }
+
     public function info()
     {
         return $this->hasOne(TourInfo::class, 'tour_id');

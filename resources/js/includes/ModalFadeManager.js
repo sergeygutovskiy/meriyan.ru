@@ -21,5 +21,15 @@ export default class ModalFadeManager {
                 this.fade.close();
             });
         }
+
+        this.modals.push(modal);
+    }
+
+    update_modal_triggers(index, trigger_els) {
+        this.modals[index].set_trigger_els(trigger_els);
+
+        for (let trigger_el of this.modals[index].trigger_els) {
+            trigger_el.addEventListener("click", (e) => { this.fade.open(); });
+        }
     }
 }

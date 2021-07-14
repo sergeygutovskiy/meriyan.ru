@@ -2,6 +2,7 @@
     "/js/pages/home.js": "/js/pages/home.js",
     "/js/pages/about.js": "/js/pages/about.js",
     "/js/pages/tours.js": "/js/pages/tours.js",
+    "/js/pages/search.js": "/js/pages/search.js",
     "/js/app.js": "/js/app.js",
     "/js/admin.js": "/js/admin.js",
     "/css/fonts.css": "/css/fonts.css",
@@ -9,6 +10,7 @@
     "/css/main.css": "/css/main.css",
     "/css/reset.css": "/css/reset.css",
     "/css/admin.css": "/css/admin.css",
+    "/css/pages/search.css": "/css/pages/search.css",
     "/css/pages/contacts.css": "/css/pages/contacts.css",
     "/css/pages/about.css": "/css/pages/about.css",
     "/css/pages/home.css": "/css/pages/home.css"
