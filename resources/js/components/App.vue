@@ -1,17 +1,17 @@
 <template>
     <main class="container mt-5 mb-5">
         <div class="row">
-            <div class="col-3">
-                <div class="list-group">
+            <div class="col-4 mb-4">
+                <ul class="list-group list-group-horizontal">
                     <router-link class="list-group-item list-group-item-action" :to="{ name: 'tours' }">
                         ТУРЫ
                     </router-link>
                     <router-link class="list-group-item list-group-item-action" :to="{ name: 'feedback' }">
                         ЗАЯВКИ
                     </router-link>
-                </div>
+                </ul>
             </div>
-            <div class="col-9">
+            <div class="col-12">
                 <router-view />
             </div>
         </div>
@@ -19,10 +19,10 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-            }   
-        }
-    }
+export default {
+    data() {
+        return {
+        }   
+    },
+}
 </script>

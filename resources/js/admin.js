@@ -16,10 +16,14 @@ import FeedbackBooking from './components/FeedbackBooking';
 import FeedbackSelectionRequest from './components/FeedbackSelectionRequest';
 import FeedbackQuestion from './components/FeedbackQuestion';
 
+import ToursAdd from './components/tours/add/Index';
+import ToursEdit from './components/tours/edit/Index';
+
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-    // mode: 'history',
+    mode: 'history',
+    base: '/admin/',
     routes: [
         {
             path: '/',
@@ -33,12 +37,12 @@ const router = new VueRouter({
         {
             path: '/tours/add',
             name: 'add_tour',
-            component: AddTour
+            component: ToursAdd
         },
         {
             path: '/tours/:id/edit',
             name: 'edit_tour',
-            component: EditTour,
+            component: ToursEdit,
             props: true
         },
         {

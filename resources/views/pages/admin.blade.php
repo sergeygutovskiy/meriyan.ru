@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
-    <div id="app"
-    ></div>
+    <div id="app"></div>
+
     <script src="/js/admin.js"></script>
 </body>
 </html>
