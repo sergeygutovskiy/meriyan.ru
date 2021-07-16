@@ -14,6 +14,8 @@ class RecreateTableFeedbackBooking extends Migration
     public function up()
     {
         Schema::create('feedback_booking', function (Blueprint $table) {
+            Schema::dropIfExists('feedback_booking');
+            
             $table->id();
             
             $table->unsignedBigInteger("tour_id")->unsigned()->index();

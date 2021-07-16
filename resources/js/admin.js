@@ -8,14 +8,13 @@ import bootstrap from 'bootstrap'
 
 import App from './components/App';
 import Home from './components/Home';
-import Tours from './components/Tours';
-import EditTour from './components/EditTour';
-import AddTour from './components/AddTour';
-import Feedback from './components/Feedback';
-import FeedbackBooking from './components/FeedbackBooking';
-import FeedbackSelectionRequest from './components/FeedbackSelectionRequest';
-import FeedbackQuestion from './components/FeedbackQuestion';
 
+import Feedback from './components/feedback/Feedback';
+import FeedbackBooking from './components/feedback/FeedbackBooking';
+import FeedbackSelectionRequest from './components/feedback/FeedbackSelectionRequest';
+import FeedbackQuestion from './components/feedback/FeedbackQuestion';
+
+import Tours from './components/tours/Index';
 import ToursAdd from './components/tours/add/Index';
 import ToursEdit from './components/tours/edit/Index';
 
