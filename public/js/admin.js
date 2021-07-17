@@ -5976,6 +5976,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -6020,6 +6027,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.pdf_document = this.$refs.pdf_document.files[0];
       console.log(this.pdf_document);
     },
+    validate: function validate() {
+      return this.description.length > 0 && this.people != '' && this.duration != '' && this.video_href.length > 0 && this.season != null && this.complexity != null;
+    },
     send_form: function send_form(e) {
       var _this = this;
 
@@ -6030,6 +6040,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 e.preventDefault();
+
+                if (_this.validate()) {
+                  _context.next = 4;
+                  break;
+                }
+
+                _this.messages.created = false;
+                return _context.abrupt("return");
+
+              case 4:
                 form_data = new FormData();
                 form_data.append('input', JSON.stringify({
                   tour_id: _this.created_tour_id,
@@ -6041,28 +6061,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   complexity: _this.complexity
                 }));
                 form_data.append('pdf_document', _this.pdf_document ? _this.pdf_document : '');
-                _context.prev = 4;
-                _context.next = 7;
+                _context.prev = 7;
+                _context.next = 10;
                 return axios.post(_this.endpoint_url, form_data);
 
-              case 7:
+              case 10:
                 response = _context.sent;
                 _this.created_tour_info_id = response.data.data.id;
                 _this.messages.created = true;
-                _context.next = 15;
+                _context.next = 18;
                 break;
 
-              case 12:
-                _context.prev = 12;
-                _context.t0 = _context["catch"](4);
+              case 15:
+                _context.prev = 15;
+                _context.t0 = _context["catch"](7);
                 console.error(_context.t0);
 
-              case 15:
+              case 18:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[4, 12]]);
+        }, _callee, null, [[7, 15]]);
       }))();
     },
     get_seasons: function get_seasons() {
@@ -6221,6 +6241,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -6248,6 +6275,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.card_image = this.$refs.card_image.files[0];
       this.card_image_path = URL.createObjectURL(this.card_image);
     },
+    validate: function validate() {
+      return this.title.length > 0 && this.description.length > 0 && this.price != '' && this.card_image != null;
+    },
     send_form: function send_form(e) {
       var _this = this;
 
@@ -6258,6 +6288,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 e.preventDefault();
+
+                if (_this.validate()) {
+                  _context.next = 4;
+                  break;
+                }
+
+                _this.messages.created = false;
+                return _context.abrupt("return");
+
+              case 4:
                 form_data = new FormData();
                 form_data.append('input', JSON.stringify({
                   title: _this.title,
@@ -6266,31 +6306,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   discount_price: _this.discount_price
                 }));
                 form_data.append('card_image', _this.card_image);
-                _context.prev = 4;
-                _context.next = 7;
+                _context.prev = 7;
+                _context.next = 10;
                 return axios.post(_this.endpoint_url, form_data);
 
-              case 7:
+              case 10:
                 response = _context.sent;
                 _this.created_tour_id = response.data.data.id;
 
                 _this.$emit('tour-created', _this.created_tour_id);
 
                 _this.messages.created = true;
-                _context.next = 16;
+                _context.next = 19;
                 break;
 
-              case 13:
-                _context.prev = 13;
-                _context.t0 = _context["catch"](4);
+              case 16:
+                _context.prev = 16;
+                _context.t0 = _context["catch"](7);
                 console.error(_context.t0);
 
-              case 16:
+              case 19:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[4, 13]]);
+        }, _callee, null, [[7, 16]]);
       }))();
     }
   }
@@ -6577,6 +6617,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -6622,6 +6669,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     pdf_document_changed: function pdf_document_changed() {
       this.new_pdf_document = this.$refs.pdf_document.files[0];
     },
+    validate: function validate() {
+      return this.edited_description.length > 0 && this.edited_people != '' && this.edited_duration != '' && this.edited_season != null && this.edited_complexity != null && this.edited_video_href.length > 0;
+    },
     send_form: function send_form(e) {
       var _this = this;
 
@@ -6632,6 +6682,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 e.preventDefault();
+
+                if (_this.validate()) {
+                  _context.next = 4;
+                  break;
+                }
+
+                _this.messages.updated = false;
+                return _context.abrupt("return");
+
+              case 4:
                 form_data = new FormData();
                 form_data.append('input', JSON.stringify({
                   description: _this.edited_description,
@@ -6646,27 +6706,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _this.reset_messages();
 
-                _context.prev = 5;
-                _context.next = 8;
+                _context.prev = 8;
+                _context.next = 11;
                 return axios.post(_this.endpoint_url, form_data);
 
-              case 8:
+              case 11:
                 response = _context.sent;
                 _this.messages.updated = true;
-                _context.next = 15;
+                _context.next = 18;
                 break;
 
-              case 12:
-                _context.prev = 12;
-                _context.t0 = _context["catch"](5);
+              case 15:
+                _context.prev = 15;
+                _context.t0 = _context["catch"](8);
                 console.error(_context.t0);
 
-              case 15:
+              case 18:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[5, 12]]);
+        }, _callee, null, [[8, 15]]);
       }))();
     },
     get_seasons: function get_seasons() {
@@ -6828,6 +6888,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -6866,6 +6946,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.reset_messages();
       this.messages.deleted = true;
     },
+    validate: function validate() {
+      return this.new_name.length > 0 && this.new_description.length > 0 && this.new_image != null;
+    },
     send_form: function send_form(e) {
       var _this = this;
 
@@ -6876,39 +6959,49 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 e.preventDefault();
+
+                if (_this.validate()) {
+                  _context.next = 4;
+                  break;
+                }
+
+                _this.messages.created = false;
+                return _context.abrupt("return");
+
+              case 4:
                 form_data = new FormData();
                 form_data.append('input', JSON.stringify({
                   'name': _this.new_name,
                   'description': _this.new_description
                 }));
-                form_data.append('new_image', _this.new_image ? _this.new_image : '');
+                form_data.append('new_image', _this.new_image);
 
                 _this.reset_messages();
 
-                _context.prev = 5;
-                _context.next = 8;
+                _context.prev = 8;
+                _context.next = 11;
                 return axios.post(_this.endpoint_url, form_data);
 
-              case 8:
+              case 11:
                 response = _context.sent;
 
                 _this.locations.push(response.data.data.location);
 
                 _this.messages.created = true;
-                _context.next = 16;
+                _context.next = 19;
                 break;
 
-              case 13:
-                _context.prev = 13;
-                _context.t0 = _context["catch"](5);
+              case 16:
+                _context.prev = 16;
+                _context.t0 = _context["catch"](8);
                 console.error(_context.t0);
 
-              case 16:
+              case 19:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[5, 13]]);
+        }, _callee, null, [[8, 16]]);
       }))();
     },
     new_image_changed: function new_image_changed() {
@@ -7056,6 +7149,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['id', 'title', 'description', 'image_path', 'price', 'discount_price'],
   data: function data() {
@@ -7097,6 +7197,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.new_card_image = null;
       this.new_card_image_path = '';
     },
+    validate: function validate() {
+      return this.edited_title.length > 0 && this.edited_description.length > 0 && this.price != '';
+    },
     send_form: function send_form(e) {
       var _this = this;
 
@@ -7107,6 +7210,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 e.preventDefault();
+
+                if (_this.validate()) {
+                  _context.next = 4;
+                  break;
+                }
+
+                _this.messages.updated = false;
+                return _context.abrupt("return");
+
+              case 4:
                 form_data = new FormData();
                 form_data.append('input', JSON.stringify({
                   title: _this.edited_title,
@@ -7118,27 +7231,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _this.reset_messages();
 
-                _context.prev = 5;
-                _context.next = 8;
+                _context.prev = 8;
+                _context.next = 11;
                 return axios.post(_this.endpoint_url, form_data);
 
-              case 8:
+              case 11:
                 response = _context.sent;
                 _this.messages.updated = true;
-                _context.next = 15;
+                _context.next = 18;
                 break;
 
-              case 12:
-                _context.prev = 12;
-                _context.t0 = _context["catch"](5);
+              case 15:
+                _context.prev = 15;
+                _context.t0 = _context["catch"](8);
                 console.error(_context.t0);
 
-              case 15:
+              case 18:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[5, 12]]);
+        }, _callee, null, [[8, 15]]);
       }))();
     }
   }
@@ -7167,6 +7280,26 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -7272,6 +7405,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.reset_messages();
       this.messages.deleted = true;
     },
+    validate: function validate() {
+      return this.new_description.length > 0;
+    },
     send_form: function send_form(e) {
       var _this = this;
 
@@ -7282,6 +7418,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 e.preventDefault();
+
+                if (_this.validate()) {
+                  _context.next = 4;
+                  break;
+                }
+
+                _this.messages.created = false;
+                return _context.abrupt("return");
+
+              case 4:
                 form_data = new FormData();
                 form_data.append('input', JSON.stringify({
                   'description': _this.new_description,
@@ -7290,30 +7436,30 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _this.reset_messages();
 
-                _context.prev = 4;
-                _context.next = 7;
+                _context.prev = 7;
+                _context.next = 10;
                 return axios.post(_this.endpoint_url, form_data);
 
-              case 7:
+              case 10:
                 response = _context.sent;
 
                 _this.services.push(response.data.data.service);
 
                 _this.messages.created = true;
-                _context.next = 15;
+                _context.next = 18;
                 break;
 
-              case 12:
-                _context.prev = 12;
-                _context.t0 = _context["catch"](4);
+              case 15:
+                _context.prev = 15;
+                _context.t0 = _context["catch"](7);
                 console.error(_context.t0);
 
-              case 15:
+              case 18:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[4, 12]]);
+        }, _callee, null, [[7, 15]]);
       }))();
     },
     get_services: function get_services() {
@@ -29685,6 +29831,15 @@ var render = function() {
               ],
               1
             )
+          : _vm.messages.created == false
+          ? _c(
+              "div",
+              {
+                staticClass: "alert alert-danger mt-3 mb-0",
+                attrs: { role: "alert" }
+              },
+              [_vm._v("\n            Не все поля заполнены\n        ")]
+            )
           : _vm._e()
       ])
     ]
@@ -29953,6 +30108,15 @@ var render = function() {
                   "\n            Черновик создан, теперь можно указать подробную информацию для добавления тура\n        "
                 )
               ]
+            )
+          : _vm.messages.created == false
+          ? _c(
+              "div",
+              {
+                staticClass: "alert alert-danger mt-3 mb-0",
+                attrs: { role: "alert" }
+              },
+              [_vm._v("\n            Не все поля заполнены\n        ")]
             )
           : _vm._e()
       ])
@@ -30489,6 +30653,15 @@ var render = function() {
               },
               [_vm._v("\n            Подробная информация обновлена\n        ")]
             )
+          : _vm.messages.updated == false
+          ? _c(
+              "div",
+              {
+                staticClass: "alert alert-danger mt-3 mb-0",
+                attrs: { role: "alert" }
+              },
+              [_vm._v("\n            Не все поля заполнены\n        ")]
+            )
           : _vm._e()
       ])
     ]
@@ -30540,140 +30713,134 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "card mb-4", attrs: { id: "locations-form" } },
+    { staticClass: "mb-4", attrs: { id: "locations-form" } },
     [
-      _c(
-        "div",
-        { staticClass: "card-body" },
-        [
-          _vm._m(0),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("form", { staticClass: "card mb-4", on: { submit: _vm.send_form } }, [
+        _c("div", { staticClass: "card-body" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "mb-3" }, [
+            _c("label", { staticClass: "form-label" }, [_vm._v("Название")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.new_name,
+                  expression: "new_name"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text" },
+              domProps: { value: _vm.new_name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.new_name = $event.target.value
+                }
+              }
+            })
+          ]),
           _vm._v(" "),
           _c(
-            "form",
-            { staticClass: "card mb-4", on: { submit: _vm.send_form } },
+            "div",
+            { staticClass: "mb-3" },
             [
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "mb-3" }, [
-                  _c("label", { staticClass: "form-label" }, [
-                    _vm._v("Название")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.new_name,
-                        expression: "new_name"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.new_name },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.new_name = $event.target.value
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "mb-3" },
-                  [
-                    _c("label", { staticClass: "form-label" }, [
-                      _vm._v("Описание")
-                    ]),
-                    _vm._v(" "),
-                    _c("vue-editor", {
-                      model: {
-                        value: _vm.new_description,
-                        callback: function($$v) {
-                          _vm.new_description = $$v
-                        },
-                        expression: "new_description"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "mb-3" }, [
-                  _c("label", { staticClass: "form-label" }, [
-                    _vm._v("Картинка")
-                  ]),
-                  _vm._v(" "),
-                  _vm.new_image
-                    ? _c("img", {
-                        staticClass: "card-img-top mb-3",
-                        staticStyle: {
-                          "max-height": "320px",
-                          "object-fit": "cover"
-                        },
-                        attrs: { src: _vm.new_image_path }
-                      })
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c("input", {
-                    ref: "new_image_file",
-                    staticClass: "form-control",
-                    attrs: { type: "file" },
-                    on: { change: _vm.new_image_changed }
-                  })
-                ]),
-                _vm._v(" "),
-                _vm._m(1),
-                _vm._v(" "),
-                _vm.messages.created
-                  ? _c(
-                      "div",
-                      {
-                        staticClass: "alert alert-success mt-3 mb-0",
-                        attrs: { role: "alert" }
-                      },
-                      [
-                        _vm._v(
-                          "\n                    Локация создана\n                "
-                        )
-                      ]
-                    )
-                  : _vm._e()
-              ])
-            ]
+              _c("label", { staticClass: "form-label" }, [_vm._v("Описание")]),
+              _vm._v(" "),
+              _c("vue-editor", {
+                model: {
+                  value: _vm.new_description,
+                  callback: function($$v) {
+                    _vm.new_description = $$v
+                  },
+                  expression: "new_description"
+                }
+              })
+            ],
+            1
           ),
           _vm._v(" "),
-          _vm._l(_vm.locations, function(location) {
-            return _c("location", {
-              key: location.id,
-              attrs: {
-                id: location.id,
-                tour_id: _vm.id,
-                name: location.name,
-                description: location.description,
-                image_path: location.image_path
-              },
-              on: { deleted: _vm.on_deleted }
+          _c("div", { staticClass: "mb-3" }, [
+            _c("label", { staticClass: "form-label" }, [_vm._v("Картинка")]),
+            _vm._v(" "),
+            _vm.new_image
+              ? _c("img", {
+                  staticClass: "card-img-top mb-3",
+                  staticStyle: { "max-height": "320px", "object-fit": "cover" },
+                  attrs: { src: _vm.new_image_path }
+                })
+              : _vm._e(),
+            _vm._v(" "),
+            _c("input", {
+              ref: "new_image_file",
+              staticClass: "form-control",
+              attrs: { type: "file" },
+              on: { change: _vm.new_image_changed }
             })
-          }),
+          ]),
           _vm._v(" "),
-          _vm.messages.deleted
+          _vm._m(2),
+          _vm._v(" "),
+          _vm.messages.created
             ? _c(
                 "div",
                 {
                   staticClass: "alert alert-success mt-3 mb-0",
                   attrs: { role: "alert" }
                 },
-                [_vm._v("\n            Локация удалена\n        ")]
+                [_vm._v("\n                Локация создана\n            ")]
+              )
+            : _vm.messages.created == false
+            ? _c(
+                "div",
+                {
+                  staticClass: "alert alert-danger mt-3 mb-0",
+                  attrs: { role: "alert" }
+                },
+                [
+                  _vm._v(
+                    "\n                Не все поля заполнены\n            "
+                  )
+                ]
               )
             : _vm._e()
-        ],
-        2
-      )
-    ]
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(3),
+      _vm._v(" "),
+      _vm._l(_vm.locations, function(location) {
+        return _c("location", {
+          key: location.id,
+          attrs: {
+            id: location.id,
+            tour_id: _vm.id,
+            name: location.name,
+            description: location.description,
+            image_path: location.image_path
+          },
+          on: { deleted: _vm.on_deleted }
+        })
+      }),
+      _vm._v(" "),
+      _vm.messages.deleted
+        ? _c(
+            "div",
+            {
+              staticClass: "alert alert-success mt-3 mb-0",
+              attrs: { role: "alert" }
+            },
+            [_vm._v("\n        Локация удалена\n    ")]
+          )
+        : _vm._e()
+    ],
+    2
   )
 }
 var staticRenderFns = [
@@ -30681,7 +30848,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-3" }, [_c("h3", [_vm._v("Локации")])])
+    return _c("div", { staticClass: "card mb-4" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("div", [_c("h3", { staticClass: "mb-0" }, [_vm._v("Локации")])])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-3" }, [
+      _c("h4", { staticClass: "mb-0" }, [_vm._v("Добавить")])
+    ])
   },
   function() {
     var _vm = this
@@ -30691,8 +30870,18 @@ var staticRenderFns = [
       _c(
         "button",
         { staticClass: "btn btn-success", attrs: { type: "submit" } },
-        [_vm._v("\n                        Добавить\n                    ")]
+        [_vm._v("\n                    Добавить\n                ")]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card mb-4" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("div", [_c("h4", { staticClass: "mb-0" }, [_vm._v("Список")])])
+      ])
     ])
   }
 ]
@@ -30977,6 +31166,15 @@ var render = function() {
               },
               [_vm._v("\n            Основная информация обновлена\n        ")]
             )
+          : _vm.messages.updated == false
+          ? _c(
+              "div",
+              {
+                staticClass: "alert alert-danger mt-3 mb-0",
+                attrs: { role: "alert" }
+              },
+              [_vm._v("\n            Не все поля заполнены\n        ")]
+            )
           : _vm._e()
       ])
     ]
@@ -31016,154 +31214,151 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "card mb-4", attrs: { id: "services-form" } },
+    { staticClass: "mb-4", attrs: { id: "services-form" } },
     [
-      _c(
-        "div",
-        { staticClass: "card-body" },
-        [
-          _vm._m(0),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("form", { staticClass: "card mb-4", on: { submit: _vm.send_form } }, [
+        _c("div", { staticClass: "card-body" }, [
+          _vm._m(1),
           _vm._v(" "),
           _c(
-            "form",
-            { staticClass: "card mb-4", on: { submit: _vm.send_form } },
+            "div",
+            { staticClass: "mb-3" },
             [
-              _c("div", { staticClass: "card-body" }, [
-                _c(
-                  "div",
-                  { staticClass: "mb-3" },
-                  [
-                    _c("vue-editor", {
-                      model: {
-                        value: _vm.new_description,
-                        callback: function($$v) {
-                          _vm.new_description = $$v
-                        },
-                        expression: "new_description"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "mb-3" }, [
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("span", { staticClass: "input-group-text" }, [
-                      _vm._v(
-                        "\n                            Включено в стоимость\n                        "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.new_is_in_price,
-                            expression: "new_is_in_price"
-                          }
-                        ],
-                        staticClass: "form-select",
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.new_is_in_price = $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          }
-                        }
-                      },
-                      [
-                        _c(
-                          "option",
-                          {
-                            domProps: {
-                              value: false,
-                              selected: !_vm.new_is_in_price
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Нет\n                            "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "option",
-                          {
-                            domProps: {
-                              value: true,
-                              selected: _vm.new_is_in_price
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Да\n                            "
-                            )
-                          ]
-                        )
-                      ]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _vm._m(1),
-                _vm._v(" "),
-                _vm.messages.created
-                  ? _c(
-                      "div",
-                      {
-                        staticClass: "alert alert-success mt-3 mb-0",
-                        attrs: { role: "alert" }
-                      },
-                      [
-                        _vm._v(
-                          "\n                    Услуга создана\n                "
-                        )
-                      ]
-                    )
-                  : _vm._e()
-              ])
-            ]
+              _c("vue-editor", {
+                model: {
+                  value: _vm.new_description,
+                  callback: function($$v) {
+                    _vm.new_description = $$v
+                  },
+                  expression: "new_description"
+                }
+              })
+            ],
+            1
           ),
           _vm._v(" "),
-          _vm._l(_vm.services, function(service) {
-            return _c("service", {
-              key: service.id,
-              attrs: {
-                id: service.id,
-                tour_id: _vm.id,
-                description: service.description,
-                is_in_price: !!service.is_included_in_price
-              },
-              on: { deleted: _vm.on_deleted }
-            })
-          }),
+          _c("div", { staticClass: "mb-3" }, [
+            _c("div", { staticClass: "input-group" }, [
+              _c("span", { staticClass: "input-group-text" }, [
+                _vm._v(
+                  "\n                        Включено в стоимость\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.new_is_in_price,
+                      expression: "new_is_in_price"
+                    }
+                  ],
+                  staticClass: "form-select",
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.new_is_in_price = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "option",
+                    {
+                      domProps: { value: false, selected: !_vm.new_is_in_price }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            Нет\n                        "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "option",
+                    {
+                      domProps: { value: true, selected: _vm.new_is_in_price }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            Да\n                        "
+                      )
+                    ]
+                  )
+                ]
+              )
+            ])
+          ]),
           _vm._v(" "),
-          _vm.messages.deleted
+          _vm._m(2),
+          _vm._v(" "),
+          _vm.messages.created
             ? _c(
                 "div",
                 {
                   staticClass: "alert alert-success mt-3 mb-0",
                   attrs: { role: "alert" }
                 },
-                [_vm._v("\n            Услуга удалена\n        ")]
+                [_vm._v("\n                Услуга создана\n            ")]
+              )
+            : _vm.messages.created == false
+            ? _c(
+                "div",
+                {
+                  staticClass: "alert alert-danger mt-3 mb-0",
+                  attrs: { role: "alert" }
+                },
+                [
+                  _vm._v(
+                    "\n                Не все поля заполнены\n            "
+                  )
+                ]
               )
             : _vm._e()
-        ],
-        2
-      )
-    ]
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(3),
+      _vm._v(" "),
+      _vm._l(_vm.services, function(service) {
+        return _c("service", {
+          key: service.id,
+          attrs: {
+            id: service.id,
+            tour_id: _vm.id,
+            description: service.description,
+            is_in_price: !!service.is_included_in_price
+          },
+          on: { deleted: _vm.on_deleted }
+        })
+      }),
+      _vm._v(" "),
+      _vm.messages.deleted
+        ? _c(
+            "div",
+            {
+              staticClass: "alert alert-success mt-3 mb-0",
+              attrs: { role: "alert" }
+            },
+            [_vm._v("\n        Услуга удалена\n    ")]
+          )
+        : _vm._e()
+    ],
+    2
   )
 }
 var staticRenderFns = [
@@ -31171,7 +31366,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-3" }, [_c("h3", [_vm._v("Услуги")])])
+    return _c("div", { staticClass: "card mb-4" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("div", [_c("h3", { staticClass: "mb-0" }, [_vm._v("Услуги")])])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-3" }, [
+      _c("h4", { staticClass: "mb-0" }, [_vm._v("Добавить")])
+    ])
   },
   function() {
     var _vm = this
@@ -31181,8 +31388,18 @@ var staticRenderFns = [
       _c(
         "button",
         { staticClass: "btn btn-success", attrs: { type: "submit" } },
-        [_vm._v("\n                        Добавить\n                    ")]
+        [_vm._v("\n                    Добавить\n                ")]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card mb-4" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("div", [_c("h4", { staticClass: "mb-0" }, [_vm._v("Список")])])
+      ])
     ])
   }
 ]

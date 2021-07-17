@@ -96,6 +96,13 @@
                 >
                 Подробная информация обновлена
             </div>
+            <div 
+                v-else-if="messages.updated == false" 
+                class="alert alert-danger mt-3 mb-0" 
+                role="alert"
+                >
+                Не все поля заполнены
+            </div>
         </div>
     </form>
 </template>
@@ -168,9 +175,25 @@ export default {
             this.new_pdf_document = this.$refs.pdf_document.files[0];
         },
 
+        validate() {
+            return (
+                this.edited_description.length > 0
+                && this.edited_people != ''
+                && this.edited_duration != ''
+                && this.edited_season != null
+                && this.edited_complexity != null
+                && this.edited_video_href.length > 0
+            );
+        },
+
         async send_form(e) {
             e.preventDefault();  
         
+            if ( !this.validate() ) {
+                this.messages.updated = false;
+                return;
+            }
+
             let form_data = new FormData();
             form_data.append('input', JSON.stringify({
                 description: this.edited_description,

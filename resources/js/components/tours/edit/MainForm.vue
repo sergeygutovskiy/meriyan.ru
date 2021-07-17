@@ -79,6 +79,13 @@
                 >
                 Основная информация обновлена
             </div>
+            <div 
+                v-else-if="messages.updated == false" 
+                class="alert alert-danger mt-3 mb-0" 
+                role="alert"
+                >
+                Не все поля заполнены
+            </div>
         </div>
     </form>
 </template>
@@ -142,8 +149,21 @@ export default {
             this.new_card_image_path = '';
         },
 
+        validate() {
+            return (
+                this.edited_title.length > 0
+                && this.edited_description.length > 0
+                && this.price != ''
+            );
+        },
+
         async send_form(e) {
             e.preventDefault();
+
+            if ( !this.validate() ) {
+                this.messages.updated = false;
+                return;
+            }
 
             let form_data = new FormData();
             form_data.append('input', JSON.stringify({

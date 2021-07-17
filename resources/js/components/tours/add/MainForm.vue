@@ -62,6 +62,13 @@
                 >
                 Черновик создан, теперь можно указать подробную информацию для добавления тура
             </div>
+            <div 
+                v-else-if="messages.created == false" 
+                class="alert alert-danger mt-3 mb-0" 
+                role="alert"
+                >
+                Не все поля заполнены
+            </div>
         </div>
     </form>
 </template>
@@ -101,8 +108,22 @@ export default {
             this.card_image_path = URL.createObjectURL(this.card_image);
         },
 
+        validate() {
+            return (
+                this.title.length > 0
+                && this.description.length > 0
+                && this.price != ''
+                && this.card_image != null
+            )
+        },
+
         async send_form(e) {
             e.preventDefault();
+
+            if ( !this.validate() ) {
+                this.messages.created = false;
+                return;
+            }
 
             let form_data = new FormData();
             form_data.append('input', JSON.stringify({

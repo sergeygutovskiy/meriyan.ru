@@ -93,6 +93,13 @@
                 , чтобы добавить категории, локации и услуги,
                 либо обновить данные
             </div>
+            <div 
+                v-else-if="messages.created == false" 
+                class="alert alert-danger mt-3 mb-0" 
+                role="alert"
+                >
+                Не все поля заполнены
+            </div>
         </div>
     </form>
 </template>
@@ -157,9 +164,25 @@ export default {
             console.log(this.pdf_document);
         },
 
+        validate() {
+            return (
+                this.description.length > 0
+                && this.people != ''
+                && this.duration != ''
+                && this.video_href.length > 0
+                && this.season != null
+                && this.complexity != null
+            );
+        },
+
         async send_form(e) {
             e.preventDefault();  
         
+            if ( !this.validate() ) {
+                this.messages.created = false;
+                return;
+            }
+
             let form_data = new FormData();
             form_data.append('input', JSON.stringify({
                 tour_id: this.created_tour_id,
