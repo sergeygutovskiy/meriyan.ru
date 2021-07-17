@@ -6794,7 +6794,7 @@
 .m-tour-card__price > span:first-child {
   font-weight: 700;
 }
-.m-tour-card__price > span:last-child {
+.m-tour-card__price > span:nth-child(2) {
   opacity: 0.75;
 }
 
@@ -7523,6 +7523,10 @@
   .m-contact-card__image-wrapper {
     left: 50%;
     transform: translate(-50%, -60%);
+  }
+
+  .m-tour-info-location:first-child .m-tour-info-location__name span:first-child {
+    text-shadow: none;
   }
 
   .m-tour-info-location::after {

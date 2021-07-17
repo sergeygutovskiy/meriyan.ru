@@ -96,7 +96,7 @@
 }
 
 .m-tour-info-location:first-child .m-tour-info-location__name span:first-child {
-    text-shadow: 0px 0px 3px #000
+    text-shadow: 0px 0px 3px #000;
 }
 
 @mixin module-tour-info-location--large {
@@ -119,6 +119,10 @@
 }
 
 @mixin module-tour-info-location--mobile {
+    .m-tour-info-location:first-child .m-tour-info-location__name span:first-child {
+        text-shadow: none;
+    }
+    
     .m-tour-info-location {
         &::after {
             right: 28px;
