@@ -40,7 +40,9 @@ Route::prefix('api/v1')->group(function () {
 
     Route::get('/seasons', [ ApiSeasonsController::class, 'index'  ]);
     Route::get('/complexities', [ ApiComplexitiesController::class, 'index'  ]);
+
     Route::get('/tags', [ ApiTagsController::class, 'index'  ]);
+    Route::post('/tags/{id}', [ ApiTagsController::class, 'update'  ]);
 });
 
 Route::prefix('api')->group(function () {

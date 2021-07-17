@@ -10,6 +10,10 @@ class Tag extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'description',
+    ];
+
     public function tours()
     {
         return $this->belongsToMany(Tour::class, 'tours_tags');

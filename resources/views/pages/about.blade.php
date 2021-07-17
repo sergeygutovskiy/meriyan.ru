@@ -20,7 +20,7 @@
             <div class="container mt-auto mb-auto">
                 <div class="row mb-6">
                     <div class="col-12 col-xl-5 text-center text-xl-start u-text_color_white">
-                        <h1>Lorem ipsum</h1>
+                        <h1>О нас</h1>
                     </div>
                 </div>
                 <div class="row">
@@ -41,7 +41,7 @@
         <section class="container u-page-margin">
             <div class="row mb-4 mb-md-8">
                 <div class="col d-flex justify-content-end u-text_color_white">
-                    <h2 class="mb-0">Lorem Ipsum</h2>
+                    <h2 class="mb-0">Наши преимущества</h2>
                 </div>
             </div>
             <div class="row">
@@ -117,7 +117,7 @@
     <section class="container u-page-margin">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="u-text_color_green-light">Lorem Ipsum</h2>
+                <h2 class="u-text_color_green-light">Отзывы наших клиентов</h2>
             </div>
         </div>
         <div class="row">
@@ -179,12 +179,12 @@
 
     <section class="container u-page-margin">
         <x-form.form-section
-            title="Lorem Ipsum"
-            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-            Donec nec neque vel diam hendrerit ultrices non quis ante."
+            title="Хотите начать путешествовать с нами?"
+            paragraph="Оставляйте нам свои данные и интересующие 
+            вас вопросы или пожелания к путешествию.
+            Мы свяжемся с вами в ближайшее время!"
             is-green="true"
-        />
+            />
     </section>
 
     <div class="u-page-padding"></div>

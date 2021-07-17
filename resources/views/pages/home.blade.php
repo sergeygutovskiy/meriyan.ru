@@ -22,11 +22,11 @@
             <div class="container mt-auto mb-auto">
                 <div class="row justify-content-center text-center u-text_color_white">
                     <div class="home-header col-12 col-lg-7">
-                        <h1 class="mb-7">Lorem Ipsum</h1>
+                        <h1 class="mb-7">
+                            Отдыхай как любишь
+                        </h1>
                         <p class="u-text_size_28 mb-7">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                            Donec nec neque vel diam hendrerit ultrices non quis ante.
+                            Выбирай свой уникальный тур в любую точку мира
                         </p>
                         <div>
                             <button class="u-btn u-btn_size_big u-btn_theme_transparent" id="learn-more-btn">
@@ -41,24 +41,23 @@
         <section class="container u-text_color_white u-page-margin">
             <div class="row">
                 <div class="col">
-                    <h2>Lorem Ipsum</h2>
+                    <h2>О нас</h2>
                 </div>
             </div>
             <div class="row mb-4 mb-sm-7">
                 <div class="col-lg-7">
                     <p class="u-text_size_28">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                        Donec nec neque vel diam hendrerit ultrices non quis ante.
+                        Наша Турфирма появилась не просто так! Мы сестры - Королева Марианна и Шаталина Яна.
+                        И родились мы в семье глухих родителей (людей с ограниченными возможностями слуха), 
+                        проблемы и жизнь таких людей нам до боли знакома!                        
                     </p>
                 </div>
             </div>
             <div class="row justify-content-end mb-6 mb-sm-7">
                 <div class="col-lg-7">
                     <p class="u-text_size_28">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                        Donec nec neque vel diam hendrerit ultrices non quis ante.
+                        Целью нашего турагенства стало - дать возможность таким людям и семьям не просто жить, 
+                        а путешествовать. Мы организовываем различные туры с сурдопереводом.
                     </p>
                 </div>
             </div>
@@ -81,7 +80,7 @@
                     >
                     <div class="mb-4 mb-lg-0">
                         <h2 class="u-text_color_white mb-0">
-                            Lorem Ipsum
+                            Мы рекомендуем
                         </h2>
                     </div>
                     <a class="u-btn u-btn_size_big u-btn_theme_transparent"  href="{{ url("tours") }}">
@@ -112,44 +111,41 @@
 
         <section class="container u-page-margin">
             <x-banner
-                title="Lorem Ipsum Lorem Ipsu Lorem Ipsu"
-                desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                    Donec nec neque vel diam hendrerit ultrices non quis ante."
-                img="/images/static/banners/home.png"
+                title="Не можете выбрать тур?"
+                desc="Мы подберем вам тур, учитывая все ваши пожелания к путешествию, 
+                чтобы ваш отдых отвечал всем вашим пожеланиям"
                 link-text="Подберите мне тур"
+                img="/images/static/banners/home.png"
             />
         </section>
 
         <section class="container u-page-margin">
             <div class="row">
                 <div class="col text-center u-text_color_white">
-                    <h2>Lorem Ipsum</h2>
+                    <h2>Наши партнёры</h2>
                 </div>
             </div>
             <div class="row row-cols-1 row-cols-lg-3 justify-content-sm-between">
                 <div class="col d-flex justify-content-center">
                     <x-partner-card 
-                        name="Lorem ipsum"
+                        name="Бюро жилья"
                         image="http://placehold.it/500x500"
-                        paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec sodales lacinia velit, a malesuada enim placerat ac."
+                        paragraph="Брокерское агентство недвижимости 'Бюро жилья'"
                     />
                 </div>
                 <div class="col d-flex justify-content-center mt-4 mt-lg-0">
                     <x-partner-card 
                         name="Lorem ipsum"
                         image="http://placehold.it/500x500"
-                        paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec sodales lacinia velit, a malesuada enim placerat ac."
+                        paragraph="Общественная организация по защите прав 
+                        людей с ограниченными возможностями по слуху"
                     />
                 </div>
                 <div class="col col-md-12 col-lg mt-4 mt-lg-0 d-flex justify-content-center">
                     <x-partner-card 
-                        name="Lorem ipsum"
+                        name="Мир глухих"
                         image="http://placehold.it/500x500"
-                        paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec sodales lacinia velit, a malesuada enim placerat ac."
+                        paragraph="Центр сурдоперевода 'Мир глухих'"
                     />
                 </div>
             </div>
@@ -157,11 +153,11 @@
 
         <section class="container u-page-margin">
             <x-form.form-section
-                title="Lorem Ipsum"
-                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                Donec nec neque vel diam hendrerit ultrices non quis ante."
-            />
+                title="Хотите начать путешествовать с нами?"
+                paragraph="Оставляйте нам свои данные и интересующие 
+                вас вопросы или пожелания к путешествию.
+                Мы свяжемся с вами в ближайшее время!"
+                />
         </section>
 
         <div class="u-page-padding"></div>

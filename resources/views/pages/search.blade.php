@@ -160,12 +160,12 @@
 
     <section class="container u-page-margin">
         <x-form.form-section
-            title="Lorem Ipsum"
-            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-            Donec nec neque vel diam hendrerit ultrices non quis ante."
+            title="Хотите начать путешествовать с нами?"
+            paragraph="Оставляйте нам свои данные и интересующие 
+            вас вопросы или пожелания к путешествию.
+            Мы свяжемся с вами в ближайшее время!"
             is-green="true"
-        />
+            />
     </section>
 
     <div class="u-page-padding"></div>

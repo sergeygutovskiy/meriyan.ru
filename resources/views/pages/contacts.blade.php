@@ -20,7 +20,9 @@
             <div class="container u-page-margin d-flex flex-column justify-content-center text-center u-text_color_white">
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-7">
-                        <h1>Lorem Ipsum</h1>
+                        <h1>
+                            Наши сотрудники
+                        </h1>
                     </div>
                 </div>
             </div>

@@ -18,6 +18,8 @@ import Tours from './components/tours/Index';
 import ToursAdd from './components/tours/add/Index';
 import ToursEdit from './components/tours/edit/Index';
 
+import TagsIndex from './components/tags/Index';
+
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -65,6 +67,11 @@ const router = new VueRouter({
                     component: FeedbackSelectionRequest
                 },
             ]
+        },
+        {
+            path: '/tags',
+            name: 'tags',
+            component: TagsIndex
         },
     ]
 });
