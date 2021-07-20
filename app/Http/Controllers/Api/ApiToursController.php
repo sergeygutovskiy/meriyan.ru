@@ -253,7 +253,7 @@ class ApiToursController extends Controller
             'description' => $input['description'],
             'people_amount' => $input['people'],
             'duration' => $input['duration'],
-            'video_href' => $input['video_href'],
+            'video_path' => $input['video_href'],
             'season_id' => $input['season'],
             'complexity_id' => $input['complexity'],
         ]);
