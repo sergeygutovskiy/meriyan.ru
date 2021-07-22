@@ -32,6 +32,7 @@ class PageController extends Controller
 
     public function search()
     {
+        $tours = Tour::orderBy('discount_price', 'desc')->get();
         $seasons = Season::get();
         $tags = Tag::get();
         $complexities = Complexity::get();
@@ -40,6 +41,7 @@ class PageController extends Controller
         $max_price = Tour::max('price');
 
         return view('pages.search', [
+            'tours' => $tours,
             'seasons' => $seasons,
             'tags' => $tags,
             'complexities' => $complexities,

@@ -7129,6 +7129,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.get_locations();
   },
   methods: {
+    clear_inputs: function clear_inputs() {
+      this.new_name = '';
+      this.new_description = '';
+      this.new_image = null;
+      this.new_image_path = '';
+    },
     reset_messages: function reset_messages() {
       this.messages.created = null;
       this.messages.deleted = null;
@@ -7181,21 +7187,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _this.locations.push(response.data.data.location);
 
+                _this.clear_inputs();
+
                 _this.messages.created = true;
-                _context.next = 19;
+                _context.next = 20;
                 break;
 
-              case 16:
-                _context.prev = 16;
+              case 17:
+                _context.prev = 17;
                 _context.t0 = _context["catch"](8);
                 console.error(_context.t0);
 
-              case 19:
+              case 20:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[8, 16]]);
+        }, _callee, null, [[8, 17]]);
       }))();
     },
     new_image_changed: function new_image_changed() {
@@ -7588,6 +7596,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.get_services();
   },
   methods: {
+    clear_inputs: function clear_inputs() {
+      this.new_description = '';
+      this.new_is_in_price = true;
+    },
     reset_messages: function reset_messages() {
       this.messages.created = null;
       this.messages.deleted = null;
@@ -7639,21 +7651,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _this.services.push(response.data.data.service);
 
+                _this.clear_inputs();
+
                 _this.messages.created = true;
-                _context.next = 18;
+                _context.next = 19;
                 break;
 
-              case 15:
-                _context.prev = 15;
+              case 16:
+                _context.prev = 16;
                 _context.t0 = _context["catch"](7);
                 console.error(_context.t0);
 
-              case 18:
+              case 19:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[7, 15]]);
+        }, _callee, null, [[7, 16]]);
       }))();
     },
     get_services: function get_services() {
@@ -29009,7 +29023,7 @@ var render = function() {
                 staticClass: "list-group-item list-group-item-action",
                 attrs: { to: { name: "tours" } }
               },
-              [_vm._v("\n                    ТУРЫ\n                ")]
+              [_vm._v("\n                    Туры\n                ")]
             ),
             _vm._v(" "),
             _c(
@@ -29018,7 +29032,7 @@ var render = function() {
                 staticClass: "list-group-item list-group-item-action",
                 attrs: { to: { name: "feedback" } }
               },
-              [_vm._v("\n                    ЗАЯВКИ\n                ")]
+              [_vm._v("\n                    Заявки\n                ")]
             ),
             _vm._v(" "),
             _c(

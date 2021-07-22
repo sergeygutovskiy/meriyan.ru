@@ -57,31 +57,36 @@
 
                             <div class="col-12 col-lg-7 mb-4">
                                 <div 
-                                    class="input-complexity d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center" 
+                                    class="input-complexity 
+                                    d-flex flex-column flex-sm-row 
+                                    align-items-stretch align-items-sm-center" 
                                     id="input-complexities"
                                     >
                                     <span>
                                         Сложность тура
                                     </span>
-                                    <div class="mt-1 mt-sm-0 d-flex justify-content-between">
+                                    <div class="mt-1 mt-sm-0 mb-n1 d-flex flex-wrap justify-content-between">
                                         <button
                                             type="button" 
                                             data-complexity-id="{{ $complexities[0]->id }}"
-                                            class="u-btn complexity-{{ $complexities[0]->id }} u-btn_theme_green_outlined"
+                                            class="u-btn complexity-{{ $complexities[0]->id }} 
+                                            u-btn_theme_green_outlined mb-1 mr-1"
                                             >
                                             {{ $complexities[0]->name }}
                                         </button>
                                         <button
                                             type="button"
                                             data-complexity-id="{{ $complexities[1]->id }}"
-                                            class="u-btn complexity-{{ $complexities[1]->id }} u-btn_theme_green_outlined ml-1"
+                                            class="u-btn complexity-{{ $complexities[1]->id }} 
+                                            u-btn_theme_green_outlined mb-1 mr-1"
                                             >
                                             {{ $complexities[1]->name }}
                                         </button>
                                         <button
                                             type="button" 
                                             data-complexity-id="{{ $complexities[2]->id }}"
-                                            class="u-btn complexity-{{ $complexities[2]->id }} u-btn_theme_green_outlined ml-1"
+                                            class="u-btn complexity-{{ $complexities[2]->id }} 
+                                            u-btn_theme_green_outlined mb-1"
                                             >
                                             {{ $complexities[2]->name }}
                                         </button>
@@ -154,8 +159,15 @@
         </header>    
     </div>
 
-    <section class="container u-page-margin" id="tours">
-        <x-tours.columns-3-grid :tours="[]" />
+    <div class="u-page-margin" id="loading">
+        <img src="/images/static/loading.svg" width="360" height="360">
+    </div>
+
+    <section class="container u-page-margin active" id="tours">
+        <x-tours.columns-3-grid 
+            :tours="$tours" 
+            :is-with-price="true"
+            />
     </section>
 
     <section class="container u-page-margin">

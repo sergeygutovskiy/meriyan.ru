@@ -1,3 +1,18 @@
+#tours {
+  display: none;
+}
+#tours.active {
+  display: block;
+}
+
+#loading {
+  display: none;
+  text-align: center;
+}
+#loading.active {
+  display: block;
+}
+
 .search-inputs > div {
   position: relative;
 }
@@ -58,6 +73,9 @@
   border-radius: 20px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
 }
+.dropdown__toggle:hover {
+  cursor: pointer;
+}
 .dropdown__menu {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -75,11 +93,10 @@
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
   max-height: 0;
   overflow: hidden;
+  transition: max-height 150ms linear;
 }
 .dropdown__menu-wrapper.active {
-  max-height: -webkit-fit-content;
-  max-height: -moz-fit-content;
-  max-height: fit-content;
+  max-height: 360px;
 }
 .dropdown__menu > div:first-child {
   padding-top: 0.75rem;
@@ -123,11 +140,13 @@
   height: 25px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 14px;
+  transition: background-color 150ms linear;
 }
 .toggle__switcher > span {
   position: absolute;
   height: 100%;
   width: 100%;
+  transition: transform 150ms linear;
 }
 .toggle__switcher > span::after {
   content: "";
@@ -149,6 +168,9 @@
 }
 .toggle__switcher.active > span::after {
   transform: translate(-100%, -50%);
+}
+.toggle__switcher:hover {
+  cursor: pointer;
 }
 
 .input-complexity {
@@ -199,6 +221,12 @@
   background-color: transparent;
   border: none;
 }
+.input-seasons__btn:hover {
+  filter: brightness(150%);
+}
+.input-seasons__btn.active {
+  filter: brightness(150%);
+}
 
 .input-price {
   height: 61px;
@@ -240,6 +268,11 @@
 }
 
 @media screen and (max-width: 576px) {
+  #loading img {
+    max-width: 180px;
+    max-height: 180px;
+  }
+
   .input-complexity,
 .input-price {
     height: auto;

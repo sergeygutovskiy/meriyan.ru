@@ -29,6 +29,7 @@ $utilities: (
     "display": map-get($utilities, "display"),
     
     "flex-direction":  map-get($utilities, "flex-direction"),
+    "flex-wrap":       map-get($utilities, "flex-wrap"),
     "justify-content": map-get($utilities, "justify-content"),
     "align-items":     map-get($utilities, "align-items"),
     "order":           map-get($utilities, "order"),

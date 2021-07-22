@@ -229,12 +229,11 @@
                         u-text_color_white"
                     >
                     <h2>
-                        Lorem Ipsum
+                        Хотите отправится в тур?
                     </h2>
                     <p class="u-text_size_28">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                        Donec nec neque vel diam hendrerit ultrices non quis ante.
+                        Отправляйте заявку на бронирование места в туре. Оставляя нам свои данные для связи, 
+                        вы становитесь на шаг ближе к отдыху своей мечты!
                     </p>
                 </div>
                 <div class="col-12 col-lg d-flex justify-content-lg-end mt-6 mt-lg-0">

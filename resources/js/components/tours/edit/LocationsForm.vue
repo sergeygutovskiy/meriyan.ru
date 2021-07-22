@@ -125,6 +125,13 @@ export default {
     },
 
     methods: {
+        clear_inputs() {
+            this.new_name = '';
+            this.new_description = '';
+            this.new_image = null;
+            this.new_image_path = '';
+        },
+
         reset_messages() {
             this.messages.created = null;
             this.messages.deleted = null;
@@ -168,6 +175,8 @@ export default {
             try {
                 let response = await axios.post(this.endpoint_url, form_data);
                 this.locations.push(response.data.data.location);
+
+                this.clear_inputs();
 
                 this.messages.created = true;
 

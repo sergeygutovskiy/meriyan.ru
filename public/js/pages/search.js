@@ -2121,6 +2121,8 @@ var max_price = null;
 var is_discount = true;
 var search_form = document.getElementById('search-form');
 var tours = document.getElementById('tours').childNodes[1];
+var loading_container = document.getElementById('loading');
+var tours_container = document.getElementById('tours');
 var input_tags = document.getElementById('input_tags');
 var input_discount = document.getElementById('input-discount');
 var input_seasons = document.getElementById('input-seasons');
@@ -2229,7 +2231,9 @@ min_price = input_price_range.getElementsByTagName('input')[0].value;
 max_price = input_price_range.getElementsByTagName('input')[1].value;
 search_form.addEventListener('submit', function (event) {
   event.preventDefault();
-  axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/tours/search', {
+  loading_container.classList.add('active');
+  tours_container.classList.remove('active');
+  axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/v1/tours/search', {
     min_price: min_price,
     max_price: max_price,
     is_discount: is_discount,
@@ -2239,11 +2243,14 @@ search_form.addEventListener('submit', function (event) {
   }).then(function (response) {
     var searched_tours = response.data;
     tours.innerHTML = '';
+    console.log(searched_tours);
     searched_tours.forEach(function (t) {
       tours.append(create_tour_element(t));
     });
     var modal_trigger_els = document.getElementsByClassName("m-tour-card__booking-btn");
     window.app.modal_fade_manager.update_modal_triggers(0, modal_trigger_els);
+    loading_container.classList.remove('active');
+    tours_container.classList.add('active');
   });
 });
 

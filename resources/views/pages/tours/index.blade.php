@@ -19,11 +19,12 @@
             <div class="container u-text_color_white text-center mt-auto mb-auto">
                 <div class="row justify-content-center mb-8">
                     <div class="col-12 col-lg-7">
-                        <h1 class="mb-6">Lorem Ipsum</h1>
+                        <h1 class="mb-6">
+                            Наши уникальные туры
+                        </h1>
                         <p class="u-text_size_28">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                            Donec nec neque vel diam hendrerit ultrices non quis ante.
+                            Мы собрали самые популярные категории наших туров, 
+                            чтобы вы могли выбрать подходящее для вас путешествие
                         </p>
                     </div>
                 </div>
@@ -157,6 +158,15 @@
                     :is-with-price="true" 
                     />
             </div>
+        </section>
+
+        <section class="container u-page-margin">
+            <x-form.form-section
+                title="Хотите начать путешествовать с нами?"
+                paragraph="Оставляйте нам свои данные и интересующие 
+                вас вопросы или пожелания к путешествию.
+                Мы свяжемся с вами в ближайшее время!"
+                />
         </section>
 
         <div class="u-page-padding"></div>

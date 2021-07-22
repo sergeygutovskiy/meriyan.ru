@@ -22,6 +22,8 @@ Route::prefix('api/v1')->group(function () {
     
     Route::get('/tours/{id}', [ ApiToursController::class, 'show' ]);
 
+    Route::post('/tours/search', [ ApiToursController::class, 'search' ]);
+
     Route::get('/tours/{id}/tags', [ ApiToursController::class, 'tags' ]);
     Route::post('/tours/{id}/tags', [ ApiToursController::class, 'store_tags' ]);
     
@@ -46,7 +48,7 @@ Route::prefix('api/v1')->group(function () {
 });
 
 Route::prefix('api')->group(function () {
-    Route::post('/tours/search', [ App\Http\Controllers\Admin\TourController::class,       'search' ]);
+    // Route::post('/tours/search', [ App\Http\Controllers\Admin\TourController::class,       'search' ]);
     Route::get( '/tours',        [ App\Http\Controllers\Admin\TourController::class,       'index'  ]);
     Route::post('/tours',        [ App\Http\Controllers\Admin\TourController::class,       'store'  ]);
     Route::get( '/tours/{id}',   [ App\Http\Controllers\Admin\TourController::class,       'show'   ]);

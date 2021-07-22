@@ -123,6 +123,11 @@ export default {
     },
 
     methods: {
+        clear_inputs() {
+            this.new_description = '';
+            this.new_is_in_price = true;
+        },
+
         reset_messages() {
             this.messages.created = null;
             this.messages.deleted = null;
@@ -163,6 +168,8 @@ export default {
             try {
                 let response = await axios.post(this.endpoint_url, form_data);
                 this.services.push(response.data.data.service);
+
+                this.clear_inputs();
 
                 this.messages.created = true;
 

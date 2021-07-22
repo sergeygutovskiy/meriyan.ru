@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Tours\Tour;
 use App\Models\Tours\TourLocation;
 use App\Models\Tours\TourService;
+use App\Models\Tag;
+use App\Models\Complexity;
+use App\Models\Season;
 
 class ApiToursController extends Controller
 {
@@ -356,4 +359,84 @@ class ApiToursController extends Controller
             'data' => [ 'id' => $info->id ]
         ]);
     }
+
+    public function search(Request $request)
+    {
+        $tags = json_decode($request->input('tags'));
+        $seasons = json_decode($request->input('seasons'));
+        $complexities = json_decode($request->input('complexities'));
+
+        $min_price = $request->input('min_price');
+        $max_price = $request->input('max_price');
+        $is_discount = $request->input('is_discount') == 'true' ? true : false;
+
+        if (count($tags) == 0) $tags = Tag::all()->pluck('id')->toArray();
+        if (count($seasons) == 0) $seasons = Season::all()->pluck('id')->toArray();
+        if (count($complexities) == 0) $complexities = Complexity::all()->pluck('id')->toArray();
+        
+        $tours = Tour::with('tags')->with('info')
+            ->where('price', '>=', $min_price)
+            ->where('price', '<=', $max_price);
+
+        if ($is_discount) $tours = $tours->get();
+        else $tours = $tours->where('discount_price', '=', null)->get();    
+    
+        $filtered_tours = [];
+
+        foreach ($tours as $tour)
+        {
+            foreach ($tags as $tag)
+            {
+                if ($tour->tags->contains($tag))
+                {
+                    $filtered_tours[$tour->id] = $tour;
+                    break;
+                }
+            }
+
+            if (isset($filtered_tours[$tour->id])) continue;
+        }
+
+        foreach ($filtered_tours as $tour)
+        {
+            $isset = false;
+
+            foreach ($seasons as $season)
+            {
+                if ($tour->info->season->id == $season)
+                {
+                    $isset = true;
+                    break;
+                }
+            }
+
+            if (!$isset) unset($filtered_tours[$tour->id]);
+        }
+
+        foreach ($filtered_tours as $tour)
+        {
+            $isset = false;
+
+            foreach ($complexities as $complexity)
+            {
+                if ($tour->info->complexity->id == $complexity)
+                {
+                    $isset = true;
+                    break;
+                }
+            }
+
+            if (!$isset) unset($filtered_tours[$tour->id]);
+        }
+
+        $response_tours = [];
+        foreach ($filtered_tours as $tour) { $response_tours[] = $tour; }
+
+        $response_tours = collect($response_tours)->sortByDesc('discount_price')->toArray();
+        
+        $response_tours_array = [];
+        foreach ($response_tours as $tour) { $response_tours_array[] = $tour; }
+
+        return $response_tours_array;
+    }    
 }
