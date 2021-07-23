@@ -5,6 +5,10 @@
                 <h4 class="mb-0">{{ name }}</h4>
             </div>
             <div class="mb-3">
+                <label class="form-label">Название для личной страницы</label>
+                <input type="text" class="form-control" v-model="edited_name_for_page">
+            </div>
+            <div class="mb-3">
                 <textarea 
                     class="form-control" 
                     rows="4"
@@ -32,7 +36,8 @@ export default {
     props: [
         'id',
         'name',
-        'description'
+        'description',
+        'name_for_page',
     ],
     
     data() {
@@ -42,6 +47,7 @@ export default {
             },
 
             edited_description: this.description,
+            edited_name_for_page: this.name_for_page,
 
             endpoint_url: `/api/v1/tags/${this.id}`,
         }
@@ -57,9 +63,9 @@ export default {
 
             let form_data = new FormData();
             form_data.append('input', JSON.stringify({
-                'description': this.edited_description
+                'description': this.edited_description,
+                'page_name': this.edited_name_for_page,
             }));
-            form_data.append('new_image', this.new_image ? this.new_image : '');
 
             this.reset_messages();
 

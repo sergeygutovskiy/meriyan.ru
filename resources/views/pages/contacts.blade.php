@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contacts')
+@section('title', 'Контакты - МериЯн')
 
 @section('head')
     <link rel="stylesheet" href="css/pages/contacts.css">
@@ -32,70 +32,40 @@
             <div class="row row-cols-2 justify-content-center">
                 <div class="col-12 col-lg-11">
                     <div class="row justify-content-between pv-2">
-                        <div class="mb-8 d-flex justify-content-center col-12 justify-content-lg-start col-lg-6">
+                        <div class="mb-8 d-flex justify-content-center col-12 justify-content-lg-start col-xl-6">
                             <x-contact-card 
-                                name="Lorem Ipsum"
-                                image="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
-                                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                                Donec nec neque vel diam hendrerit ultrices non quis ante."
-                                email="mar.78ma@rambler.ru"
-                                phone="+7 (962) 685-09-78"
+                                name="Николаевна <br> Яна"
+                                image="/images/static/contacts/yana.jpg"
+                                paragraph="Коммерческий директор, ГИД по странам Скандинавии, бизнес-тренер, 
+                                руководитель брокерского агентства 'Бюро Жилья', 
+                                вице-президент Общественной организации людей 
+                                с ограниченными возможностями слуха 'Мир Глухих'"
+                                email="shatalinarf@yandex.ru"
+                                phone="+7 (911) 194-12-61"
+                                phone-href="+79111941261"
                             />
                         </div>
-                        <div class="mb-8 d-flex justify-content-center col-12 justify-content-lg-end col-lg-6">
+                        <div class="mb-8 d-flex justify-content-center col-12 justify-content-lg-end col-xl-6">
                             <x-contact-card 
-                                name="Lorem Ipsum"
-                                image="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
-                                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                                Donec nec neque vel diam hendrerit ultrices non quis ante."
+                                name="Королева <br> Марианна"
+                                image="/images/static/contacts/mariana.jpg"
+                                paragraph="Генеральный директор ООО 'Мэриян', 
+                                зам. директора брокерского агентства 'Бюро Жилья', 
+                                вице-президент Общественной организации людей 
+                                с ограниченными возможностями слуха 'Мир Глухих', сурдопереводчик"
                                 email="mar.78ma@rambler.ru"
                                 phone="+7 (962) 685-09-78"
+                                phone-href="+79626850978"
                             />
                         </div>
-                        <div class="mt-8 mb-8 d-flex justify-content-center col-12 justify-content-lg-start col-lg-6">
+                        <div class="mt-8 mb-8 d-flex justify-content-center col-12 justify-content-lg-start col-xl-6">
                             <x-contact-card 
-                                name="Lorem Ipsum"
-                                image="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
-                                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                                Donec nec neque vel diam hendrerit ultrices non quis ante."
-                                email="mar.78ma@rambler.ru"
-                                phone="+7 (962) 685-09-78"
-                            />
-                        </div>
-                        <div class="mt-8 mb-8 d-flex justify-content-center col-12 justify-content-lg-end col-lg-6">
-                            <x-contact-card 
-                                name="Lorem Ipsum"
-                                image="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
-                                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                                Donec nec neque vel diam hendrerit ultrices non quis ante."
-                                email="mar.78ma@rambler.ru"
-                                phone="+7 (962) 685-09-78"
-                            />
-                        </div>
-                        <div class="mt-8 mb-8 d-flex justify-content-center col-12 justify-content-lg-start col-lg-6">
-                            <x-contact-card 
-                                name="Lorem Ipsum"
-                                image="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
-                                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                                Donec nec neque vel diam hendrerit ultrices non quis ante."
-                                email="mar.78ma@rambler.ru"
-                                phone="+7 (962) 685-09-78"
-                            />
-                        </div>
-                        <div class="mt-8 mb-8 d-flex justify-content-center col-12 justify-content-lg-end col-lg-6">
-                            <x-contact-card 
-                                name="Lorem Ipsum"
-                                image="https://images7.alphacoders.com/686/thumb-1920-686386.jpg"
-                                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                                Donec nec neque vel diam hendrerit ultrices non quis ante."
-                                email="mar.78ma@rambler.ru"
-                                phone="+7 (962) 685-09-78"
+                                name="Космосс Руслан"
+                                image="/images/static/contacts/ruslan.jpg"
+                                paragraph="Менеджер по сотрудничеству с партнёрами"
+                                email="good.lucktome@yandex.ru"
+                                phone="+7 (911) 154-56-87"
+                                phone-href="+79111545687"
                             />
                         </div>
                     </div>

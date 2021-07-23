@@ -12,6 +12,7 @@
             :id="tag.id"
             :name="tag.name"
             :description="tag.description"
+            :name_for_page="tag.page_name"
         />
     </section>
 </template>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Search')
+@section('title', 'Поиск - МериЯн')
 
 @section('head')
     <link rel="stylesheet" href="css/pages/search.css">

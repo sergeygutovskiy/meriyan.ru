@@ -23,7 +23,8 @@ class ApiTagsController extends Controller
         $input = (array) json_decode($r->input('input'));
 
         $tag->update([
-            'description' => $input['description']
+            'description' => $input['description'],
+            'page_name' => $input['page_name'], 
         ]);
 
         return json_encode([

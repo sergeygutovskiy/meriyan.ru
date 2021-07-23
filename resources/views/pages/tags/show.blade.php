@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tag')
+@section('title', 'Категория "' . $tag->name . '" - МериЯн')
 
 @section('head')
     {{-- <link rel="stylesheet" href="css/pages/home.css"> --}}
@@ -22,7 +22,7 @@
                     <div class="col-12 col-lg-7">
                         <h1 class="u-header-with-tags mb-7">
                             <span>
-                                {{ $tag->name }}
+                                {{ $tag->page_name != null ? $tag->page_name : $tag->name }}
                             </span>
                             {{-- // TODO доделать вывод тэгов --}}
                             {{-- <div class="u-header-with-tags__icons">
@@ -48,12 +48,12 @@
 
     <section class="container u-page-margin">
         <x-form.form-section
-            title="Lorem Ipsum"
-            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-            Donec nec neque vel diam hendrerit ultrices non quis ante."
+            title="Хотите начать путешествовать с нами?"
+            paragraph="Оставляйте нам свои данные и интересующие 
+            вас вопросы или пожелания к путешествию.
+            Мы свяжемся с вами в ближайшее время!"
             is-green="true"
-        />
+            />
     </section>
     
     <div class="u-page-padding"></div>

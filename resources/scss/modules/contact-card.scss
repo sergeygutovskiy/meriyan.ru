@@ -39,6 +39,10 @@
 
 @mixin module-contact-card--mobile {    
     .m-contact-card {
+        br {
+            display: none;
+        }
+
         &__image {
             &-wrapper {
                 left: 50%;

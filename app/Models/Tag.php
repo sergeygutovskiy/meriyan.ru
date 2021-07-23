@@ -12,6 +12,7 @@ class Tag extends Model
 
     protected $fillable = [
         'description',
+        'page_name',
     ];
 
     public function tours()

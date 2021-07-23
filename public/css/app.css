@@ -7592,6 +7592,9 @@
     padding-top: 180px;
   }
 
+  .m-contact-card br {
+    display: none;
+  }
   .m-contact-card__image-wrapper {
     left: 50%;
     transform: translate(-50%, -60%);

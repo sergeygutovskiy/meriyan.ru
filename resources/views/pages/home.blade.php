@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'Главная - МериЯн')
 
 @section('head')
     <link rel="stylesheet" href="css/pages/home.css">

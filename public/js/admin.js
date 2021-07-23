@@ -5749,6 +5749,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -5841,14 +5842,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['id', 'name', 'description'],
+  props: ['id', 'name', 'description', 'name_for_page'],
   data: function data() {
     return {
       messages: {
         updated: null
       },
       edited_description: this.description,
+      edited_name_for_page: this.name_for_page,
       endpoint_url: "/api/v1/tags/".concat(this.id)
     };
   },
@@ -5868,33 +5874,33 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 e.preventDefault();
                 form_data = new FormData();
                 form_data.append('input', JSON.stringify({
-                  'description': _this.edited_description
+                  'description': _this.edited_description,
+                  'page_name': _this.edited_name_for_page
                 }));
-                form_data.append('new_image', _this.new_image ? _this.new_image : '');
 
                 _this.reset_messages();
 
-                _context.prev = 5;
-                _context.next = 8;
+                _context.prev = 4;
+                _context.next = 7;
                 return axios.post(_this.endpoint_url, form_data);
 
-              case 8:
+              case 7:
                 response = _context.sent;
                 _this.messages.updated = true;
-                _context.next = 15;
+                _context.next = 14;
                 break;
 
-              case 12:
-                _context.prev = 12;
-                _context.t0 = _context["catch"](5);
+              case 11:
+                _context.prev = 11;
+                _context.t0 = _context["catch"](4);
                 console.error(_context.t0);
 
-              case 15:
+              case 14:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[5, 12]]);
+        }, _callee, null, [[4, 11]]);
       }))();
     }
   }
@@ -29710,7 +29716,12 @@ var render = function() {
       _vm._l(_vm.tags, function(tag) {
         return _c("tag", {
           key: tag.id,
-          attrs: { id: tag.id, name: tag.name, description: tag.description }
+          attrs: {
+            id: tag.id,
+            name: tag.name,
+            description: tag.description,
+            name_for_page: tag.page_name
+          }
         })
       })
     ],
@@ -29758,6 +29769,34 @@ var render = function() {
       _c("div", { staticClass: "card-body" }, [
         _c("div", { staticClass: "mb-3" }, [
           _c("h4", { staticClass: "mb-0" }, [_vm._v(_vm._s(_vm.name))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-3" }, [
+          _c("label", { staticClass: "form-label" }, [
+            _vm._v("Название для личной страницы")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.edited_name_for_page,
+                expression: "edited_name_for_page"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text" },
+            domProps: { value: _vm.edited_name_for_page },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.edited_name_for_page = $event.target.value
+              }
+            }
+          })
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "mb-3" }, [

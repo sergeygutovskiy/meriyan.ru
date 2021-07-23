@@ -11,19 +11,21 @@ class ContactCard extends Component
     public $paragraph;
     public $email;
     public $phone;
+    public $phone_href;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $image, $paragraph, $email, $phone)
+    public function __construct($name, $image, $paragraph, $email, $phone, $phoneHref)
     {
         $this->name = $name;
         $this->image = $image;
         $this->paragraph = $paragraph;
         $this->email = $email;
         $this->phone = $phone;
+        $this->phone_href = $phoneHref;
     }
 
     /**

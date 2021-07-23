@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tours')
+@section('title', $tour->title . ' - МериЯн')
 
 @section('head')
 @endsection

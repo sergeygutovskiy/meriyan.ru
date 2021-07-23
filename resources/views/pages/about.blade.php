@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'About us')
+@section('title', 'О нас - МериЯн')
 
 @section('head')
     <link rel="stylesheet" href="css/pages/about.css">
