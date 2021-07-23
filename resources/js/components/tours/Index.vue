@@ -47,7 +47,7 @@ export default {
     methods: {
         async get_tours() {
             try {
-                let response = await axios.get("/api/tours");
+                let response = await axios.get("/api/v1/tours");
                 this.tours = response.data;
                 console.log(this.tours);
             } catch (error) {

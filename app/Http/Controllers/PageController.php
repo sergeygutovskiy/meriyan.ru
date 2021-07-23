@@ -8,6 +8,7 @@ use App\Models\Tours\Tour;
 use App\Models\Tag;
 use App\Models\Season;
 use App\Models\Complexity;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -75,5 +76,26 @@ class PageController extends Controller
         $tag = Tag::with('tours')->where('id', $id)->first();
 
         return view('pages.tags.show', [ 'tag' => $tag ]);
+    }
+
+    public function login()
+    {
+        return view('pages.login');
+    }
+
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('admin');
+        }
+
+        return back()->withErrors(['a' => 'a']);
     }
 }

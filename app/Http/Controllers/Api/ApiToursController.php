@@ -15,6 +15,11 @@ use App\Models\Season;
 
 class ApiToursController extends Controller
 {
+    public function index()
+    {
+        return Tour::get();
+    }
+
     public function show($id)
     {
         $tour = Tour::where('id', $id)->first();
