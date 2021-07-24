@@ -47,19 +47,30 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label class="form-label">Карточка</label>
-                <input class="form-control" type="file" @change="card_image_changed" ref="card_image">
+                <label class="form-label">Фото для страницы</label>
+                <input class="form-control" type="file" @change="image_changed" ref="image">
             
                 <img
-                    v-if="!new_card_image"
+                    v-if="!new_image"
                     :src="`/images/storage/tours/${id}/${edited_image_path}`" 
                     class="img-fluid mt-3"
                     >
                 <img
+                    v-if="new_image" 
+                    :src="new_image_path"
+                    class="img-fluid mt-3"
+                    >
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Карточка</label>
+                <input class="form-control" type="file" @change="card_image_changed" ref="card_image">
+
+                <img
                     v-if="new_card_image" 
                     :src="new_card_image_path"
                     class="img-fluid mt-3"
-                    >
+                    >                
             </div>
 
             <div class="d-flex justify-content-between">
@@ -114,6 +125,9 @@ export default {
             edited_discount_price: this.discount_price,
             edited_is_discount_price: this.discount_price != null,
         
+            new_image: null,
+            new_image_path: '',
+
             new_card_image: null,
             new_card_image_path: '',
 
@@ -132,6 +146,11 @@ export default {
             this.messages.updated = null;
         },
 
+        image_changed() {
+            this.new_image = this.$refs.image.files[0];
+            this.new_image_path = URL.createObjectURL(this.new_image);
+        },
+
         card_image_changed() {
             this.new_card_image = this.$refs.card_image.files[0];
             this.new_card_image_path = URL.createObjectURL(this.new_card_image);
@@ -145,8 +164,8 @@ export default {
             this.edited_discount_price = this.discount_price;
             this.edited_is_discount_price = this.discount_price != null;
 
-            this.new_card_image = null;
-            this.new_card_image_path = '';
+            this.new_image = null;
+            this.new_image_path = '';
         },
 
         validate() {
@@ -172,6 +191,7 @@ export default {
                 price: this.edited_price,
                 discount_price: this.edited_is_discount_price ? this.edited_discount_price : null
             }));
+            form_data.append('new_image', this.new_image ? this.new_image : '');
             form_data.append('new_card_image', this.new_card_image ? this.new_card_image : '');
             
             this.reset_messages();

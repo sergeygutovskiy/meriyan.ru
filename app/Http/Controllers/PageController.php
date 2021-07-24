@@ -98,4 +98,9 @@ class PageController extends Controller
 
         return back()->withErrors(['a' => 'a']);
     }
+
+    public function policy()
+    {
+        return view('pages.policy');
+    }
 }

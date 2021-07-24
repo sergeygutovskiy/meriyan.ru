@@ -68,6 +68,7 @@ Route::get('/tours/{tour}', [ PageController::class, 'tours_show'   ])->name('to
 Route::get('/tags/{tag}',   [ PageController::class, 'tags_show'    ])->name('tag.show');
 Route::get('/about',        [ PageController::class, 'about'        ])->name("about");
 Route::get('/contacts',     [ PageController::class, 'contacts'     ])->name("contacts");
+Route::get('/policy',       [ PageController::class, 'policy'       ])->name("policy");
 Route::get('/search',       [ PageController::class, 'search'       ])->name("search");
 Route::get('/login',        [ PageController::class, 'login'        ])
     ->middleware('guest')

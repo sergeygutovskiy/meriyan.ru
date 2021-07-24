@@ -16,7 +16,8 @@ class Tour extends Model
         'description', 
         'price', 
         'discount_price', 
-        'image_path'
+        'image_path',
+        'card_image_path',
     ];
     
     public function getLocalStoragePathAttribute()
@@ -27,6 +28,11 @@ class Tour extends Model
     public function getImageSrcAttribute()
     {
         return  '/images/storage/' . $this->local_storage_path . $this->image_path;
+    }
+
+    public function getCardImageSrcAttribute()
+    {
+        return  '/images/storage/' . $this->local_storage_path . $this->card_image_path;
     }
 
     public function getPriceFormattedAttribute()

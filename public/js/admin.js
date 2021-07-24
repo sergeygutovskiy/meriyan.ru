@@ -7364,6 +7364,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['id', 'title', 'description', 'image_path', 'price', 'discount_price'],
   data: function data() {
@@ -7377,6 +7388,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       edited_price: this.price,
       edited_discount_price: this.discount_price,
       edited_is_discount_price: this.discount_price != null,
+      new_image: null,
+      new_image_path: '',
       new_card_image: null,
       new_card_image_path: '',
       endpoint_url: "/api/v1/tours/".concat(this.id)
@@ -7391,6 +7404,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     reset_messages: function reset_messages() {
       this.messages.updated = null;
     },
+    image_changed: function image_changed() {
+      this.new_image = this.$refs.image.files[0];
+      this.new_image_path = URL.createObjectURL(this.new_image);
+    },
     card_image_changed: function card_image_changed() {
       this.new_card_image = this.$refs.card_image.files[0];
       this.new_card_image_path = URL.createObjectURL(this.new_card_image);
@@ -7402,8 +7419,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.edited_price = this.price;
       this.edited_discount_price = this.discount_price;
       this.edited_is_discount_price = this.discount_price != null;
-      this.new_card_image = null;
-      this.new_card_image_path = '';
+      this.new_image = null;
+      this.new_image_path = '';
     },
     validate: function validate() {
       return this.edited_title.length > 0 && this.edited_description.length > 0 && this.price != '';
@@ -7435,31 +7452,32 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   price: _this.edited_price,
                   discount_price: _this.edited_is_discount_price ? _this.edited_discount_price : null
                 }));
+                form_data.append('new_image', _this.new_image ? _this.new_image : '');
                 form_data.append('new_card_image', _this.new_card_image ? _this.new_card_image : '');
 
                 _this.reset_messages();
 
-                _context.prev = 8;
-                _context.next = 11;
+                _context.prev = 9;
+                _context.next = 12;
                 return axios.post(_this.endpoint_url, form_data);
 
-              case 11:
+              case 12:
                 response = _context.sent;
                 _this.messages.updated = true;
-                _context.next = 18;
+                _context.next = 19;
                 break;
 
-              case 15:
-                _context.prev = 15;
-                _context.t0 = _context["catch"](8);
+              case 16:
+                _context.prev = 16;
+                _context.t0 = _context["catch"](9);
                 console.error(_context.t0);
 
-              case 18:
+              case 19:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[8, 15]]);
+        }, _callee, null, [[9, 16]]);
       }))();
     }
   }
@@ -31639,16 +31657,18 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "mb-3" }, [
-          _c("label", { staticClass: "form-label" }, [_vm._v("Карточка")]),
+          _c("label", { staticClass: "form-label" }, [
+            _vm._v("Фото для страницы")
+          ]),
           _vm._v(" "),
           _c("input", {
-            ref: "card_image",
+            ref: "image",
             staticClass: "form-control",
             attrs: { type: "file" },
-            on: { change: _vm.card_image_changed }
+            on: { change: _vm.image_changed }
           }),
           _vm._v(" "),
-          !_vm.new_card_image
+          !_vm.new_image
             ? _c("img", {
                 staticClass: "img-fluid mt-3",
                 attrs: {
@@ -31660,6 +31680,24 @@ var render = function() {
                 }
               })
             : _vm._e(),
+          _vm._v(" "),
+          _vm.new_image
+            ? _c("img", {
+                staticClass: "img-fluid mt-3",
+                attrs: { src: _vm.new_image_path }
+              })
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-3" }, [
+          _c("label", { staticClass: "form-label" }, [_vm._v("Карточка")]),
+          _vm._v(" "),
+          _c("input", {
+            ref: "card_image",
+            staticClass: "form-control",
+            attrs: { type: "file" },
+            on: { change: _vm.card_image_changed }
+          }),
           _vm._v(" "),
           _vm.new_card_image
             ? _c("img", {

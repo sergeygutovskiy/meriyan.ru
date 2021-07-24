@@ -129,14 +129,14 @@
                 <div class="col d-flex justify-content-center">
                     <x-partner-card 
                         name="Бюро жилья"
-                        image="http://placehold.it/500x500"
+                        image="/images/static/partners/partner-1.png"
                         paragraph="Брокерское агентство недвижимости 'Бюро жилья'"
                     />
                 </div>
                 <div class="col d-flex justify-content-center mt-4 mt-lg-0">
                     <x-partner-card 
                         name="Lorem ipsum"
-                        image="http://placehold.it/500x500"
+                        image="/images/static/partners/partner-2.png"
                         paragraph="Общественная организация по защите прав 
                         людей с ограниченными возможностями по слуху"
                     />
@@ -144,7 +144,7 @@
                 <div class="col col-md-12 col-lg mt-4 mt-lg-0 d-flex justify-content-center">
                     <x-partner-card 
                         name="Мир глухих"
-                        image="http://placehold.it/500x500"
+                        image="/images/static/partners/partner-3.png"
                         paragraph="Центр сурдоперевода 'Мир глухих'"
                     />
                 </div>

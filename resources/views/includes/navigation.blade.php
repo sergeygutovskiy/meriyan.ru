@@ -28,7 +28,10 @@
         <a class="navigation__link" href="{{ url('search') }}">ПОИСК ТУРА</a>
     </nav>
     <div class="navigation__social-links">
-        <a class="navigation__social-link mr-3" href="">
+        <a 
+            class="navigation__social-link mr-3" 
+            href="https://www.instagram.com/meriyantravel"
+            >
             <svg 
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 26 26" 
@@ -52,20 +55,10 @@
                         C 8 10.226563 10.226563 8 13 8 Z"/>
             </svg>
         </a>
-        <a class="navigation__social-link mr-3" href="">
-            <svg 
-                enable-background="new 0 0 26 26" 
-                height="24" 
-                width="24" 
-                viewBox="0 0 26 26" 
-                xmlns="http://www.w3.org/2000/svg">
-                <path 
-                    d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 
-                        0-5.323 1.987-5.323 
-                        5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/>
-            </svg>
-        </a>
-        <a class="navigation__social-link mr-3" href="">
+        <a 
+            class="navigation__social-link mr-3" 
+            href="https://www.youtube.com/channel/UCqA5G22SF-TANJ2wSZiTU6w"
+            >
             <svg 
                 height="24" 
                 width="24" 
@@ -89,7 +82,10 @@
                     style="fill-rule:nonzero;"/>
             </svg>
         </a>
-        <a class="navigation__social-link mr-3" href="">
+        <a 
+            class="navigation__social-link mr-3" 
+            href="https://vk.com/mary_yan_travel"
+            >
             <svg
                 style="position: relative; bottom: -1px;" 
                 height="28" 
@@ -111,7 +107,10 @@
                         1.01862,0,0,1,19.2268,12.307c.63737-.83876,1.67988-2.21175,
                         2.122-2.79993C21.95313,8.70313,23.04688,7,21.54736,7Z"/>
             </svg>
-            <a class="navigation__social-link" href="">
+            <a 
+                class="navigation__social-link" 
+                href="https://wa.me/79111941261"
+                >
                 <svg 
                     style="position: relative; bottom: -1px; right: -1px;"
                     height="28" 

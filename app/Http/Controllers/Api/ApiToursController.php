@@ -216,6 +216,8 @@ class ApiToursController extends Controller
     public function update(Request $r, $id)
     {
         $input = (array) json_decode($r->input('input'));
+        
+        $new_image = $r->new_image ? $r->new_image : null;
         $new_card_image = $r->new_card_image ? $r->new_card_image : null;
     
         $tour = Tour::where('id', $id)->first();
@@ -226,10 +228,30 @@ class ApiToursController extends Controller
             'discount_price' => $input['discount_price'],
         ]);
 
-        if ($new_card_image)
+        if ($new_image)
         {
             Storage::disk('public_images')
                 ->delete('tours/' . $id . '/' . $tour->image_path);
+
+            $file_name = 'page-' . bin2hex(random_bytes(5)) . '.' . $new_image->extension();
+
+            Storage::disk('public_images')->put(
+                $tour->local_storage_path . $file_name, 
+                file_get_contents($new_image->getRealPath())
+            );
+        
+            $tour->update([
+                'image_path' => $file_name
+            ]);
+        }
+
+        if ($new_card_image)
+        {
+            if ($tour->card_image_path != null)
+            {
+                Storage::disk('public_images')
+                    ->delete('tours/' . $id . '/' . $tour->card_image_path);
+            }
 
             $file_name = 'card-' . bin2hex(random_bytes(5)) . '.' . $new_card_image->extension();
 
@@ -239,7 +261,7 @@ class ApiToursController extends Controller
             );
         
             $tour->update([
-                'image_path' => $file_name
+                'card_image_path' => $file_name
             ]);
         }
 
