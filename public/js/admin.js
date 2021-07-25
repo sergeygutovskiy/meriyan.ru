@@ -6632,6 +6632,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 
@@ -7375,8 +7376,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['id', 'title', 'description', 'image_path', 'price', 'discount_price'],
+  props: ['id', 'title', 'description', 'image_path', 'card_image_path', 'price', 'discount_price'],
   data: function data() {
     return {
       messages: {
@@ -7385,6 +7392,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       edited_title: this.title,
       edited_description: this.description,
       edited_image_path: this.image_path,
+      edited_card_image_path: this.card_image_path,
       edited_price: this.price,
       edited_discount_price: this.discount_price,
       edited_is_discount_price: this.discount_price != null,
@@ -7416,11 +7424,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.edited_title = this.title;
       this.edited_description = this.description;
       this.edited_image_path = this.image_path;
+      this.edited_card_image_path = this.card_image_path;
       this.edited_price = this.price;
       this.edited_discount_price = this.discount_price;
       this.edited_is_discount_price = this.discount_price != null;
       this.new_image = null;
       this.new_image_path = '';
+      this.new_card_image = null;
+      this.new_card_image_path = '';
     },
     validate: function validate() {
       return this.edited_title.length > 0 && this.edited_description.length > 0 && this.price != '';
@@ -30733,6 +30744,7 @@ var render = function() {
                 title: _vm.tour.title,
                 description: _vm.tour.description,
                 image_path: _vm.tour.image_path,
+                card_image_path: _vm.tour.card_image_path,
                 price: _vm.tour.price,
                 discount_price: _vm.tour.discount_price
               }
@@ -31698,6 +31710,19 @@ var render = function() {
             attrs: { type: "file" },
             on: { change: _vm.card_image_changed }
           }),
+          _vm._v(" "),
+          !_vm.new_card_image && _vm.edited_card_image_path
+            ? _c("img", {
+                staticClass: "img-fluid mt-3",
+                attrs: {
+                  src:
+                    "/images/storage/tours/" +
+                    _vm.id +
+                    "/" +
+                    _vm.edited_card_image_path
+                }
+              })
+            : _vm._e(),
           _vm._v(" "),
           _vm.new_card_image
             ? _c("img", {

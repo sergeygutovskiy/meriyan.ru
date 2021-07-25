@@ -15,6 +15,7 @@
                 :title="tour.title"
                 :description="tour.description"
                 :image_path="tour.image_path"
+                :card_image_path="tour.card_image_path"
                 :price="tour.price"
                 :discount_price="tour.discount_price"
                 />

@@ -135,7 +135,10 @@ function create_tour_element(tour) {
     const wrapper_end = '</div></div>';
 
     let tour_el = '<article class="m-tour-card"><div class="m-tour-card__image-wrapper">';
-    tour_el += `<img class="m-tour-card__image" src="/images/storage/tours/${tour.id}/${tour.image_path}">`;
+    if (tour.card_image_path)
+        tour_el += `<img class="m-tour-card__image" src="/images/storage/tours/${tour.id}/${tour.card_image_path}">`;
+    else
+        tour_el += `<img class="m-tour-card__image" src="/images/storage/tours/${tour.id}/${tour.image_path}">`;
     
     tour_el += '</div><div class="m-tour-card__content ph-4 pv-6"><div class="m-tour-card__tags">';
     for (let i = 0; i < tour.tags.length && i < 3; i++)

@@ -67,6 +67,12 @@
                 <input class="form-control" type="file" @change="card_image_changed" ref="card_image">
 
                 <img
+                    v-if="!new_card_image && edited_card_image_path" 
+                    :src="`/images/storage/tours/${id}/${edited_card_image_path}`" 
+                    class="img-fluid mt-3"
+                    > 
+
+                <img
                     v-if="new_card_image" 
                     :src="new_card_image_path"
                     class="img-fluid mt-3"
@@ -108,6 +114,7 @@ export default {
         'title',
         'description',
         'image_path',
+        'card_image_path',
         'price',
         'discount_price',
     ],
@@ -121,6 +128,7 @@ export default {
             edited_title: this.title,
             edited_description: this.description,
             edited_image_path: this.image_path,
+            edited_card_image_path: this.card_image_path,
             edited_price: this.price,
             edited_discount_price: this.discount_price,
             edited_is_discount_price: this.discount_price != null,
@@ -160,12 +168,16 @@ export default {
             this.edited_title = this.title;
             this.edited_description = this.description;
             this.edited_image_path = this.image_path;
+            this.edited_card_image_path = this.card_image_path;
             this.edited_price = this.price;
             this.edited_discount_price = this.discount_price;
             this.edited_is_discount_price = this.discount_price != null;
 
             this.new_image = null;
             this.new_image_path = '';
+
+            this.new_card_image = null;
+            this.new_card_image_path = '';
         },
 
         validate() {

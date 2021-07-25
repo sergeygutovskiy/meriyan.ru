@@ -2258,7 +2258,7 @@ function create_tour_element(tour) {
   var wrapper_start = '<div class="col-sm mb-6"><div class="ml-auto mr-auto d-flex justify-content-center">';
   var wrapper_end = '</div></div>';
   var tour_el = '<article class="m-tour-card"><div class="m-tour-card__image-wrapper">';
-  tour_el += "<img class=\"m-tour-card__image\" src=\"/images/storage/tours/".concat(tour.id, "/").concat(tour.image_path, "\">");
+  if (tour.card_image_path) tour_el += "<img class=\"m-tour-card__image\" src=\"/images/storage/tours/".concat(tour.id, "/").concat(tour.card_image_path, "\">");else tour_el += "<img class=\"m-tour-card__image\" src=\"/images/storage/tours/".concat(tour.id, "/").concat(tour.image_path, "\">");
   tour_el += '</div><div class="m-tour-card__content ph-4 pv-6"><div class="m-tour-card__tags">';
 
   for (var i = 0; i < tour.tags.length && i < 3; i++) {
