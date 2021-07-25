@@ -14,6 +14,7 @@ const tours = document.getElementById('tours').childNodes[1];
 
 const loading_container = document.getElementById('loading');
 const tours_container = document.getElementById('tours');
+const selected_tags_container = document.getElementById('selected-tags'); 
 
 const input_tags = document.getElementById('input_tags');
 const input_discount = document.getElementById('input-discount');
@@ -40,10 +41,17 @@ for (let tag of tags) {
         if (active_tags.indexOf(id) === -1) {
             active_tags.push(id);
             this.classList.add('active');
+
+            selected_tags_container.append(get_selected_tag(
+                tag.innerText,
+                id
+            ));
         }
         else {
             active_tags = active_tags.filter(value => { return value !== id });
             this.classList.remove('active');
+
+            remove_selected_tag(id);
         }
     });
 }
@@ -192,4 +200,38 @@ function create_tour_element(tour) {
     const parser = new DOMParser();
 	const doc = parser.parseFromString(wrapper_start + tour_el + wrapper_end, 'text/html');
     return doc.body.childNodes[0];
+}
+
+function get_selected_tag(text, id) {
+    let el = `<button data-tag-id="${id}" class="selected-tag mr-4 mb-2"><span>${text}</span>`
+        + '<img src="/images/static/modal-close.svg" class="ml-2" width="24" height="24">'
+        + '</button>';
+    
+    const parser = new DOMParser();
+	const doc = parser.parseFromString(el, 'text/html');
+    const btn = doc.body.childNodes[0];
+
+    btn.addEventListener('click', function() {
+        const id = this.getAttribute('data-tag-id');
+        
+        for (let tag of tags) {
+            const tag_id = tag.getAttribute('data-tag-id');
+            if (id != tag_id) continue;
+
+            active_tags = active_tags.filter(value => { return value !== id });
+            tag.classList.remove('active');
+            break;
+        }
+
+        this.remove();
+    });
+
+    return btn;
+}
+
+function remove_selected_tag(id) {
+    selected_tags_container.childNodes.forEach(ch => {
+        if (id == ch.getAttribute('data-tag-id'))
+            ch.remove();
+    });
 }

@@ -51,7 +51,7 @@
                 <a class="navigation-mobile__link mb-2" href="{{ url('tours') }}">ТУРЫ</a>
                 <a class="navigation-mobile__link mb-2" href="{{ url('about') }}">О НАС</a>
                 <a class="navigation-mobile__link mb-2" href="{{ url('contacts') }}">КОНТАКТЫ</a>
-                <a class="navigation-mobile__link" href="">ПОИСК ТУРА</a>
+                <a class="navigation-mobile__link" href="{{ url("search") }}">ПОИСК ТУРА</a>
             </nav>
             <div class="navigation-mobile__border mv-4"></div>
             <div class="navigation-mobile__social-links">

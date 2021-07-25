@@ -16,8 +16,8 @@
             <img class="u-page-background__image-fallback" src="/images/static/backgrounds/about.jpg" alt="">
         </picture>
 
-        <header class="u-page-header u-page-header_size_100vh">
-            <div class="container mt-auto mb-auto">
+        <header class="u-page-header">
+            <div class="container u-page-margin">
                 <div class="row mb-6">
                     <div class="col-12 col-xl-5 text-center text-xl-start u-text_color_white">
                         <h1>О нас</h1>
@@ -26,12 +26,15 @@
                 <div class="row">
                     <div class="col-12 col-xl-7 offset-xl-5 text-center text-xl-start u-text_color_white">
                         <p class="u-text_size_28">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Donec sodales lacinia velit, a malesuada enim placerat ac. 
-                            Praesent maximus nisi eget nulla pulvinar, auctor egestas nulla sollicitudin. 
-                            Sed nisl est, condimentum lobortis mauris aliquet, convallis pharetra risus. 
-                            In cursus venenatis lorem et ullamcorper. 
-                            Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                            Турагентство МэриЯн предлагает услуги по подбору и организации туров, экскурсий и
+                            эксклюзивно-индивидуальных программ под запрос, в любой точке мира и в особенности в
+                            республике Крым, где мы вляемся Встречающей стороной.
+                        </p>
+                        <p class="u-text_size_28 mt-6">
+                            Путешествие может быть идеальным только в том случае, если в нем предусмотрено
+                            абсолютно все. Поэтому все заботы от покупки авиабилетов и бронирования гостиницы до
+                            трансфера из аэропорта и заказа экскурсий мы возьмем на себя. Вам останется лишь
+                            наслаждаться отдыхом.
                         </p>
                     </div>
                 </div>
@@ -41,44 +44,52 @@
         <section class="container u-page-margin">
             <div class="row mb-4 mb-md-8">
                 <div class="col d-flex justify-content-end u-text_color_white">
-                    <h2 class="mb-0">Наши преимущества</h2>
+                    <h2 class="mb-0">
+                        Почему стоит обратиться именно к нам?
+                    </h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6">
                     <article class="m-about-point-card ph-4 pv-6">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h3>Lorem Ipsum</h3>
-                            <img src="/images/tours/tags/icon-1.svg" width="60px" height="60px">
+                            <h3>
+                                С нами безопасно
+                            </h3>
+                            <img src="/images/static/about/flower.svg" width="60px" height="60px">
                         </div>
                         <p class="mt-6">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                            Donec nec neque vel diam hendrerit ultrices non quis ante.
+                            Важно, что мы заботимся и о вашей безопасности: вы будете заранее знать об
+                            обстановке в регионе, где собираетесь отдыхать, обо всех нюансах страховой программы,
+                            особенностях перелета и трансфера.
                         </p>
                     </article>
                     <article class="m-about-point-card ph-4 pv-6 mt-4 mt-sm-8">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h3>Lorem Ipsum</h3>
-                            <img src="images/tours/tags/icon-1.svg" width="60px" height="60px">
+                            <h3>
+                                Подходим каждому
+                            </h3>
+                            <img src="/images/static/about/medal.svg" width="60px" height="60px">
                         </div>
                         <p class="mt-6">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                            Donec nec neque vel diam hendrerit ultrices non quis ante.
+                            Думаете, что у вас нет денег на путешествие мечты? 
+                            Вне зависимости от
+                            бюджета поездки мы подберем лучшие варианты, 
+                            которые будут соответствовать вашим пожеланиям.
                         </p>
                     </article>
                 </div>
                 <div class="col-12 col-lg-6 d-flex align-items-center">
                     <article class="m-about-point-card ph-4 pv-6 mt-4 mt-sm-8 mt-md-0">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h3>Lorem Ipsum</h3>
-                            <img src="images/tours/tags/icon-1.svg" width="60px" height="60px">
+                            <h3>
+                                На нас можно положиться
+                            </h3>
+                            <img src="/images/static/about/support.svg" width="60px" height="60px">
                         </div>
                         <p class="mt-6">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Donec dolor urna, vestibulum eget vestibulum in, iaculis non felis. 
-                            Donec nec neque vel diam hendrerit ultrices non quis ante.
+                            Мы не бросаем своих клиентов в поездке!
+                            Менеджер всегда будет на связи и поможет решить любую возникшую проблему.                            
                         </p>
                     </article>
                 </div>
@@ -98,7 +109,7 @@
                             </h2>
                         </div>
                         <a class="u-btn u-btn_size_big u-btn_theme_transparent"  href="{{ url("tours") }}">
-                            Больше туров
+                            Больше популярных туров
                         </a>
                     </div>
                 </nav>

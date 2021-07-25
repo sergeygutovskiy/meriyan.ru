@@ -1,5 +1,6 @@
 .u-page-background {
     $wave_size: (560 * 100vw) / 1920;
+    $offset_3_k: 3.00;
     $offset_2_k: 1.40;
     $offset_1_k: 0.75;
 
@@ -34,6 +35,11 @@
         bottom: 0;
     }
 
+    &-top.offset_3 &__image,
+    &-bottom.offset_3 &__image {
+        height: calc(100% + #{$wave_size} * #{$offset_3_k});
+    }
+
     &-top.offset_2 &__image,
     &-bottom.offset_2 &__image {
         height: calc(100% + #{$wave_size} * #{$offset_2_k});
@@ -63,6 +69,11 @@
 
     &-bottom::before {
         bottom: 0;
+    }
+
+    &-top.offset_3::before,
+    &-bottom.offset_3::before {
+        height: calc(100% + #{$wave_size}  * #{$offset_3_k});
     }
 
     &-top.offset_2::before,
@@ -100,10 +111,16 @@
         transform: rotateZ(180deg) translateY(3px);
     }
 
+    &-top.offset_3::after {
+        transform: translateY( calc((100% * #{$offset_3_k}) + 4px) );
+    }
+    &-bottom.offset_3::after {
+        transform: rotateZ(180deg) translateY( calc((100% * #{$offset_3_k}) + 4px) );
+    }
+
     &-top.offset_2::after {
         transform: translateY( calc((100% * #{$offset_2_k}) + 4px) );
-    }
-    
+    }    
     &-bottom.offset_2::after {
         transform: rotateZ(180deg) translateY( calc((100% * #{$offset_2_k}) + 4px) );
     }
@@ -111,7 +128,6 @@
     &-top.offset_1::after {
         transform: translateY( calc((100% * #{$offset_1_k}) + 4px) );
     }
-    
     &-bottom.offset_1::after {
         transform: rotateZ(180deg) translateY( calc((100% * #{$offset_1_k}) + 4px) );
     }

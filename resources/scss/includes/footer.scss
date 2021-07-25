@@ -7,12 +7,13 @@
         &-wrapper {
             z-index: 1;
             display: inline-block;
-            height: 50px;
-            width: 133px;
+            height: 40px;
+            width: 224;
             border-bottom: 0;
         }
 
         display: block;
+        filter: brightness(0) invert(1);
     }
 
     &__links {
