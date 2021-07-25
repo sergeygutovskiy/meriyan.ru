@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Feedback\FeedbackSelectionRequest;
+use Illuminate\Support\Facades\Mail;
 
 class FeedbackSelectionRequestController extends Controller
 {
@@ -39,6 +40,18 @@ class FeedbackSelectionRequestController extends Controller
             'email' => $request->input('email'),
             'wishes' => strlen($request->input('wishes')) ? $request->input('wishes') : ''
         ]);
+
+        Mail::raw(
+            'Заявка на подбор тура | '
+            . 'Имя: ' . $request->input('name') . ' | '
+            . 'Телефон: ' . $request->input('phone') . ' | '
+            . 'Почта: ' . $request->input('email') . ' | '
+            . 'Пожелания: ' . $request->input('wishes')
+            , function($message) {
+            $message
+            ->subject('Новая заявка')
+            ->to('sergey.gutovsk@gmail.com');
+        });
     
         return 'OK';
     }

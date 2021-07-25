@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Feedback\FeedbackBooking;
+use Illuminate\Support\Facades\Mail;
+use App\Models\Tours\Tour;
 
 class FeedbackBookingController extends Controller
 {
@@ -38,6 +40,18 @@ class FeedbackBookingController extends Controller
             'email' => $request->input('email'),
         ]);
     
+        Mail::raw(
+            'Заявка на бронирование | '
+            . 'Тур: ' . Tour::where('id', $request->input('tour_id'))->first()->title . ' | '
+            . 'Имя: ' . $request->input('name') . ' | '
+            . 'Телефон: ' . $request->input('phone') . ' | '
+            . 'Почта: ' . $request->input('email')
+            , function($message) {
+            $message
+            ->subject('Новая заявка')
+            ->to('sergey.gutovsk@gmail.com');
+        });
+
         return 'OK';
     }
 }

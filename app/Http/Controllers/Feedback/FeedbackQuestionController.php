@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Feedback\FeedbackQuestion;
+use Illuminate\Support\Facades\Mail;
 
 class FeedbackQuestionController extends Controller
 {
@@ -37,6 +38,17 @@ class FeedbackQuestionController extends Controller
             'question' => strlen($request->input('question')) ? $request->input('question') : ''
         ]);
     
+        Mail::raw(
+            'Заявка с вопросом | '
+            . 'Имя: ' . $request->input('name') . ' | '
+            . 'Почта: ' . $request->input('email') . ' | '
+            . 'Вопрос: ' . $request->input('question')
+            , function($message) {
+            $message
+            ->subject('Новая заявка')
+            ->to('sergey.gutovsk@gmail.com');
+        });
+
         return 'OK';
     }
 }
