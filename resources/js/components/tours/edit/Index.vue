@@ -46,6 +46,10 @@
                 v-if="tour"
                 :id="tour.id"
             />
+
+            <div class="text-center" v-if="!tour">
+                <div class="spinner-border text-success" role="status"></div>
+            </div>
         </div>
         <div class="col-4">
             <div class="list-group">
