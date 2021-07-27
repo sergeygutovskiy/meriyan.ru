@@ -83,6 +83,7 @@
             </div>
         </header>
 
+        @if ($tour->info->video_path)   
         <section class="container u-page-margin">
             <div class="m-tour-info-video-container row justify-content-between align-items-center">
                 <div class="col-12 col-lg-6">
@@ -106,6 +107,17 @@
                 </div>
             </div>
         </section>
+        @else
+        <section class="container u-page-margin">
+            <div class="row justify-content-end">
+                <div class="mt-7 mt-lg-0 col-12 col-lg-6 u-text_size_24 u-text_color_white">
+                    <div class="m-tour-info-video-container__description">
+                        {!! html_entity_decode($tour->info->description) !!}
+                    </div>
+                </div>
+            </div>
+        </section>            
+        @endif
 
     </div>
 

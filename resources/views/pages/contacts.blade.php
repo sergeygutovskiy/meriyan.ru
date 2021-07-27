@@ -78,10 +78,13 @@
     {{-- // TODO адаптировать --}}
     <section class="container u-page-margin">
             <div class="row">
-                <div class="col-12 col-lg pr-4 d-flex flex-lg-column justify-content-evenly">
+                <div 
+                    class="col-12 col-lg pr-4 d-flex flex-column text-center text-lg-start 
+                    flex-lg-column justify-content-evenly">
                     <div 
                         class="d-flex flex-column align-items-center
-                        flex-lg-row align-items-lg-start"
+                        flex-lg-row align-items-lg-start
+                        mb-6 mb-lg-0"
                         >
                         <img 
                             class="form-icon mb-4 pb-lg-0" 
@@ -105,8 +108,7 @@
                             height="80"
                             >
                         <p class="form-paragraph u-text_size_28 ml-lg-4">
-                            196620, г. Санкт-Петербург,
-                            г. Павловск, ул. Васенко, д. 9
+                            Ежедневно, круглосуточно на связи для вас
                         </p>
                     </div>
                 </div>

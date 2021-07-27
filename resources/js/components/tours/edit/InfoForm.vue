@@ -18,8 +18,29 @@
                 <input type="number" :min="0" class="form-control" v-model="edited_people">
             </div>
             <div class="mb-3">
-                <label for="" class="form-label">Ссылка на youtube видео</label>
-                <input type="text" class="form-control" v-model="edited_video_href">
+                <label class="form-label">Ссылка на youtube видео</label>
+                <div class="input-group">
+                    <select class="form-select" v-model="edited_is_video_href">
+                        <option 
+                            :value="false" 
+                            :selected="!edited_is_video_href"
+                            >
+                            Нет
+                        </option>
+                        <option 
+                            :value="true" 
+                            :selected="edited_is_video_href"
+                            >
+                            Есть
+                        </option>
+                    </select>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        v-model="edited_video_href" 
+                        :disabled="!edited_is_video_href"
+                        >
+                </div>
             </div>
             <div class="input-group mb-3">
                 <label class="input-group-text">Сезон</label>
@@ -137,7 +158,9 @@ export default {
             edited_duration: this.duration,
             edited_season: this.season,
             edited_complexity: this.complexity,
+
             edited_video_href: this.video_href,
+            edited_is_video_href: this.video_href != null,
 
             edited_is_pdf_document: !!this.pdf_document_path,
             new_pdf_document: null,
@@ -157,6 +180,12 @@ export default {
             if (!val) {
                 this.$refs.pdf_document.value = null;
                 this.new_pdf_document = null;
+            }
+        },
+
+        edited_is_video_href: function (val) {
+            if (!val) {
+                this.edited_video_href = ''
             }
         },
     },
@@ -182,7 +211,6 @@ export default {
                 && this.edited_duration != ''
                 && this.edited_season != null
                 && this.edited_complexity != null
-                && this.edited_video_href.length > 0
             );
         },
 
