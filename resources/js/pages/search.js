@@ -204,7 +204,8 @@ function create_tour_element(tour) {
 
 function get_selected_tag(text, id) {
     let el = `<button data-tag-id="${id}" class="selected-tag mr-4 mb-2"><span>${text}</span>`
-        + '<img src="/images/static/modal-close.svg" class="ml-2" width="24" height="24">'
+        + '<img src="/images/static/modal-close.svg" class="ml-2" width="24" height="24"'
+        + ' style="filter: brightness(0) invert(1);">'
         + '</button>';
     
     const parser = new DOMParser();

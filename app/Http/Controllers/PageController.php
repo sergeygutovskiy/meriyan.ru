@@ -14,7 +14,12 @@ class PageController extends Controller
 {
     public function home()
     {
-        $tours = Tour::with('tags')->get();
+        // $tours = Tour::with('tags')->get();
+
+        $tours = Tour::with('tags')->whereIn('id', [
+            43, 44, 45, 
+            105, 125, 137
+        ])->get();
 
         return view('pages.home', [ 'tours' => $tours ]);
     }

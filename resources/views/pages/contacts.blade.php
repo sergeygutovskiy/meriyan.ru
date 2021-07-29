@@ -34,7 +34,7 @@
                     <div class="row justify-content-between pv-2">
                         <div class="mb-8 d-flex justify-content-center col-12 justify-content-lg-start col-xl-6">
                             <x-contact-card 
-                                name="Николаевна <br> Яна"
+                                name="Шаталина <br> Яна"
                                 image="/images/static/contacts/yana.jpg"
                                 paragraph="Коммерческий директор, ГИД по странам Скандинавии, бизнес-тренер, 
                                 руководитель брокерского агентства 'Бюро Жилья', 
@@ -108,7 +108,8 @@
                             height="80"
                             >
                         <p class="form-paragraph u-text_size_28 ml-lg-4">
-                            Ежедневно, круглосуточно на связи для вас
+                            Ежедневно, круглосуточно <br>
+                            на связи для вас
                         </p>
                     </div>
                 </div>

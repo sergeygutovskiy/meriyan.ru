@@ -15,7 +15,7 @@ class PartnerCard extends Component
      *
      * @return void
      */
-    public function __construct($name, $image, $paragraph)
+    public function __construct($image, $paragraph, $name)
     {
         $this->name = $name;
         $this->image = $image;

@@ -11,11 +11,11 @@
 @section('content')
     <div class="u-page-background u-page-background-top offset_2">
         <picture class="u-page-background__image">
-            <source
+            {{-- <source
                 srcset="/images/static/backgrounds/home.webp"
                 type="image/webp"
-            />
-            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home.jpg" alt="">
+            /> --}}
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home-top.jpg" alt="">
         </picture>
 
         <header class="u-page-header u-page-header_size_100vh">
@@ -97,7 +97,7 @@
 
     <section class="container m-tours-mobile-slider">
         <div id="tours-slider">
-            <x-tours.columns-3-grid :tours="$tours" />
+            <x-tours.columns-3-grid :tours="$tours" :max="6" />
         
             <div class="m-tours-mobile-slider-pagination"></div>
         </div>
@@ -105,22 +105,23 @@
 
     <div class="u-page-background u-page-background-bottom offset_1">
         <picture class="u-page-background__image">
-            <source
+            {{-- <source
                 srcset="/images/static/backgrounds/home.webp"
                 type="image/webp"
-            />
-            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home.jpeg" alt="">
+            /> --}}
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home-bottom.jpg" alt="">
         </picture>
 
         <section class="container u-page-margin">
             <x-banner
                 title="Не можете выбрать тур?"
-                desc="Мы подберем вам тур, учитывая все ваши пожелания к путешествию, 
-                чтобы ваш отдых отвечал всем вашим пожеланиям. В ходе беседы менеджер 
-                уточнит детали и пожелания, после чего изучит все доступные
-                предложения и сформирует идеальный со всех точек зрения тур."
-                link-text="Подберите мне тур"
+                desc="Мы подберем вам тур, 
+                учитывая все ваши пожелания к путешествию, 
+                чтобы ваш отдых отвечал всем вашим пожеланиям. 
+                В ходе беседы мы уточним детали и пожелания, 
+                после чего сформируем идеальный со всех точек зрения тур."
                 img="/images/static/banners/home.png"
+                link-text="Подберите мне тур"
             />
         </section>
 
@@ -130,7 +131,7 @@
                     <h2>Наши партнёры</h2>
                 </div>
             </div>
-            <div class="row row-cols-1 row-cols-lg-3 justify-content-sm-between">
+            <div class="row row-cols-1 row-cols-lg-3 justify-content-sm-center">
                 <div class="col d-flex justify-content-center">
                     <x-partner-card 
                         name="Бюро жилья"
@@ -138,7 +139,7 @@
                         paragraph="Брокерское агентство недвижимости 'Бюро жилья'"
                     />
                 </div>
-                <div class="col d-flex justify-content-center mt-4 mt-lg-0">
+                {{-- <div class="col d-flex justify-content-center mt-4 mt-lg-0">
                     <x-partner-card 
                         name=""
                         image="/images/static/partners/partner-2.png"
@@ -148,11 +149,11 @@
                 </div>
                 <div class="col col-md-12 col-lg mt-4 mt-lg-0 d-flex justify-content-center">
                     <x-partner-card 
-                        name="Мир глухих"
+                        name=""
                         image="/images/static/partners/partner-3.png"
                         paragraph="Центр сурдоперевода 'Мир глухих'"
                     />
-                </div>
+                </div> --}}
             </div>
         </section>
 
