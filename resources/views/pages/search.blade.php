@@ -10,10 +10,16 @@
     <div class="u-page-background u-page-background-top offset_3">
         <picture class="u-page-background__image">
             <source
-                srcset="/images/static/backgrounds/home.webp"
+                media="(max-width: 575px)"
                 type="image/webp"
+                srcset="/images/static/backgrounds/home-top--mobile.webp"
             />
-            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home.jpg" alt="">
+            <source
+                media="(min-width: 576px)"
+                type="image/webp"
+                srcset="/images/static/backgrounds/home-top.webp"
+            />
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home-top.jpg">
         </picture>
     </div>
 

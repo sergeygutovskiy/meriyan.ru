@@ -11,11 +11,17 @@
 @section('content')
     <div class="u-page-background u-page-background-top offset_2">
         <picture class="u-page-background__image">
-            {{-- <source
-                srcset="/images/static/backgrounds/home.webp"
+            <source
+                media="(max-width: 575px)"
                 type="image/webp"
-            /> --}}
-            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home-top.jpg" alt="">
+                srcset="/images/static/backgrounds/home-top--mobile.webp"
+            />
+            <source
+                media="(min-width: 576px)"
+                type="image/webp"
+                srcset="/images/static/backgrounds/home-top.webp"
+            />
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home-top.jpg">
         </picture>
 
         <header class="u-page-header u-page-header_size_100vh">
@@ -105,11 +111,17 @@
 
     <div class="u-page-background u-page-background-bottom offset_1">
         <picture class="u-page-background__image">
-            {{-- <source
-                srcset="/images/static/backgrounds/home.webp"
+            <source
+                media="(max-width: 575px)"
                 type="image/webp"
-            /> --}}
-            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home-bottom.jpg" alt="">
+                srcset="/images/static/backgrounds/home-bottom--mobile.webp"
+            />
+            <source
+                media="(min-width: 576px)"
+                type="image/webp"
+                srcset="/images/static/backgrounds/home-bottom.webp"
+            />
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/home-bottom.jpg">
         </picture>
 
         <section class="container u-page-margin">

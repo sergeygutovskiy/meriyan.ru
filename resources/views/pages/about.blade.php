@@ -10,10 +10,16 @@
     <div class="u-page-background u-page-background-top">
         <picture class="u-page-background__image">
             <source
-                srcset="/images/static/backgrounds/about.webp"
+                media="(max-width: 575px)"
                 type="image/webp"
+                srcset="/images/static/backgrounds/about--mobile.webp"
             />
-            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/about.jpg" alt="">
+            <source
+                media="(min-width: 576px)"
+                type="image/webp"
+                srcset="/images/static/backgrounds/about.webp"
+            />
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/about.jpg">
         </picture>
 
         <header class="u-page-header">

@@ -18,7 +18,7 @@
                 <input type="number" :min="0" class="form-control" v-model="edited_people">
             </div>
             <div class="mb-3">
-                <label class="form-label">Ссылка на youtube видео</label>
+                <label class="form-label">Ссылка на youtube видео / фото</label>
                 <div class="input-group">
                     <select class="form-select" v-model="edited_is_video_href">
                         <option 

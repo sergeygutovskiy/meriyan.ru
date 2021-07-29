@@ -87,6 +87,7 @@
         <section class="container u-page-margin">
             <div class="m-tour-info-video-container row justify-content-between align-items-center">
                 <div class="col-12 col-lg-6">
+                    @if ($tour->info->is_media_is_video)
                     <div class="m-tour-info-video-container__video-wrapper">
                         <iframe 
                             class="m-tour-info-video-container__video"
@@ -99,6 +100,11 @@
                             allowfullscreen>
                         </iframe>
                     </div>
+                    @else
+                    <div class="d-flex align-items-center">
+                        <img src="{{ $tour->info->video_path }}" class="m-tour-info-video-container__img">
+                    </div>
+                    @endif
                 </div>
                 <div class="mt-7 mt-lg-0 col-12 col-lg-5 u-text_size_24 u-text_color_white">
                     <div class="m-tour-info-video-container__description">
@@ -106,7 +112,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>  
         @else
         <section class="container u-page-margin">
             <div class="row justify-content-end">

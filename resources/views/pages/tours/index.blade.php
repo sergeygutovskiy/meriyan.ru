@@ -9,10 +9,16 @@
     <div class="u-page-background u-page-background-top">
         <picture class="u-page-background__image">
             <source
-                srcset="/images/static/backgrounds/tours-top.webp"
+                media="(max-width: 575px)"
                 type="image/webp"
+                srcset="/images/static/backgrounds/tours-top--mobile.webp"
             />
-            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/tours-top.jpg" alt="">
+            <source
+                media="(min-width: 576px)"
+                type="image/webp"
+                srcset="/images/static/backgrounds/tours-top.webp"
+            />
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/tours-top.jpg">
         </picture>
 
         <header class="u-page-header u-page-header_size_100vh">
@@ -121,10 +127,16 @@
     <div class="u-page-background u-page-background-bottom offset_2">
         <picture class="u-page-background__image">
             <source
-                srcset="/images/static/backgrounds/tours-bottom.webp"
+                media="(max-width: 575px)"
                 type="image/webp"
+                srcset="/images/static/backgrounds/tours-bottom--mobile.webp"
             />
-            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/tours-bottom.jpeg" alt="">
+            <source
+                media="(min-width: 576px)"
+                type="image/webp"
+                srcset="/images/static/backgrounds/tours-bottom.webp"
+            />
+            <img class="u-page-background__image-fallback" src="/images/static/backgrounds/tours-bottom.jpg">
         </picture>
 
         <section class="container u-page-margin" id="tag3">

@@ -19,7 +19,28 @@
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Ссылка на youtube видео</label>
-                <input type="text" class="form-control" v-model="video_href">
+                <div class="input-group">
+                    <select class="form-select" v-model="is_video_href">
+                        <option 
+                            :value="false" 
+                            :selected="!is_video_href"
+                            >
+                            Нет
+                        </option>
+                        <option 
+                            :value="true" 
+                            :selected="is_video_href"
+                            >
+                            Есть
+                        </option>
+                    </select>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        v-model="video_href" 
+                        :disabled="!is_video_href"
+                        >
+                </div>
             </div>
             <div class="input-group mb-3">
                 <label class="input-group-text">Сезон</label>
@@ -125,6 +146,8 @@ export default {
             description: '',
             duration: 0,
             people: 0,
+
+            is_video_href: false,
             video_href: '',
 
             is_pdf_document: false,
@@ -150,7 +173,13 @@ export default {
                 this.$refs.pdf_document.value = null;
                 this.pdf_document = null;
             }
-        }
+        },
+
+        is_video_href: function (val) {
+            if (!val) {
+                this.edited_video_href = ''
+            }
+        },
     },
 
     created() {
@@ -169,7 +198,6 @@ export default {
                 this.description.length > 0
                 && this.people != ''
                 && this.duration != ''
-                && this.video_href.length > 0
                 && this.season != null
                 && this.complexity != null
             );

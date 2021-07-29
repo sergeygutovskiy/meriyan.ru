@@ -22,6 +22,11 @@ class TourInfo extends Model
         'document_path'
     ];
 
+    public function getIsMediaIsVideoAttribute()
+    {
+        return str_contains($this->video_path, 'youtube');
+    }
+
     public function getDocumentSrcAttribute()
     {
         return  '/images/storage' . $this->tour->local_storage_path . $this->document_path;
